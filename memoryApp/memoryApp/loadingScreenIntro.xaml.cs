@@ -25,7 +25,6 @@ namespace memoryApp
         {
             InitializeComponent();
             showOtherScreen();
-      
         }
         public async void showOtherScreen()
         {
