@@ -1,0 +1,15 @@
+C:\Users\joey\source\repos\memory\memoryApp\memoryApp\bin\Debug\memoryApp.exe.config
+C:\Users\joey\source\repos\memory\memoryApp\memoryApp\bin\Debug\memoryApp.exe
+C:\Users\joey\source\repos\memory\memoryApp\memoryApp\bin\Debug\memoryApp.pdb
+C:\Users\joey\source\repos\memory\memoryApp\memoryApp\obj\Debug\memoryApp.csprojAssemblyReference.cache
+C:\Users\joey\source\repos\memory\memoryApp\memoryApp\obj\Debug\MainWindow.g.cs
+C:\Users\joey\source\repos\memory\memoryApp\memoryApp\obj\Debug\App.g.cs
+C:\Users\joey\source\repos\memory\memoryApp\memoryApp\obj\Debug\memoryApp_MarkupCompile.cache
+C:\Users\joey\source\repos\memory\memoryApp\memoryApp\obj\Debug\memoryApp_MarkupCompile.lref
+C:\Users\joey\source\repos\memory\memoryApp\memoryApp\obj\Debug\MainWindow.baml
+C:\Users\joey\source\repos\memory\memoryApp\memoryApp\obj\Debug\memoryApp.g.resources
+C:\Users\joey\source\repos\memory\memoryApp\memoryApp\obj\Debug\memoryApp.Properties.Resources.resources
+C:\Users\joey\source\repos\memory\memoryApp\memoryApp\obj\Debug\memoryApp.csproj.GenerateResource.cache
+C:\Users\joey\source\repos\memory\memoryApp\memoryApp\obj\Debug\memoryApp.csproj.CoreCompileInputs.cache
+C:\Users\joey\source\repos\memory\memoryApp\memoryApp\obj\Debug\memoryApp.exe
+C:\Users\joey\source\repos\memory\memoryApp\memoryApp\obj\Debug\memoryApp.pdb
