@@ -24,5 +24,10 @@ namespace memoryApp
         {
             InitializeComponent();
         }
+
+        private void ExitApplication_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

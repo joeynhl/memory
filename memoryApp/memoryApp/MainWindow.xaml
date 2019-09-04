@@ -5,4 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:memoryApp"
         mc:Ignorable="d"
-        Title="Memory Game - NHL Stenden Hogeschool" Height="1024" Width="1024"/>
+        Title="Memory Game - NHL Stenden Hogeschool" Height="1024" Width="598" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="images/mainmenubg1.png" Stretch="Uniform"/>
+    </Window.Background>
+    <Grid HorizontalAlignment="Left" Height="512" Margin="10,10,0,0" VerticalAlignment="Top" Width="578">
+        <Button Content="Highscores" HorizontalAlignment="Left" Margin="207,244,0,0" VerticalAlignment="Top" Width="174" Height="74"/>
+        <Button Content="Begin Spel" HorizontalAlignment="Left" Margin="207,150,0,0" VerticalAlignment="Top" Width="174" Height="73"/>
+        <Button Content="Afsluiten" HorizontalAlignment="Left" Margin="207,340,0,0" VerticalAlignment="Top" Width="174" Height="74" Click="ExitApplication_Click"/>
+        <Label Content="Memory" HorizontalAlignment="Center" Margin="152,0,150,404" VerticalAlignment="Bottom" Height="98" Width="276" FontFamily="Unispace" FontSize="72"/>
+    </Grid>
+</Window>
