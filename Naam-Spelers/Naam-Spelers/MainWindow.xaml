@@ -1,0 +1,50 @@
+﻿<Window x:Class="Naam_Spelers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Naam_Spelers"
+        mc:Ignorable="d"
+        Title="Memory" Height="800" Width="800" ResizeMode="NoResize">
+
+    <Grid RenderTransformOrigin="0.506,0.486" Background="#3ADA9A" Margin="2,8,-2,-7">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="59*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="31*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="547*"/>
+        </Grid.ColumnDefinitions>
+        <Image HorizontalAlignment="Left" Height="186" VerticalAlignment="Top" Width="319" Grid.Column="4" Margin="7.346,27,0,0"/>
+        <Image Source="C:\Visual studio 2019\Memory\Naam-Spelers\Naam-Spelers\memory-logo.png" RenderTransformOrigin="5.086,0.249" Margin="23,-405,58,16" Grid.ColumnSpan="4" Grid.Column="1"/>
+        <Label Content="Speler 1&#xD;&#xA;" Grid.Column="4" HorizontalAlignment="Left" Margin="104,360,0,0" VerticalAlignment="Top" Width="202" FontSize="24" Foreground="White" FontWeight="Bold" />
+        <Label Content="Speler 2&#xD;&#xA;" Grid.Column="4" HorizontalAlignment="Left" Margin="100,476,0,0" VerticalAlignment="Top" Width="202" FontSize="24" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.473,0.669" />
+        <Button Content="Verder" Grid.Column="4" HorizontalAlignment="Left" Margin="21,601,0,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Button_Click"/>
+        <RichTextBox HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="343" Grid.Column="3" Margin="43,414,0,0" TextChanged="RichTextBox_TextChanged" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" FontSize="22">
+            <RichTextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.504"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </RichTextBox.RenderTransform>
+            <FlowDocument/>
+        </RichTextBox>
+        <RichTextBox HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="343" Grid.Column="3" Margin="43,526,0,0" TextChanged="RichTextBox_TextChanged" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" FontSize="22">
+            <RichTextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.504"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </RichTextBox.RenderTransform>
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </Grid>
+</Window>
