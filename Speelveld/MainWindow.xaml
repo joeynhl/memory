@@ -5,7 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Speelveld"
         mc:Ignorable="d"
-        Title="MainWindow" WindowState="Maximized" Height="450" Width="800">
-    <Grid Name="grid">
-    </Grid>
+        Title="MainWindow"  Height="800" Width="800" >
+
+    <StackPanel Grid.IsSharedSizeScope="True"  >
+        <Border>
+            <Grid>
+                <Menu Background="black" Height="100">
+                    <TextBlock Foreground="#fff"  FontSize="50" >Naam 1</TextBlock>
+                    <TextBlock Foreground="#fff" Margin="20, 0,0,0" FontSize="50">Naam 2</TextBlock>
+                    
+                </Menu>
+            </Grid>
+        </Border>
+
+        <Border >
+            <Grid Name="cardgrid" Height="600">
+                <Grid.Background>
+                    <ImageBrush ImageSource="D:\NHL\memory\Speelveld\achtergrondafbeelding.jpg"/>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+            </Grid>
+        </Border>
+    </StackPanel>
 </Window>
