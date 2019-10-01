@@ -20,9 +20,16 @@ namespace Speelveld
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
+
+            Button btn = new Button();
+            btn.Content = "click me motherfucker";
+
+            grid.Children.Add(btn);
         }
+        
     }
 }
