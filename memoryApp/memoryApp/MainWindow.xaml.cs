@@ -20,14 +20,24 @@ namespace memoryApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        MediaPlayer Sound = new MediaPlayer();
         public MainWindow()
         {
             InitializeComponent();
+            InitialiseerMuziek();
         }
 
         private void ExitApplication_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+        public void InitialiseerMuziek()
+        {
+            Sound.Open(new Uri("C:/Sound1.wav")) ;
+            Sound.Play();
+        }
+
+
     }
 }
