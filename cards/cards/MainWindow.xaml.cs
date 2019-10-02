@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace cards
 {
     /// <summary>
@@ -24,10 +23,6 @@ namespace cards
         public MainWindow()
         {
             InitializeComponent();
-
-            
-           
         }
-       
     }
 }
