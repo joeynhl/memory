@@ -6,24 +6,33 @@
         xmlns:local="clr-namespace:cards"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
+    <Window.Resources>
+        <BitmapImage x:Key="openImage" UriSource="C:\Users\eelco\Documents\GitHub\memory\cards\cards\Resources\goodestboi.jpg" />
+        <BitmapImage x:Key="closedImage" UriSource="C:\Users\eelco\Documents\GitHub\memory\cards\cards\Resources\image.png" />
+    </Window.Resources>
     <Grid>
 
         <Canvas Width="800" Height="800" >
 
-            <Button>
-                <Button.Template>
-                    <ControlTemplate>
-                        <Rectangle
-            Width="155"
-            Height="155"
-            Fill="black"
-            Canvas.Left="10"
-            Canvas.Top="25" 
-                />
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
+      
 
+            <Rectangle
+                x:Name="card"
+      Grid.Row="3" Grid.Column="0"
+      Width="300" Height="150"
+      Stroke="MediumBlue" StrokeThickness="1"
+      HorizontalAlignment="Left"
+                MouseDown="Rectangle_MouseDown" Canvas.Left="272" Canvas.Top="162" >
+                
+                
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="{StaticResource closedImage}"/>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            
+    
         </Canvas>
 
     </Grid>

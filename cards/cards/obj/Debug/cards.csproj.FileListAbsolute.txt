@@ -1,0 +1,15 @@
+C:\Users\eelco\Documents\GitHub\memory\cards\cards\bin\Debug\cards.exe.config
+C:\Users\eelco\Documents\GitHub\memory\cards\cards\bin\Debug\cards.exe
+C:\Users\eelco\Documents\GitHub\memory\cards\cards\bin\Debug\cards.pdb
+C:\Users\eelco\Documents\GitHub\memory\cards\cards\obj\Debug\cards.csprojAssemblyReference.cache
+C:\Users\eelco\Documents\GitHub\memory\cards\cards\obj\Debug\MainWindow.g.cs
+C:\Users\eelco\Documents\GitHub\memory\cards\cards\obj\Debug\App.g.cs
+C:\Users\eelco\Documents\GitHub\memory\cards\cards\obj\Debug\cards_MarkupCompile.cache
+C:\Users\eelco\Documents\GitHub\memory\cards\cards\obj\Debug\cards_MarkupCompile.lref
+C:\Users\eelco\Documents\GitHub\memory\cards\cards\obj\Debug\MainWindow.baml
+C:\Users\eelco\Documents\GitHub\memory\cards\cards\obj\Debug\cards.g.resources
+C:\Users\eelco\Documents\GitHub\memory\cards\cards\obj\Debug\cards.Properties.Resources.resources
+C:\Users\eelco\Documents\GitHub\memory\cards\cards\obj\Debug\cards.csproj.GenerateResource.cache
+C:\Users\eelco\Documents\GitHub\memory\cards\cards\obj\Debug\cards.csproj.CoreCompileInputs.cache
+C:\Users\eelco\Documents\GitHub\memory\cards\cards\obj\Debug\cards.exe
+C:\Users\eelco\Documents\GitHub\memory\cards\cards\obj\Debug\cards.pdb

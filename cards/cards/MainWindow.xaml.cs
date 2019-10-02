@@ -24,5 +24,20 @@ namespace cards
         {
             InitializeComponent();
         }
+
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Title = "Clicked";
+
+            var fill = card.Fill as ImageBrush;
+
+            if (fill.ImageSource == (ImageSource)Resources["closedImage"])
+            {
+                fill.ImageSource = (ImageSource)Resources["openImage"];
+            }
+
+        }
+
+
     }
 }
