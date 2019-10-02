@@ -14,5 +14,7 @@
         <Button Content="Begin Spel" HorizontalAlignment="Left" Margin="207,150,0,0" VerticalAlignment="Top" Width="174" Height="73"/>
         <Button Content="Afsluiten" HorizontalAlignment="Left" Margin="207,340,0,0" VerticalAlignment="Top" Width="174" Height="74" Click="ExitApplication_Click"/>
         <Label Content="Memory" HorizontalAlignment="Center" Margin="152,0,150,404" VerticalAlignment="Bottom" Height="98" Width="276" FontFamily="Unispace" FontSize="72"/>
+        <Button x:Name="stopMuziek" Content="Stop" HorizontalAlignment="Left" Margin="537,625,0,-138" VerticalAlignment="Top" Width="29" Height="25" Click="stopMuziek_Click" RenderTransformOrigin="-0.64,0.44"/>
+        <Button x:Name="playMuziek" Content="Play" HorizontalAlignment="Left" Margin="507,625,0,-138" VerticalAlignment="Top" Width="25" Height="25" Click="playMuziek_Click" RenderTransformOrigin="-0.64,0.44"/>
     </Grid>
 </Window>

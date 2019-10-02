@@ -38,6 +38,13 @@ namespace memoryApp
             Sound.Play();
         }
 
-
+        private void playMuziek_Click(object sender, RoutedEventArgs e)
+        {
+            Sound.Play();
+        }
+        private void stopMuziek_Click(object sender, RoutedEventArgs e)
+        {
+            Sound.Stop();
+        }
     }
 }
