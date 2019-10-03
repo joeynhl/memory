@@ -8,16 +8,16 @@
         Title="MainWindow" Height="450" Width="800">
 
     <Window.Resources>
-        <BitmapImage x:Key="openImage" UriSource="C:\Users\eelco\Documents\GitHub\memory\cards\cards\Resources\goodestboi.jpg" />
-        <BitmapImage x:Key="closedImage" UriSource="C:\Users\eelco\Documents\GitHub\memory\cards\cards\Resources\image.png" />
+        <BitmapImage x:Key="openImage" UriSource="/images/goodestboi.jpg" />
+        <BitmapImage x:Key="closedImage" UriSource="/images/sjekkie.jpg" />
     </Window.Resources>
     <Grid>
 
         <Canvas Width="800" Height="800" >
+          
 
-      
 
-            <Rectangle
+          <Rectangle
                 x:Name="card"
       Grid.Row="3" Grid.Column="0"
       Width="300" Height="150"
