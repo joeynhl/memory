@@ -27,48 +27,48 @@ namespace cards
         {
             InitializeComponent();
 
-            Image rotateImage = new Image()
-            {
-                Stretch = Stretch.Uniform,
-                Source = new BitmapImage(new Uri("pack://application:,,,/images/goodestboi.jpg")),
-                RenderTransform = new RotateTransform()
-            };
-            Image opacityImage = new Image()
-            {
-                Stretch = Stretch.Uniform,
-                Source = new BitmapImage(new Uri("pack://application:,,,/images/sjekkie.jpg"))
-            };
+            //Image rotateImage = new Image()
+            //{
+            //    Stretch = Stretch.Uniform,
+            //    Source = new BitmapImage(new Uri("pack://application:,,,/images/goodestboi.jpg")),
+            //    RenderTransform = new RotateTransform()
+            //};
+            //Image opacityImage = new Image()
+            //{
+            //    Stretch = Stretch.Uniform,
+            //    Source = new BitmapImage(new Uri("pack://application:,,,/images/sjekkie.jpg"))
+            //};
 
-            LayoutRoot.Children.Add(rotateImage);
-            LayoutRoot.Children.Add(opacityImage);
+            //LayoutRoot.Children.Add(rotateImage);
+            //LayoutRoot.Children.Add(opacityImage);
 
-            Grid.SetColumn(opacityImage, 1);
+            //Grid.SetColumn(opacityImage, 1);
 
-            Storyboard storyboard = new Storyboard();
-            storyboard.Duration = new Duration(TimeSpan.FromSeconds(3.0));
-            DoubleAnimation rotateAnimation = new DoubleAnimation()
-            {
-                From = 0,
-                To = 360,
-                Duration = storyboard.Duration
-            };
-            DoubleAnimation opacityAnimation = new DoubleAnimation()
-            {
-                From = 1.0,
-                To = 0.0,
-                BeginTime = TimeSpan.FromSeconds(2.0),
-                Duration = new Duration(TimeSpan.FromSeconds(1.0))
-            };
+            //Storyboard storyboard = new Storyboard();
+            //storyboard.Duration = new Duration(TimeSpan.FromSeconds(3.0));
+            //DoubleAnimation rotateAnimation = new DoubleAnimation()
+            //{
+            //    From = 0,
+            //    To = 360,
+            //    Duration = storyboard.Duration
+            //};
+            //DoubleAnimation opacityAnimation = new DoubleAnimation()
+            //{
+            //    From = 1.0,
+            //    To = 0.0,
+            //    BeginTime = TimeSpan.FromSeconds(2.0),
+            //    Duration = new Duration(TimeSpan.FromSeconds(1.0))
+            //};
 
-            Storyboard.SetTarget(rotateAnimation, rotateImage);
-            Storyboard.SetTargetProperty(rotateAnimation, new PropertyPath("(UIElement.RenderTransform).(RotateTransform.Angle)"));
-            Storyboard.SetTarget(opacityAnimation, opacityImage);
-            Storyboard.SetTargetProperty(opacityAnimation, new PropertyPath("Opacity"));
+            //Storyboard.SetTarget(rotateAnimation, rotateImage);
+            //Storyboard.SetTargetProperty(rotateAnimation, new PropertyPath("(UIElement.RenderTransform).(RotateTransform.Angle)"));
+            //Storyboard.SetTarget(opacityAnimation, opacityImage);
+            //Storyboard.SetTargetProperty(opacityAnimation, new PropertyPath("Opacity"));
 
-            storyboard.Children.Add(rotateAnimation);
-            storyboard.Children.Add(opacityAnimation);
+            //storyboard.Children.Add(rotateAnimation);
+            //storyboard.Children.Add(opacityAnimation);
 
-            Resources.Add("Storyboard", storyboard);
+            //Resources.Add("Storyboard", storyboard);
 
             //Button button = new Button()
             //{
@@ -99,10 +99,30 @@ namespace cards
             {
                 fill.ImageSource = (ImageSource)Resources["openImage"];
             }
+            else
+            {
+                fill.ImageSource = (ImageSource)Resources["closedImage"];
 
-            ((Storyboard)Resources["Storyboard"]).Begin();
+            }
+
+            //((Storyboard)Resources["Storyboard"]).Begin();
 
         }
+
+        //private void Rectangle_MouseUp(object sender, MouseButtonEventArgs e)
+        //{
+        //    this.Title = "Clicked";
+
+        //    var fill = card.Fill as ImageBrush;
+
+        //    if (fill.ImageSource == (ImageSource)Resources["openImage"])
+        //    {
+        //        fill.ImageSource = (ImageSource)Resources["ClosedImage"];
+        //    }
+
+        //    //((Storyboard)Resources["Storyboard"]).Begin();
+
+        //}
 
 
     }
