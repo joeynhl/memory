@@ -26,6 +26,19 @@ namespace Speelveld
             InitializeComponent();
             setField();
         }
+        /// <summary>
+        /// 2d array for cards (4x4 game)
+        /// </summary>
+       public string[,] cards = new string[2, 4]
+            {
+                {"1", "2", "3", "4"},
+                { "5", "6", "7", "8"}
+            };
+
+        /// <summary>
+        /// 2d array for double cards
+        /// </summary>
+        public string[,] multiplecards = new string[4, 4];
 
         public static void Shuffle<T>(Random random, T[,] cards)
         {
@@ -46,40 +59,49 @@ namespace Speelveld
             }
         }
 
+        private void fillCards()
+        {
+            for (int i = 0; i < 2; i++) //loop twice trough array
+            { 
+                for (int row = 0; row < cards.GetLength(0); row++)// loop trough rows
+                {
+                    for (int column = 0; column < cards.GetLength(1); column++)// loop trough columns
+                    {
+                        if(i == 1)//if its the second loop row plus 2
+                        {
+                            multiplecards[row+2, column] = cards[row, column];
+                        } else {
+                            multiplecards[row, column] = cards[row, column];
+                        }
+                    }
+                }
+            }
+        }
+
         private void setField()
         {
-            string[,] cards = new string[2, 4]
-            {
-                {"1", "2", "3", "4"},
-                { "5", "6", "7", "8"}
-            };
+            fillCards(); // get the multiple cards array filled
+
             var rnd = new Random();
+            Shuffle(rnd, multiplecards); //shuffle cards
 
-            Shuffle(rnd, cards);
-
-
-            for (int row = 0; row < cards.GetLength(0); row++)
+            for (int row = 0; row < multiplecards.GetLength(0); row++) //loop trough rows
             {
-                for (int column = 0; column < cards.GetLength(1); column++)
+                for (int column = 0; column < multiplecards.GetLength(1); column++) // loop trough columns
                 {
-
-
-                    Button btn = new Button();
-                    btn.Content = cards[row, column];
-                    cardgrid.Children.Add(btn);
+                    Button btn = new Button(); // create new button
+                    btn.Content = multiplecards[row, column]; // fill button content
+                    
                     btn.HorizontalContentAlignment = HorizontalAlignment.Stretch;
                     btn.VerticalContentAlignment = VerticalAlignment.Stretch;
                     btn.Margin = new Thickness(10);
 
-                    btn.SetValue(Grid.RowProperty, row);
-                    btn.SetValue(Grid.ColumnProperty, column);
+                    btn.SetValue(Grid.RowProperty, row); //set row position
+                    btn.SetValue(Grid.ColumnProperty, column); // set col position
+                    cardgrid.Children.Add(btn);
 
-                    /* Grid.Row = "0" Grid.Column = "0"*/
                 }
             }
-            
-
         }
-
     }
 }
