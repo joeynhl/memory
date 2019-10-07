@@ -122,7 +122,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="achtergrondafbeelding.jpg" />
+    <Resource Include="Image\achtergrondafbeelding.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
