@@ -5,15 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cards"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="800">
 
     <Window.Resources>
         <BitmapImage x:Key="openImage" UriSource="/images/goodestboi.jpg" />
         <BitmapImage x:Key="closedImage" UriSource="/images/sjekkie.jpg" />
+
+       
     </Window.Resources>
     <Grid>
 
-        <Canvas Width="800" Height="800" >
+        <Canvas Name="LayoutRoot" Width="200" Height="200" >
+
+        </Canvas>
+
+
+        <Canvas Name="cards" Width="800" Height="800" >
           
 
 
@@ -29,7 +36,23 @@
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="{StaticResource closedImage}"/>
                 </Rectangle.Fill>
+
+                <!--<Rectangle.Triggers>
+                    --><!-- Animates the rectangle's opacity. --><!--
+                    <EventTrigger RoutedEvent="Rectangle.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                Storyboard.TargetName="card" 
+                                Storyboard.TargetProperty="Opacity"
+                                From="1.0" To="0.0" Duration="0:0:3" 
+                                AutoReverse="True" RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Rectangle.Triggers>-->
             </Rectangle>
+            
 
             
     
