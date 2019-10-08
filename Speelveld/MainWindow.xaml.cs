@@ -31,8 +31,8 @@ namespace Speelveld
         /// </summary>
        public string[,] cards = new string[2, 4]
             {
-                {"1", "2", "3", "4"},
-                { "5", "6", "7", "8"}
+                {"../../Image/sjekkie.jpg", "../../Image/sjekkie.jpg", "../../Image/sjekkie.jpg", "../../Image/sjekkie.jpg"},
+                { "../../Image/sjekkie.jpg", "../../Image/sjekkie.jpg", "../../Image/sjekkie.jpg", "../../Image/sjekkie.jpg"}
             };
 
         /// <summary>
@@ -89,18 +89,60 @@ namespace Speelveld
             {
                 for (int column = 0; column < multiplecards.GetLength(1); column++) // loop trough columns
                 {
+                    Rectangle Card = new Rectangle(); // create new card
+
+                    Card.Fill = new ImageBrush(new BitmapImage(new Uri("../../Image/goodestboi.jpg", UriKind.Relative))); //set imagebrush 
+                    Card.HorizontalAlignment = HorizontalAlignment.Stretch;
+                    Card.VerticalAlignment = VerticalAlignment.Stretch;
+                    Card.Margin = new Thickness(10);
+                    Card.SetValue(Grid.RowProperty, row);
+                    Card.SetValue(Grid.ColumnProperty, column);
+                    Card.SetValue(DataContextProperty, multiplecards[row, column]);
+                    Card.Name = multiplecards[row, column];
+                    Card.MouseLeftButtonDown += Rectangle_MouseDown;
+                    cardgrid.Children.Add(Card);
+
+/*              
+
                     Button btn = new Button(); // create new button
-                    btn.Content = multiplecards[row, column]; // fill button content
+                    btn.Content = multiplecards[row, column]; // fill button content*/
                     
-                    btn.HorizontalContentAlignment = HorizontalAlignment.Stretch;
+                    /*btn.HorizontalContentAlignment = HorizontalAlignment.Stretch;
                     btn.VerticalContentAlignment = VerticalAlignment.Stretch;
                     btn.Margin = new Thickness(10);
 
                     btn.SetValue(Grid.RowProperty, row); //set row position
                     btn.SetValue(Grid.ColumnProperty, column); // set col position
-                    cardgrid.Children.Add(btn);
+                    cardgrid.Children.Add(btn);*/
 
                 }
+            }
+        }
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            
+
+            var mouseWasDownOn = e.Source as FrameworkElement;
+            if (mouseWasDownOn != null)
+            {
+                string elementName = mouseWasDownOn.Name;
+
+                MessageBox.Show(elementName);
+            }
+
+
+
+
+            var fill = card.Fill as ImageBrush;
+
+            if (fill.ImageSource == (ImageSource)Resources["closedImage"])
+            {
+                fill.ImageSource = (ImageSource)Resources["openImage"];
+            }
+            else
+            {
+                fill.ImageSource = (ImageSource)Resources["closedImage"];
+
             }
         }
     }
