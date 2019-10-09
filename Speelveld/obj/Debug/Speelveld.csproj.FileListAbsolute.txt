@@ -1,0 +1,15 @@
+D:\NHL\memory\Speelveld\bin\Debug\Speelveld.exe.config
+D:\NHL\memory\Speelveld\bin\Debug\Speelveld.exe
+D:\NHL\memory\Speelveld\bin\Debug\Speelveld.pdb
+D:\NHL\memory\Speelveld\obj\Debug\Speelveld.csprojAssemblyReference.cache
+D:\NHL\memory\Speelveld\obj\Debug\MainWindow.g.cs
+D:\NHL\memory\Speelveld\obj\Debug\App.g.cs
+D:\NHL\memory\Speelveld\obj\Debug\Speelveld_MarkupCompile.cache
+D:\NHL\memory\Speelveld\obj\Debug\Speelveld_MarkupCompile.lref
+D:\NHL\memory\Speelveld\obj\Debug\MainWindow.baml
+D:\NHL\memory\Speelveld\obj\Debug\Speelveld.g.resources
+D:\NHL\memory\Speelveld\obj\Debug\Speelveld.Properties.Resources.resources
+D:\NHL\memory\Speelveld\obj\Debug\Speelveld.csproj.GenerateResource.cache
+D:\NHL\memory\Speelveld\obj\Debug\Speelveld.csproj.CoreCompileInputs.cache
+D:\NHL\memory\Speelveld\obj\Debug\Speelveld.exe
+D:\NHL\memory\Speelveld\obj\Debug\Speelveld.pdb

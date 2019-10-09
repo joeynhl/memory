@@ -1,0 +1,95 @@
+XAML
+
+ <Window.Resources>
+        <BitmapImage x:Key="openImage" UriSource="/images/goodestboi.jpg" />
+        <BitmapImage x:Key="closedImage" UriSource="/images/sjekkie.jpg" />
+    </Window.Resources>
+
+<Rectangle
+                x:Name="card"
+                Grid.Row="3" Grid.Column="0"
+                Width="150" Height="300"
+                Stroke="MediumBlue" StrokeThickness="1"
+                HorizontalAlignment="Left"
+                MouseDown="Rectangle_MouseDown" Canvas.Left="272" Canvas.Top="162"  >
+              
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="{StaticResource closedImage}"/>
+                </Rectangle.Fill>
+
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform  />
+                        <SkewTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.Triggers>
+                    <EventTrigger RoutedEvent="MouseDown">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard>
+                                <Storyboard x:Name="ImageFlip">
+                                    <DoubleAnimationUsingKeyFrames   Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.0" Value="1" />
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.09" Value="0.3" />
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.12" Value="0.6" />
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.15" Value="0.8" />
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.18" Value="1" />
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.2" Value="1" />
+                                    </DoubleAnimationUsingKeyFrames>
+
+                                    <DoubleAnimationUsingKeyFrames  Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.0" Value="1" />
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.09" Value="0.9" />
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.18" Value="1" />
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.2" Value="1" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames   Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleY)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.06" Value="-10" />
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.09" Value="-20" />
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.1" Value="20" />
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00.18" Value="0" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                </Rectangle.Triggers>
+</Rectangle>
+
+
+C PITTIG 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+!!dit is een losse functie buiten de mainwindow
+
+private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+         
+            var fill = card.Fill as ImageBrush;
+
+            if (fill.ImageSource == (ImageSource)Resources["closedImage"])
+            {
+                fill.ImageSource = (ImageSource)Resources["openImage"];
+            }
+            else
+            {
+                fill.ImageSource = (ImageSource)Resources["closedImage"];
+
+            }   
+        }

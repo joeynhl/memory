@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\cards",
+    "\\cards\\Images",
+    "\\cards\\Properties",
+    "\\cards\\Resources"
   ],
-  "SelectedNode": "\\cards.sln",
+  "SelectedNode": "\\cards\\MainWindow.xaml.cs",
   "PreviewInSolutionExplorer": false
 }
