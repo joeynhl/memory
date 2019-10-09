@@ -13,3 +13,22 @@ C:\Visual studio 2019\Memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.cs
 C:\Visual studio 2019\Memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.csproj.CoreCompileInputs.cache
 C:\Visual studio 2019\Memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.exe
 C:\Visual studio 2019\Memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.pdb
+C:\Visual studio 2019\Memory\Naam-Spelers\Naam-Spelers\obj\Debug\Window1.g.cs
+C:\Visual studio 2019\Memory\Naam-Spelers\Naam-Spelers\obj\Debug\Window1.baml
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\bin\Debug\Naam-Spelers.exe.config
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\bin\Debug\Naam-Spelers.exe
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\bin\Debug\Naam-Spelers.pdb
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.csprojAssemblyReference.cache
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\MainWindow.g.cs
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Window1.g.cs
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\App.g.cs
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers_MarkupCompile.cache
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers_MarkupCompile.lref
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\MainWindow.baml
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Window1.baml
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.g.resources
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam_Spelers.Properties.Resources.resources
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.csproj.GenerateResource.cache
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.csproj.CoreCompileInputs.cache
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.exe
+D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.pdb
