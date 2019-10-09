@@ -31,8 +31,8 @@ namespace Speelveld
         /// </summary>
        public string[,] cards = new string[2, 4]
             {
-                {"1", "2", "3", "4"},
-                { "5", "6", "7", "8"}
+                {"../../Image/mario.jpg", "../../Image/mario2.jpg", "../../Image/mario3.jpg", "../../Image/mario4.jpg"},
+                { "../../Image/mario5.jpg", "../../Image/mario6.jpg", "../../Image/mario7.jpg", "../../Image/mario8.jpg"}
             };
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Speelveld
 
         private void setField()
         {
-            fillCards(); // get the multiple cards array filled
+            fillCards(); // get the duplicate cards array filled
 
             var rnd = new Random();
             Shuffle(rnd, multiplecards); //shuffle cards
@@ -89,19 +89,76 @@ namespace Speelveld
             {
                 for (int column = 0; column < multiplecards.GetLength(1); column++) // loop trough columns
                 {
+                    Rectangle Card = new Rectangle(); // create new card
+
+                    Card.Fill = new ImageBrush(new BitmapImage(new Uri("../../Image/background.jpg", UriKind.Relative))); //set imagebrush 
+
+                    Card.HorizontalAlignment = HorizontalAlignment.Stretch;
+                    Card.VerticalAlignment = VerticalAlignment.Stretch;
+                    Card.Margin = new Thickness(10);
+
+                    Card.SetValue(Grid.RowProperty, row);// set row property
+                    Card.SetValue(Grid.ColumnProperty, column); //set column property
+                    Card.Name = "Card"; //set column property
+
+                    Card.SetValue(DataContextProperty, multiplecards[row, column]); // set img url as data context 
+
+
+                    Card.MouseLeftButtonDown += Rectangle_MouseDown; // set mousedown event on card
+
+                    cardgrid.Children.Add(Card); // add card to grid
+
+/*              
+
                     Button btn = new Button(); // create new button
-                    btn.Content = multiplecards[row, column]; // fill button content
+                    btn.Content = multiplecards[row, column]; // fill button content*/
                     
-                    btn.HorizontalContentAlignment = HorizontalAlignment.Stretch;
+                    /*btn.HorizontalContentAlignment = HorizontalAlignment.Stretch;
                     btn.VerticalContentAlignment = VerticalAlignment.Stretch;
                     btn.Margin = new Thickness(10);
 
                     btn.SetValue(Grid.RowProperty, row); //set row position
                     btn.SetValue(Grid.ColumnProperty, column); // set col position
-                    cardgrid.Children.Add(btn);
+                    cardgrid.Children.Add(btn);*/
 
                 }
             }
+        }
+
+
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            
+            var Card = e.Source as FrameworkElement;
+
+            if (Card != null)
+            {
+                var context = Convert.ToString(Card.DataContext);
+                
+
+                Rectangle cards = sender as Rectangle;
+                cards.Fill = new SolidColorBrush(System.Windows.Media.Colors.AliceBlue);
+
+                cards.Fill = new ImageBrush(new BitmapImage(new Uri(context, UriKind.Relative)));
+
+
+                /*string elementName = mouseWasDownOn;*/
+            }
+
+            /*var Name = Card.FindResource(ImageSource);
+            MessageBox.Show(Name);*/
+            /*
+                        var fill = Name.Fill as ImageBrush;
+
+                        if (fill.ImageSource == (ImageSource)Resources["closedImage"])
+                        {
+                            fill.ImageSource = (ImageSource)Resources["openImage"];
+                        }
+                        else
+                        {
+                            fill.ImageSource = (ImageSource)Resources["closedImage"];
+
+                        }*/
         }
     }
 }
