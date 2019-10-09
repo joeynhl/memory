@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
 namespace Speelveld
@@ -94,43 +93,11 @@ namespace Speelveld
 
                     Card.Fill = new ImageBrush(new BitmapImage(new Uri("../../Image/background.jpg", UriKind.Relative))); //set imagebrush 
 
-                    
+                    Card.HorizontalAlignment = HorizontalAlignment.Stretch;
+                    Card.VerticalAlignment = VerticalAlignment.Stretch;
                     Card.Margin = new Thickness(10);
 
-                    //Animations
-                    ((FrameworkElement)Card).RenderTransform = (Transform)new TranslateTransform();
-
-                    TransformGroup transformgroup = new TransformGroup();
-
-                    SkewTransform skewtransform = new SkewTransform();
-                    ScaleTransform scaletransform = new ScaleTransform();
-                    transformgroup.Children.Add(skewtransform);
-                    transformgroup.Children.Add(scaletransform);
-                    Card.RenderTransform = transformgroup;
-
-/*
-                    BeginStoryboard beginstoryboard = new BeginStoryboard();
-                    EventTrigger eventtrigger = new EventTrigger();
-
-*/
-/*
-
-                    Card.Triggers = ;*/
-
-                   /* < Rectangle.Triggers >
-                        < EventTrigger RoutedEvent = "MouseDown" >
-                             < EventTrigger.Actions >
-                                 < BeginStoryboard >
-
-                                 </ BeginStoryboard >
- 
-                             </ EventTrigger.Actions >
- 
-                         </ EventTrigger >
- 
-                     </ Rectangle.Triggers >*/
-
-                     Card.SetValue(Grid.RowProperty, row);// set row property
+                    Card.SetValue(Grid.RowProperty, row);// set row property
                     Card.SetValue(Grid.ColumnProperty, column); //set column property
                     Card.Name = "Card"; //set column property
 
@@ -141,6 +108,19 @@ namespace Speelveld
 
                     cardgrid.Children.Add(Card); // add card to grid
 
+/*              
+
+                    Button btn = new Button(); // create new button
+                    btn.Content = multiplecards[row, column]; // fill button content*/
+                    
+                    /*btn.HorizontalContentAlignment = HorizontalAlignment.Stretch;
+                    btn.VerticalContentAlignment = VerticalAlignment.Stretch;
+                    btn.Margin = new Thickness(10);
+
+                    btn.SetValue(Grid.RowProperty, row); //set row position
+                    btn.SetValue(Grid.ColumnProperty, column); // set col position
+                    cardgrid.Children.Add(btn);*/
+
                 }
             }
         }
@@ -148,17 +128,22 @@ namespace Speelveld
 
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
-                var Card = e.Source as FrameworkElement;
+            
+            var Card = e.Source as FrameworkElement;
 
+            if (Card != null)
+            {
                 var context = Convert.ToString(Card.DataContext);
+                
 
                 Rectangle cards = sender as Rectangle;
+                cards.Fill = new SolidColorBrush(System.Windows.Media.Colors.AliceBlue);
+
                 cards.Fill = new ImageBrush(new BitmapImage(new Uri(context, UriKind.Relative)));
 
 
-           /* Storyboard sb = this.FindResource("ImageFlip") as Storyboard;
-            
-            sb.Begin();*/
+                /*string elementName = mouseWasDownOn;*/
+            }
 
             /*var Name = Card.FindResource(ImageSource);
             MessageBox.Show(Name);*/
