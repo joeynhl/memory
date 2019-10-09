@@ -10,33 +10,6 @@
     <Window.Resources>
         <BitmapImage x:Key="openImage" UriSource="Image/goodestboi.jpg" />
         <BitmapImage x:Key="closedImage" UriSource="Image/sjekkie.jpg" />
-
-
-        <Storyboard x:Key="ImageFlip" x:Name="ImageFlip" >
-            <DoubleAnimationUsingKeyFrames   Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
-                <SplineDoubleKeyFrame KeyTime="00:00:00.0" Value="1" />
-                <SplineDoubleKeyFrame KeyTime="00:00:00.09" Value="0.3" />
-                <SplineDoubleKeyFrame KeyTime="00:00:00.12" Value="0.6" />
-                <SplineDoubleKeyFrame KeyTime="00:00:00.15" Value="0.8" />
-                <SplineDoubleKeyFrame KeyTime="00:00:00.18" Value="1" />
-                <SplineDoubleKeyFrame KeyTime="00:00:00.2" Value="1" />
-            </DoubleAnimationUsingKeyFrames>
-
-            <DoubleAnimationUsingKeyFrames  Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
-                <SplineDoubleKeyFrame KeyTime="00:00:00.0" Value="1" />
-                <SplineDoubleKeyFrame KeyTime="00:00:00.09" Value="0.9" />
-                <SplineDoubleKeyFrame KeyTime="00:00:00.18" Value="1" />
-                <SplineDoubleKeyFrame KeyTime="00:00:00.2" Value="1" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames   Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleY)">
-                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
-                <SplineDoubleKeyFrame KeyTime="00:00:00.06" Value="-10" />
-                <SplineDoubleKeyFrame KeyTime="00:00:00.09" Value="-20" />
-                <SplineDoubleKeyFrame KeyTime="00:00:00.1" Value="20" />
-                <SplineDoubleKeyFrame KeyTime="00:00:00.18" Value="0" />
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
-        
     </Window.Resources>
     
     
@@ -53,7 +26,7 @@
         </Border>
 
         <Border >
-            <Grid Name="cardgrid" Height="650">
+            <Grid Name="cardgrid" Height="700">
                 <Grid.Background>
                     <ImageBrush ImageSource="Image/achtergrondafbeelding.jpg"/>
                 </Grid.Background>
@@ -69,7 +42,10 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <!--<Rectangle
+
+
+
+                <Rectangle
                 x:Name="card"
                 Grid.Row="1" Grid.Column="1"
                 Width="150" Height="300"
@@ -86,26 +62,43 @@
                             <SkewTransform/>
                         </TransformGroup>
                     </Rectangle.RenderTransform>
-                
-                
                     <Rectangle.Triggers>
                         <EventTrigger RoutedEvent="MouseDown">
                             <EventTrigger.Actions>
                                 <BeginStoryboard>
-                                    
+                                    <Storyboard x:Name="ImageFlip">
+                                        <DoubleAnimationUsingKeyFrames   Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.0" Value="1" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.09" Value="0.3" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.12" Value="0.6" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.15" Value="0.8" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.18" Value="1" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.2" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+
+                                        <DoubleAnimationUsingKeyFrames  Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.0" Value="1" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.09" Value="0.9" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.18" Value="1" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.2" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames   Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleY)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.06" Value="-10" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.09" Value="-20" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.1" Value="20" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.18" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger.Actions>
                         </EventTrigger>
                     </Rectangle.Triggers>
-                
-                
-                </Rectangle>-->
+                </Rectangle>
 
 
 
             </Grid>
         </Border>
     </StackPanel>
-    
-    
 </Window>
