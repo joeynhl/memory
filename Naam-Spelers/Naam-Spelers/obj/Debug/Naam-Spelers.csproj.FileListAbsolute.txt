@@ -32,3 +32,11 @@ D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Speler
 D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.csproj.CoreCompileInputs.cache
 D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.exe
 D:\rienk\Documents\GitHub\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.pdb
+D:\Documenten\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.csprojAssemblyReference.cache
+D:\Documenten\memory\Naam-Spelers\Naam-Spelers\obj\Debug\MainWindow.g.cs
+D:\Documenten\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Window1.g.cs
+D:\Documenten\memory\Naam-Spelers\Naam-Spelers\obj\Debug\App.g.cs
+D:\Documenten\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers_MarkupCompile.cache
+D:\Documenten\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers_MarkupCompile.lref
+D:\Documenten\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.exe
+D:\Documenten\memory\Naam-Spelers\Naam-Spelers\obj\Debug\Naam-Spelers.pdb

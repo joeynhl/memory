@@ -26,5 +26,10 @@ namespace Naam_Spelers
             this.Close();
 
         }
+
+        private void Textbox1_speler1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
