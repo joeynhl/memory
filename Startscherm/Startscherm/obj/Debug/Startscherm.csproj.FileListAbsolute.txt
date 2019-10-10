@@ -16,6 +16,7 @@ C:\Users\Klaudia\source\repos\Startscherm\Startscherm\obj\Debug\spelen.g.cs
 C:\Users\Klaudia\source\repos\Startscherm\Startscherm\obj\Debug\spelen.baml
 C:\Users\Klaudia\source\repos\Startscherm\Startscherm\obj\Debug\namen.g.cs
 C:\Users\Klaudia\source\repos\Startscherm\Startscherm\obj\Debug\namen.baml
+<<<<<<< HEAD
 D:\Documenten\memory\Startscherm\Startscherm\bin\Debug\Startscherm.exe.config
 D:\Documenten\memory\Startscherm\Startscherm\bin\Debug\Startscherm.exe
 D:\Documenten\memory\Startscherm\Startscherm\bin\Debug\Startscherm.pdb
@@ -34,3 +35,5 @@ D:\Documenten\memory\Startscherm\Startscherm\obj\Debug\Startscherm.Properties.Re
 D:\Documenten\memory\Startscherm\Startscherm\obj\Debug\Startscherm.csproj.GenerateResource.cache
 D:\Documenten\memory\Startscherm\Startscherm\obj\Debug\Startscherm.exe
 D:\Documenten\memory\Startscherm\Startscherm\obj\Debug\Startscherm.pdb
+=======
+>>>>>>> e02bd7a7d91b0a401fa8e9433b54acd053c3e1e3

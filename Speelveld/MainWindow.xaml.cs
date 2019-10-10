@@ -93,10 +93,61 @@ namespace Speelveld
 
                     Card.Fill = new ImageBrush(new BitmapImage(new Uri("../../Image/background.jpg", UriKind.Relative))); //set imagebrush 
 
+<<<<<<< HEAD
                     Card.HorizontalAlignment = HorizontalAlignment.Stretch;
                     Card.VerticalAlignment = VerticalAlignment.Stretch;
                     Card.Margin = new Thickness(10);
 
+=======
+                    
+                    Card.Margin = new Thickness(10);// set margin
+
+                    //Animations
+                    /*((FrameworkElement)Card).RenderTransform = (Transform)new TranslateTransform();
+
+                    TransformGroup transformgroup = new TransformGroup();
+
+                    SkewTransform skewtransform = new SkewTransform();
+                    ScaleTransform scaletransform = new ScaleTransform();
+
+                    transformgroup.Children.Add(skewtransform);
+                    transformgroup.Children.Add(scaletransform);
+                    Card.RenderTransform = transformgroup;
+*/
+/*
+                    BeginStoryboard beginstoryboard = new BeginStoryboard();
+                    EventTrigger eventtrigger = new EventTrigger();
+
+*/
+/*
+
+                    Card.Triggers = ;*/
+
+                   /* < Rectangle.Triggers >
+                        < EventTrigger RoutedEvent = "MouseDown" >
+                             < EventTrigger.Actions >
+                                 < BeginStoryboard >
+
+                                 </ BeginStoryboard >
+ 
+                             </ EventTrigger.Actions >
+ 
+                         </ EventTrigger >
+ 
+                     </ Rectangle.Triggers >*/
+
+                     Card.SetValue(Grid.RowProperty, row);// set row property
+                    Card.HorizontalAlignment = HorizontalAlignment.Stretch;
+                    Card.VerticalAlignment = VerticalAlignment.Stretch;
+                    Card.Margin = new Thickness(10);
+
+                    Card.SetValue(Grid.RowProperty, row);// set row property
+
+                    Card.HorizontalAlignment = HorizontalAlignment.Stretch;
+                    Card.VerticalAlignment = VerticalAlignment.Stretch;
+                    Card.Margin = new Thickness(10);
+
+>>>>>>> e02bd7a7d91b0a401fa8e9433b54acd053c3e1e3
                     Card.SetValue(Grid.RowProperty, row);// set row property
                     Card.SetValue(Grid.ColumnProperty, column); //set column property
                     Card.Name = "Card"; //set column property

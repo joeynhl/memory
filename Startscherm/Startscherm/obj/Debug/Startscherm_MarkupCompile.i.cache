@@ -4,12 +4,20 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 D:\Documenten\memory\Startscherm\Startscherm\obj\Debug\
+=======
+C:\Users\kevin\source\repos\Startscherm\Startscherm\obj\Debug\
+>>>>>>> e02bd7a7d91b0a401fa8e9433b54acd053c3e1e3
 Startscherm
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 D:\Documenten\memory\Startscherm\Startscherm\App.xaml
+=======
+C:\Users\kevin\source\repos\Startscherm\Startscherm\App.xaml
+>>>>>>> e02bd7a7d91b0a401fa8e9433b54acd053c3e1e3
 31040619279
 
 8359323744
