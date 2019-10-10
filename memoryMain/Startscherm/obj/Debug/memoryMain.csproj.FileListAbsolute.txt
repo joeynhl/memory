@@ -16,3 +16,5 @@ C:\Users\master\Documents\GitHub\memory\memoryMain\Startscherm\obj\Debug\Startsc
 C:\Users\master\Documents\GitHub\memory\memoryMain\Startscherm\obj\Debug\memoryMain.csproj.GenerateResource.cache
 C:\Users\master\Documents\GitHub\memory\memoryMain\Startscherm\obj\Debug\Startscherm.exe
 C:\Users\master\Documents\GitHub\memory\memoryMain\Startscherm\obj\Debug\Startscherm.pdb
+C:\Users\master\Documents\GitHub\memory\memoryMain\Startscherm\obj\Debug\SpeelVeld.g.cs
+C:\Users\master\Documents\GitHub\memory\memoryMain\Startscherm\obj\Debug\SpeelVeld.baml
