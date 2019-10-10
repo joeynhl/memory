@@ -20,9 +20,11 @@ namespace Startscherm
     /// </summary>
     public partial class MainWindow : Window
     {
+        MediaPlayer Sound = new MediaPlayer();
         public MainWindow()
         {
             InitializeComponent();
+            InitialiseerMuziek();
         }
 
         private void btnExit(object sender, RoutedEventArgs e)
@@ -47,6 +49,21 @@ namespace Startscherm
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        public void InitialiseerMuziek()
+        {
+            Sound.Open(new Uri("C:/Sound1.wav"));
+            Sound.Play();
+        }
+
+        private void playMuziek_Click(object sender, RoutedEventArgs e)
+        {
+            Sound.Play();
+        }
+        private void stopMuziek_Click(object sender, RoutedEventArgs e)
+        {
+            Sound.Stop();
         }
     }
 }

@@ -13,3 +13,17 @@ D:\NHL\memory\Speelveld\obj\Debug\Speelveld.csproj.GenerateResource.cache
 D:\NHL\memory\Speelveld\obj\Debug\Speelveld.csproj.CoreCompileInputs.cache
 D:\NHL\memory\Speelveld\obj\Debug\Speelveld.exe
 D:\NHL\memory\Speelveld\obj\Debug\Speelveld.pdb
+C:\Users\master\Documents\GitHub\memory\Speelveld\bin\Debug\Speelveld.exe.config
+C:\Users\master\Documents\GitHub\memory\Speelveld\bin\Debug\Speelveld.exe
+C:\Users\master\Documents\GitHub\memory\Speelveld\bin\Debug\Speelveld.pdb
+C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\Speelveld.csprojAssemblyReference.cache
+C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\MainWindow.g.cs
+C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\App.g.cs
+C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\Speelveld_MarkupCompile.cache
+C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\Speelveld_MarkupCompile.lref
+C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\MainWindow.baml
+C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\Speelveld.g.resources
+C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\Speelveld.Properties.Resources.resources
+C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\Speelveld.csproj.GenerateResource.cache
+C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\Speelveld.exe
+C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\Speelveld.pdb
