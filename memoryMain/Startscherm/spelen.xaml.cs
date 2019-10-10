@@ -31,11 +31,14 @@ namespace Startscherm
             string naam2 = _2eNaam.Text;
             namen namen = new namen();
 
+            speelveld speelveld = new speelveld();
+
             namen.naam1 = naam1;
             namen.naam2 = naam2;
 
             this.Hide();
-            namen.Show();
+           
+            speelveld.Show();
             this.Close();
         }
 

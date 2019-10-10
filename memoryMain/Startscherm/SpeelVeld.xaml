@@ -28,7 +28,7 @@
         <Border >
             <Grid Name="cardgrid" Height="700">
                 <Grid.Background>
-                    <ImageBrush ImageSource="Image/achtergrondafbeelding.jpg"/>
+                    <ImageBrush ImageSource="../Image/achtergrondafbeelding.jpg"/>
                 </Grid.Background>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
