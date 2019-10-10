@@ -93,8 +93,6 @@ namespace Speelveld
 
                     Card.Fill = new ImageBrush(new BitmapImage(new Uri("../../Image/background.jpg", UriKind.Relative))); //set imagebrush 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
                     
                     Card.Margin = new Thickness(10);// set margin
 
@@ -133,20 +131,17 @@ namespace Speelveld
                      </ Rectangle.Triggers >*/
 
                      Card.SetValue(Grid.RowProperty, row);// set row property
-=======
                     Card.HorizontalAlignment = HorizontalAlignment.Stretch;
                     Card.VerticalAlignment = VerticalAlignment.Stretch;
                     Card.Margin = new Thickness(10);
 
                     Card.SetValue(Grid.RowProperty, row);// set row property
->>>>>>> 014e02251b18354c58cbd600aeeb7ce0b6cf286a
-=======
+
                     Card.HorizontalAlignment = HorizontalAlignment.Stretch;
                     Card.VerticalAlignment = VerticalAlignment.Stretch;
                     Card.Margin = new Thickness(10);
 
                     Card.SetValue(Grid.RowProperty, row);// set row property
->>>>>>> parent of 5897d34... bezig met animaties werkt nog niet
                     Card.SetValue(Grid.ColumnProperty, column); //set column property
                     Card.Name = "Card"; //set column property
 
