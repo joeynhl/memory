@@ -27,16 +27,28 @@ namespace Startscherm
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string naam1 = _1eNaam.Text;
-            string naam2 = _2eNaam.Text;
+            String Speler1 = Textbox1_speler1.Text;
+            String Speler2 = Textbox2_speler2.Text;
             namen namen = new namen();
 
-            namen.naam1 = naam1;
-            namen.naam2 = naam2;
+            namen.Speler1 = Speler1;
+            namen.Speler2 = Speler2;
 
             this.Hide();
             namen.Show();
             this.Close();
+
+
+            //string naam1 = _1eNaam.Text;
+            //string naam2 = _2eNaam.Text;
+            //namen namen = new namen();
+
+            //namen.naam1 = naam1;
+            //namen.naam2 = naam2;
+
+            //this.Hide();
+            //namen.Show();
+            //this.Close();
         }
 
     }

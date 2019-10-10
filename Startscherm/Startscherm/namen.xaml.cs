@@ -19,8 +19,8 @@ namespace Startscherm
     /// </summary>
     public partial class namen : Window
     {
-        public string naam1 { get; internal set; }
-        public string naam2 { get; internal set; }
+        public string Speler1 { get; internal set; }
+        public string Speler2 { get; internal set; }
 
         public namen()
         {
@@ -35,8 +35,8 @@ namespace Startscherm
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            speler1Naam.Text = naam1;
-            speler2Naam.Text = naam2;
+            Speler1_naam.Text = Speler1;
+            Speler2_naam.Text = Speler2;
         }
     }
 }
