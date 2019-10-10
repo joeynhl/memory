@@ -17,9 +17,8 @@
         <Border>
             <Grid>
                 <Menu Background="black" Height="100">
-                    <TextBlock Foreground="#fff"  FontSize="50" ><Run Text="Naam 1"/></TextBlock>
-
-                    <TextBlock Foreground="#fff" FontSize="50"><Run Text="Naam 2"/></TextBlock>
+                    <TextBlock Foreground="#fff"  FontSize="50" ><Run x:Name="speler1Naam" Text="Naam 1"/></TextBlock>
+                    <TextBlock Foreground="#fff"  FontSize="50"><Run  x:Name="speler2Naam" Text="Naam 2"/></TextBlock>
 
                 </Menu>
             </Grid>

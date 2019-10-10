@@ -25,12 +25,18 @@ namespace Startscherm
         public namen()
         {
             InitializeComponent();
-
+            setNames();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        public void setNames()
+        {
+            speler1Naam.Text = naam1;
+            speler2Naam.Text = naam2;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

@@ -21,6 +21,9 @@ namespace Startscherm
     public partial class speelveld : Window
     {
 
+        public string naam1 { get; internal set; }
+        public string naam2 { get; internal set; }
+
         public speelveld()
         {
             InitializeComponent();
@@ -81,6 +84,9 @@ namespace Startscherm
         private void setField()
         {
             fillCards(); // get the duplicate cards array filled
+
+            speler1Naam.Text = naam1;
+            speler2Naam.Text = naam2;
 
             var rnd = new Random();
             Shuffle(rnd, multiplecards); //shuffle cards

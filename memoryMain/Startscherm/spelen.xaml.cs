@@ -30,7 +30,6 @@ namespace Startscherm
             string naam1 = _1eNaam.Text;
             string naam2 = _2eNaam.Text;
             namen namen = new namen();
-
             speelveld speelveld = new speelveld();
 
             namen.naam1 = naam1;
