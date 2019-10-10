@@ -27,3 +27,5 @@ C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\Speelveld.Properties
 C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\Speelveld.csproj.GenerateResource.cache
 C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\Speelveld.exe
 C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\Speelveld.pdb
+C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\Speelveld.g.cs
+C:\Users\master\Documents\GitHub\memory\Speelveld\obj\Debug\Speelveld.baml
