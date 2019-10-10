@@ -95,19 +95,20 @@ namespace Speelveld
                     Card.Fill = new ImageBrush(new BitmapImage(new Uri("../../Image/background.jpg", UriKind.Relative))); //set imagebrush 
 
                     
-                    Card.Margin = new Thickness(10);
+                    Card.Margin = new Thickness(10);// set margin
 
                     //Animations
-                    ((FrameworkElement)Card).RenderTransform = (Transform)new TranslateTransform();
+                    /*((FrameworkElement)Card).RenderTransform = (Transform)new TranslateTransform();
 
                     TransformGroup transformgroup = new TransformGroup();
 
                     SkewTransform skewtransform = new SkewTransform();
                     ScaleTransform scaletransform = new ScaleTransform();
+
                     transformgroup.Children.Add(skewtransform);
                     transformgroup.Children.Add(scaletransform);
                     Card.RenderTransform = transformgroup;
-
+*/
 /*
                     BeginStoryboard beginstoryboard = new BeginStoryboard();
                     EventTrigger eventtrigger = new EventTrigger();
