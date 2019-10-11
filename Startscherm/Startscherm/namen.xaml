@@ -8,8 +8,33 @@
         Title="namen" Height="450" Width="800"
         Loaded="Window_Loaded">
     <Grid>
+<<<<<<< HEAD
         <TextBox x:Name="speler1Naam" HorizontalAlignment="Left" Height="63" Margin="300,140,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="184" TextChanged="TextBox_TextChanged"/>
         <TextBox x:Name="speler2Naam" HorizontalAlignment="Left" Height="65" Margin="239,266,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="245"/>
 
+=======
+<<<<<<< HEAD
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="49*"/>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="31*"/>
+            <ColumnDefinition Width="66*"/>
+            <ColumnDefinition Width="348*"/>
+            <ColumnDefinition Width="178*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.DataContext>
+            <XmlDataProvider Source="C:\Visual studio 2019\Memory\Naam-Spelers\Naam-Spelers\bin\Debug\Spelers.xml"
+                XPath="/information"/>
+        </Grid.DataContext>
+        <Label Content="Naam speler 1:" Grid.Column="3" HorizontalAlignment="Left" Margin="51,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.711,-0.481" Height="63" Width="142" FontSize="20" Grid.ColumnSpan="2"/>
+        <Label Content="Naam speler 2:" Grid.Column="3" HorizontalAlignment="Left" Margin="49,261,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.711,-0.481" FontSize="20" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Speler1_naam" Grid.Column="3" HorizontalAlignment="Left" Height="34" Margin="56,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Text="{}" FontSize="18" Grid.ColumnSpan="2" />
+        <TextBox x:Name="Speler2_naam" Grid.Column="3" HorizontalAlignment="Left" Height="37" Margin="55,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Text="{}" FontSize="18" Grid.ColumnSpan="2"/>
+=======
+        <TextBox x:Name="speler1Naam" HorizontalAlignment="Left" Height="63" Margin="300,140,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="184" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="speler2Naam" HorizontalAlignment="Left" Height="65" Margin="239,266,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="245"/>
+
+>>>>>>> e02bd7a7d91b0a401fa8e9433b54acd053c3e1e3
+>>>>>>> 706dc851a3ffaf4fd797a2cf0b4e91510ca301b5
     </Grid>
 </Window>

@@ -19,8 +19,18 @@ namespace Startscherm
     /// </summary>
     public partial class namen : Window
     {
+<<<<<<< HEAD
         public string naam1 { get; internal set; }
         public string naam2 { get; internal set; }
+=======
+<<<<<<< HEAD
+        public string Speler1 { get; internal set; }
+        public string Speler2 { get; internal set; }
+=======
+        public string naam1 { get; internal set; }
+        public string naam2 { get; internal set; }
+>>>>>>> e02bd7a7d91b0a401fa8e9433b54acd053c3e1e3
+>>>>>>> 706dc851a3ffaf4fd797a2cf0b4e91510ca301b5
 
         public namen()
         {
@@ -35,8 +45,18 @@ namespace Startscherm
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
             speler1Naam.Text = naam1;
             speler2Naam.Text = naam2;
+=======
+<<<<<<< HEAD
+            Speler1_naam.Text = Speler1;
+            Speler2_naam.Text = Speler2;
+=======
+            speler1Naam.Text = naam1;
+            speler2Naam.Text = naam2;
+>>>>>>> e02bd7a7d91b0a401fa8e9433b54acd053c3e1e3
+>>>>>>> 706dc851a3ffaf4fd797a2cf0b4e91510ca301b5
         }
     }
 }

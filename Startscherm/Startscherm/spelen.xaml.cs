@@ -27,16 +27,49 @@ namespace Startscherm
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            String Speler1 = Textbox1_speler1.Text;
+            String Speler2 = Textbox2_speler2.Text;
+            namen namen = new namen();
+
+            namen.Speler1 = Speler1;
+            namen.Speler2 = Speler2;
+=======
+>>>>>>> 706dc851a3ffaf4fd797a2cf0b4e91510ca301b5
             string naam1 = _1eNaam.Text;
             string naam2 = _2eNaam.Text;
             namen namen = new namen();
 
             namen.naam1 = naam1;
             namen.naam2 = naam2;
+<<<<<<< HEAD
+=======
+>>>>>>> e02bd7a7d91b0a401fa8e9433b54acd053c3e1e3
+>>>>>>> 706dc851a3ffaf4fd797a2cf0b4e91510ca301b5
 
             this.Hide();
             namen.Show();
             this.Close();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+
+            //string naam1 = _1eNaam.Text;
+            //string naam2 = _2eNaam.Text;
+            //namen namen = new namen();
+
+            //namen.naam1 = naam1;
+            //namen.naam2 = naam2;
+
+            //this.Hide();
+            //namen.Show();
+            //this.Close();
+=======
+>>>>>>> e02bd7a7d91b0a401fa8e9433b54acd053c3e1e3
+>>>>>>> 706dc851a3ffaf4fd797a2cf0b4e91510ca301b5
         }
 
     }
