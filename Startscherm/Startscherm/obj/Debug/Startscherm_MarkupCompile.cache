@@ -5,12 +5,12 @@ winexe
 C#
 .cs
 <<<<<<< HEAD
-C:\Users\kevin\source\repos\Startscherm\Startscherm\obj\Debug\
+C:\Users\Klaudia\source\repos\Startscherm\Startscherm\obj\Debug\
 =======
 <<<<<<< HEAD
 D:\Documenten\memory\Startscherm\Startscherm\obj\Debug\
 =======
-C:\Users\kevin\source\repos\Startscherm\Startscherm\obj\Debug\
+C:\Users\Klaudia\source\repos\Startscherm\Startscherm\obj\Debug\
 >>>>>>> e02bd7a7d91b0a401fa8e9433b54acd053c3e1e3
 >>>>>>> 706dc851a3ffaf4fd797a2cf0b4e91510ca301b5
 Startscherm
@@ -18,19 +18,19 @@ none
 false
 DEBUG;TRACE
 <<<<<<< HEAD
-C:\Users\kevin\source\repos\Startscherm\Startscherm\App.xaml
+C:\Users\Klaudia\source\repos\Startscherm\Startscherm\App.xaml
 =======
 <<<<<<< HEAD
 D:\Documenten\memory\Startscherm\Startscherm\App.xaml
 =======
-C:\Users\kevin\source\repos\Startscherm\Startscherm\App.xaml
+C:\Users\Klaudia\source\repos\Startscherm\Startscherm\App.xaml
 >>>>>>> e02bd7a7d91b0a401fa8e9433b54acd053c3e1e3
 >>>>>>> 706dc851a3ffaf4fd797a2cf0b4e91510ca301b5
 31040619279
 
-8359323744
+7-713133101
 13-1505183044
 MainWindow.xaml;namen.xaml;spelen.xaml;
 
-True
+False
 

@@ -8,6 +8,8 @@
         WindowState="Maximized"
         Title="spelen" Height="450" Width="800">
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
     <Grid RenderTransformOrigin="0.506,0.486" Background="#3ADA9A" Margin="-3,-141,-773.4,-677">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -24,6 +26,7 @@
         <TextBox x:Name="Textbox1_speler1" Grid.Column="4" HorizontalAlignment="Left" Height="42" Margin="403.8,589,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="431" FontSize="28" />
         <TextBox x:Name="Textbox2_speler2" Grid.Column="4" HorizontalAlignment="Left" Height="40" Margin="402.8,760,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" FontSize="28" />
 =======
+>>>>>>> 706dc851a3ffaf4fd797a2cf0b4e91510ca301b5
     <Grid Background="#3ada9a" Margin="0,0,-400.667,-142.333">
         <Canvas>
             <Image Source="memory-logo.png" Stretch="Fill" Canvas.Left="297" Canvas.Top="9"/>
@@ -32,7 +35,10 @@
         <TextBox x:Name="_1eNaam" HorizontalAlignment="Left" Height="23" Margin="495,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Text="Speler 1"/>
         <TextBox x:Name="_2eNaam" HorizontalAlignment="Left" Height="23" Margin="495,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Text="Speler 2"/>
         <Button Content="Spelen" HorizontalAlignment="Left" Margin="522,389,0,0" VerticalAlignment="Top" Width="105" Height="25" Click="Button_Click"/>
+<<<<<<< HEAD
+=======
 >>>>>>> e02bd7a7d91b0a401fa8e9433b54acd053c3e1e3
+>>>>>>> 706dc851a3ffaf4fd797a2cf0b4e91510ca301b5
     </Grid>
 
 </Window>

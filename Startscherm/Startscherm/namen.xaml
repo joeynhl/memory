@@ -9,6 +9,11 @@
         Loaded="Window_Loaded">
     <Grid>
 <<<<<<< HEAD
+        <TextBox x:Name="speler1Naam" HorizontalAlignment="Left" Height="63" Margin="300,140,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="184" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="speler2Naam" HorizontalAlignment="Left" Height="65" Margin="239,266,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="245"/>
+
+=======
+<<<<<<< HEAD
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="49*"/>
             <ColumnDefinition Width="120*"/>
@@ -30,5 +35,6 @@
         <TextBox x:Name="speler2Naam" HorizontalAlignment="Left" Height="65" Margin="239,266,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="245"/>
 
 >>>>>>> e02bd7a7d91b0a401fa8e9433b54acd053c3e1e3
+>>>>>>> 706dc851a3ffaf4fd797a2cf0b4e91510ca301b5
     </Grid>
 </Window>
