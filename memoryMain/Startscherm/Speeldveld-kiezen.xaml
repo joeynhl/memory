@@ -1,0 +1,16 @@
+﻿<Window x:Class="Startscherm.Speeldveld_kiezen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Startscherm"
+        mc:Ignorable="d"
+        Title="Speeldveld_kiezen" Background="#3ada9a" Height="450" Width="800">
+    <Grid Margin="0,0,-237,-326">
+        <Image Source="memory-logo.png" HorizontalAlignment="Left" Height="144" Margin="230,19,0,0" VerticalAlignment="Top" Width="355"/>
+        <CheckBox Content="4 x4" HorizontalAlignment="Left" Margin="357,221,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
+        <CheckBox Content="4 x5" HorizontalAlignment="Left" Margin="358,250,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
+        <CheckBox Content="4x6" HorizontalAlignment="Left" Margin="359,279,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Height="38" Width="52"/>
+
+    </Grid>
+</Window>
