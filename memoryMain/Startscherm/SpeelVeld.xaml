@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Startscherm"
         mc:Ignorable="d"
-        Title="MainWindow"  WindowState="Maximized" >
+        Title="MainWindow"  WindowState="Maximized" Height="828.661" Width="1234.402" >
 
     <Window.Resources>
         <BitmapImage x:Key="openImage" UriSource="Image/goodestboi.jpg" />
@@ -16,16 +16,17 @@
     <StackPanel  >
         <Border>
             <Grid>
-                <Menu Background="black" Height="100">
+                <Menu Background="black" Height="100" RenderTransformOrigin="0.55,0.507">
                     <TextBlock Foreground="#fff"  FontSize="50" ><Run x:Name="speler1Naam" Text="Naam 1"/></TextBlock>
-                    <TextBlock Foreground="#fff"  FontSize="50"><Run  x:Name="speler2Naam" Text="Naam 2"/></TextBlock>
+                    <TextBlock Foreground="#fff"  FontSize="50" RenderTransformOrigin="1.064,0.839"><Run x:Name="speler2Naam" Text="Naam 2"/></TextBlock>
+                    <Button Content="Pauze&#xD;&#xA;" Width="174" Height="76" RenderTransformOrigin="1.162,0.768" Click="Menu" FontSize="42"/>
 
                 </Menu>
             </Grid>
         </Border>
 
         <Border >
-            <Grid Name="cardgrid" Height="700">
+            <Grid Name="cardgrid" Height="713" Margin="0,0,11,0">
                 <Grid.Background>
                     <ImageBrush ImageSource="../Image/achtergrondafbeelding.jpg"/>
                 </Grid.Background>

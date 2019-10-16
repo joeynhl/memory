@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Ingame-menu.xaml.cs">
+      <DependentUpon>Ingame-menu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="namen.xaml.cs">
       <DependentUpon>namen.xaml</DependentUpon>
     </Compile>
@@ -64,6 +67,10 @@
     <Compile Include="SpeelVeld.xaml.cs">
       <DependentUpon>SpeelVeld.xaml</DependentUpon>
     </Compile>
+    <Page Include="Ingame-menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

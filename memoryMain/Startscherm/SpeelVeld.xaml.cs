@@ -166,5 +166,16 @@ namespace Startscherm
 
                         }*/
         }
+
+        private void Menu(object sender, RoutedEventArgs e)
+        {
+            Ingame_menu Ingame_menu = new Ingame_menu();
+            Ingame_menu.naam1 = naam1;
+            Ingame_menu.naam2 = naam2;
+
+            this.Hide();
+            Ingame_menu.Show();
+            this.Close();
+        }
     }
 }

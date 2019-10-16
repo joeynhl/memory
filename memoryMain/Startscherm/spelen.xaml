@@ -6,15 +6,21 @@
         xmlns:local="clr-namespace:Startscherm"
         mc:Ignorable="d"
         WindowState="Maximized"
-        Title="spelen" Height="450" Width="800">
-    <Grid Background="#3ada9a" Margin="0,0,-400.667,-142.333">
-        <Canvas>
-            <Image Source="memory-logo.png" Stretch="Fill" Canvas.Left="297" Canvas.Top="9"/>
-            
-        </Canvas>
-        <TextBox x:Name="_1eNaam" HorizontalAlignment="Left" Height="23" Margin="495,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Text="Speler 1"/>
-        <TextBox x:Name="_2eNaam" HorizontalAlignment="Left" Height="23" Margin="495,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Text="Speler 2"/>
-        <Button Content="Spelen" HorizontalAlignment="Left" Margin="522,389,0,0" VerticalAlignment="Top" Width="105" Height="25" Click="Button_Click"/>
+        Title="spelen" Width="auto" Height="auto">
+    <Grid RenderTransformOrigin="0.506,0.486" Background="#3ADA9A" Margin="-3,-141,-905,-647">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition MaxWidth="900"/>
+        </Grid.ColumnDefinitions>
+        <Image HorizontalAlignment="Left" Height="186" VerticalAlignment="Top" Width="319" Grid.Column="4" Margin="7.346,27,0,0"/>
+        <Image Source="C:\Visual studio 2019\Memory\Naam-Spelers\Naam-Spelers\memory-logo.png" RenderTransformOrigin="5.086,0.249" Margin="679,-448,-420,572" Grid.Column="4"/>
+        <Label Content="Speler 1&#xD;&#xA;" Grid.Column="4" HorizontalAlignment="Left" Margin="893,608,-198,0" VerticalAlignment="Top" Width="206" FontSize="30" Foreground="White" FontWeight="Bold" Height="76" />
+        <Label Content="Speler 2&#xA;" Grid.Column="4" HorizontalAlignment="Left" Margin="887,788,-228,0" VerticalAlignment="Top" Width="242" FontSize="30" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.473,0.669" Height="128" />
+        <Button Content="Verder" Grid.Column="4" HorizontalAlignment="Left" Margin="839,1010,-210,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Button_Click" ClickMode="Press"/>
+        <TextBox x:Name="Textbox1_speler1" Grid.Column="4" HorizontalAlignment="Left" Height="42" Margin="753,688,-283,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="431" FontSize="28"/>
+        <TextBox x:Name="Textbox2_speler2" Grid.Column="4" HorizontalAlignment="Left" Height="40" Margin="752,859,-279,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" FontSize="28"/>
     </Grid>
-
 </Window>
