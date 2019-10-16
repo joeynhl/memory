@@ -26,7 +26,7 @@
             <StackPanel VerticalAlignment="Bottom" Margin="33,0,32,21">
                 <Button Foreground="White" Background="#666666" Content="Start spel" Width="137" Height="42" Click="startBtn"/>
                 <Button Foreground="White" Background="#666666" Content="Hervatten"  Width="137" Height="42"/>
-                <Button Foreground="White" Background="#666666" Content="Highscores" Width="137" Height="42"/>
+                <Button Foreground="White" Background="#666666" Content="Highscores" Width="137" Height="42" Click="Highscores_Click"/>
                 <Button Foreground="White" Background="#666666" Content="Opties" Width="137" Height="42" Click="Button_Click"/>
                 <Button Foreground="White" Background="#666666" Content="Afsluiten" Width="137" Height="42" Click="btnExit"/>
               
