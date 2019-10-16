@@ -8,17 +8,23 @@
         Loaded="Window_Loaded"
         Title="Ingame_menu" Background="#3ada9a" Height="800" Width="800">
     <Grid>
-        <StackPanel VerticalAlignment = "Center" Margin = "10" />
-        <Button Content="Afsluiten" HorizontalAlignment="Left" Margin="259,549,0,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Button_Click"/>
-        <Button Content="Hervatten" HorizontalAlignment="Left" Margin="255,253,0,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold"/>
-        <Slider Maximum = "100" Margin="262,460,266,275" RenderTransformOrigin="0.679,1.029" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="41*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment = "Center" Margin = "10,384,10,385" Grid.ColumnSpan="2" />
+        <Button Content="Afsluiten" HorizontalAlignment="Left" Margin="259,549,0,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Button_Click" Grid.ColumnSpan="2"/>
+        <Button Content="Hervatten" HorizontalAlignment="Left" Margin="255,253,0,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Slider Maximum = "100" Margin="262,460,266,275" RenderTransformOrigin="0.679,1.029" Grid.ColumnSpan="2" />
         <Label Content="Pauze&#xA;" HorizontalAlignment="Left" Margin="313,122,0,0" VerticalAlignment="Top" Width="168" FontSize="46" Foreground="White" FontWeight="Bold" Height="78" />
-        <Label Content="Volume&#xA;" HorizontalAlignment="Left" Margin="319,370,0,0" VerticalAlignment="Top" Width="206" FontSize="30" Foreground="White" FontWeight="Bold" Height="68" />
-        <Frame Content="" HorizontalAlignment="Left" Height="100" Margin="0,669,-2,0" VerticalAlignment="Top" Width="800" Foreground="Black" Background="#FF2C2626"/>
-        <Frame Content="" HorizontalAlignment="Left" Height="100" Margin="-4,-7,-4,0" VerticalAlignment="Top" Width="800" Foreground="Black" Background="#FF2C2626"/>
+        <Label Content="Volume&#xA;" HorizontalAlignment="Left" Margin="319,370,0,0" VerticalAlignment="Top" Width="206" FontSize="30" Foreground="White" FontWeight="Bold" Height="68" Grid.ColumnSpan="2" />
+        <Frame Content="" HorizontalAlignment="Left" Height="100" Margin="0,669,-8,0" VerticalAlignment="Top" Width="800" Foreground="Black" Background="#FF2C2626" Grid.ColumnSpan="2"/>
+        <Frame Content="" HorizontalAlignment="Left" Height="100" Margin="-4,-7,-4,0" VerticalAlignment="Top" Width="800" Foreground="Black" Background="#FF2C2626" Grid.ColumnSpan="2"/>
         <Label Content="3:21" HorizontalAlignment="Left" Margin="23,18,0,0" VerticalAlignment="Top" Width="206" FontSize="30" Foreground="White" FontWeight="Bold" Height="68" />
-        <TextBox x:Name="Speler1_naam" HorizontalAlignment="Left" Height="34" Margin="118,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="18" Text="Speler 1: " RenderTransformOrigin="0.484,0.559"/>
-        <TextBox x:Name="Speler2_naam" HorizontalAlignment="Left" Height="37" Margin="419,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Text="Speler 2: " FontSize="18"/>
+        <TextBox x:Name="Speler1_naam" HorizontalAlignment="Left" Height="34" Margin="118,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="18" Text="Speler 1: " RenderTransformOrigin="0.484,0.559" Background="#FF2C2626" TextChanged="Speler1_naam_TextChanged" Foreground="Snow"/>
+        <TextBox x:Name="Speler2_naam" HorizontalAlignment="Left" Height="37" Margin="443,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Text="Speler 2: " Background="#FF2C2626" FontSize="18" Foreground="White" Grid.ColumnSpan="2"/>
+        <TextBlock Foreground="#fff" FontSize="50" Margin="386,10,79,692"><Run x:Name="speler1Score" Text="0"/></TextBlock>
+        <TextBlock Foreground="#fff" FontSize="50" Margin="232,14,41,688" Grid.Column="1"><Run x:Name="speler2Score" Text="0"/></TextBlock>
 
     </Grid>
 </Window>

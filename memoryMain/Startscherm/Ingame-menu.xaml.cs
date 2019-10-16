@@ -21,6 +21,10 @@ namespace Startscherm
     {
         public string naam1 { get; internal set; }
         public string naam2 { get; internal set; }
+
+        public string score1 { get; internal set; }
+        public string score2 { get; internal set; }
+
         public Ingame_menu()
         {
             InitializeComponent();
@@ -34,11 +38,18 @@ namespace Startscherm
         {
             Speler1_naam.Text = "Speler : " + naam1;
             Speler2_naam.Text = "Speler : " + naam2;
+            speler1Score.Text = score1;
+            speler2Score.Text = score2;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Speler1_naam_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

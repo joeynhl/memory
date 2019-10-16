@@ -224,9 +224,15 @@ namespace Startscherm
 
         private void Menu(object sender, RoutedEventArgs e)
         {
-            Ingame_menu Ingame_menu = new Ingame_menu();
+            string score1 = speler1Score.Text;
+            string score2 = speler2Score.Text;
+
+            Ingame_menu Ingame_menu = new Ingame_menu(); //Object van maken
             Ingame_menu.naam1 = naam1;
             Ingame_menu.naam2 = naam2;
+
+            Ingame_menu.score1 = score1;
+            Ingame_menu.score2 = score2;
 
             this.Hide();
             Ingame_menu.Show();
