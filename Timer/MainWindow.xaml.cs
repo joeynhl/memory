@@ -71,7 +71,8 @@ namespace Timer2
             }
             if (minutes == 0 & seconds == 0)
             {
-                TimerLabel.Content = "TIME UP";
+                //TimerLabel.Content = "TIME UP";
+                System.Environment.Exit(1);
             }
             //https://www.youtube.com/watch?v=QkT8fgoFz3g
 
@@ -94,6 +95,14 @@ namespace Timer2
             StopButton.Height = 30;
             StopButton.Width = 50;
 
+            Minuten.Height = 0;
+            Minuten.Width = 0;
+            Seconden.Height = 0;
+            Seconden.Width = 0;
+            MinutesBox.Height = 0;
+            MinutesBox.Width = 0;
+            SecondsBox.Height = 0;
+            SecondsBox.Width = 0;
         }
         private void Stopclick(object sender, EventArgs e)
         {
@@ -103,6 +112,74 @@ namespace Timer2
             GoButton.Width = 50;
             StopButton.Height = 0;
             StopButton.Width = 0;
+        }
+
+        private void Minutes_Changed(object sender, TextChangedEventArgs e)
+        {
+            //MinutesBox.Text = minutes.ToString();
+            if (MinutesBox.Text == "")
+            {
+                MinutesBox.Text =  0.ToString();
+                MinutesBox.SelectionStart = MinutesBox.Text.Length;
+                MinutesBox.SelectionLength = 0;
+            }
+            else if (MinutesBox.Text != "0")
+            {
+                minutes = Convert.ToInt32(MinutesBox.Text);
+                MinutesBox.Text = minutes.ToString();
+                MinutesBox.SelectionStart = MinutesBox.Text.Length;
+                MinutesBox.SelectionLength = 0;
+            }
+            else {
+                minutes = Convert.ToInt32(MinutesBox.Text);
+                MinutesBox.SelectionStart = MinutesBox.Text.Length;
+                MinutesBox.SelectionLength = 0;
+            }
+        }
+
+        private void Seconds_Changed(object sender, TextChangedEventArgs e)
+        {
+            //SecondsBox.Text = seconds.ToString();
+            if (SecondsBox.Text == "")
+            {
+                SecondsBox.Text = 0.ToString();
+                seconds = Convert.ToInt32(SecondsBox.Text);
+                SecondsBox.SelectionStart = SecondsBox.Text.Length;
+                SecondsBox.SelectionLength = 0;
+            }
+            else if (SecondsBox.Text != "0")
+            {
+                SecondsBox.SelectionStart = SecondsBox.Text.Length;
+                SecondsBox.SelectionLength = 0;
+                seconds = Convert.ToInt32(SecondsBox.Text);
+                if (seconds > 59)
+                {
+                    int extraminutes = 0;
+                    for (extraminutes = 0; seconds > 59; extraminutes++)
+                    {
+                        seconds -= 60;
+                    }
+                    minutes += extraminutes;
+                    MinutesBox.Text = minutes.ToString();
+                    SecondsBox.Text = seconds.ToString();
+                    SecondsBox.SelectionStart = SecondsBox.Text.Length;
+                    SecondsBox.SelectionLength = 0;
+
+                }
+                else {
+                SecondsBox.Text = seconds.ToString();
+                SecondsBox.SelectionStart = SecondsBox.Text.Length;
+                SecondsBox.SelectionLength = 0;
+                }
+
+            }
+            else
+            {
+                seconds = Convert.ToInt32(SecondsBox.Text);
+            }
+            
+                //seconds = 59;
+                //SecondsBox.Text = seconds.ToString();
         }
     }
 }
