@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using Path = System.IO.Path;
 
 namespace WpfTutorialSamples.Dialogs
 {
@@ -26,6 +27,9 @@ namespace WpfTutorialSamples.Dialogs
         private void btnSaveFile_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "save file (*.sav)|*.sav";
+            string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            saveFileDialog.InitialDirectory = path;
             if (saveFileDialog.ShowDialog() == true)
                 File.WriteAllText(saveFileDialog.FileName, txtEditor.Text);
         }
