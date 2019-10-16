@@ -19,9 +19,9 @@
             <Grid>
                 <Menu Background="black" Height="100" RenderTransformOrigin="0.55,0.507" Margin="-6,0,6,0">
 
-                    <TextBox x:Name="Speler1_naam" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="18" Text="Speler 1: " RenderTransformOrigin="0.484,0.559"/>
-                    <TextBox x:Name="Speler2_naam" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Text="Speler 2: " FontSize="18" RenderTransformOrigin="-0.634,1.298" Background="White"/>
+                    <TextBox x:Name="Speler1_naam" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="24" Text="Speler 1: " RenderTransformOrigin="0.484,0.559" Foreground="White" Background="Black"/>
                     <TextBlock Foreground="#fff" FontSize="50"><Run x:Name="speler1Score" Text="0"/></TextBlock>
+                    <TextBox x:Name="Speler2_naam" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Text="Speler 2: " FontSize="24" RenderTransformOrigin="-0.634,1.298" Background="Black" BorderBrush="White" Foreground="White"/>
                     <TextBlock Foreground="#fff" FontSize="50"><Run x:Name="speler2Score" Text="0"/></TextBlock>
                     <Button Content="Pauze&#xA;" Width="174" Height="76" RenderTransformOrigin="1.162,0.768" Click="Menu" FontSize="42"/>
 
