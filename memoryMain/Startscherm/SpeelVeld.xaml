@@ -18,7 +18,10 @@
             <Grid>
                 <Menu Background="black" Height="100">
                     <TextBlock Foreground="#fff"  FontSize="50" ><Run x:Name="speler1Naam" Text="Naam 1"/></TextBlock>
+                    <TextBlock Foreground="#fff" FontSize="50"><Run x:Name="speler1Score" Text="0"/></TextBlock>
                     <TextBlock Foreground="#fff"  FontSize="50"><Run  x:Name="speler2Naam" Text="Naam 2"/></TextBlock>
+                    <TextBlock Foreground="#fff" FontSize="50"><Run x:Name="speler2Score" Text="0"/></TextBlock>
+
 
                 </Menu>
             </Grid>
@@ -44,7 +47,7 @@
 
 
 
-                <Rectangle
+                <!--<Rectangle
                 x:Name="card"
                 Grid.Row="1" Grid.Column="1"
                 Width="150" Height="300"
@@ -93,7 +96,7 @@
                             </EventTrigger.Actions>
                         </EventTrigger>
                     </Rectangle.Triggers>
-                </Rectangle>
+                </Rectangle>-->
 
 
 
