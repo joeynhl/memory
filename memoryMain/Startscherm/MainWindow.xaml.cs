@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using save;
 
 namespace Startscherm
 {
@@ -36,6 +37,15 @@ namespace Startscherm
         {
             this.Hide();
             var newWindow = new spelen();
+            newWindow.Show();
+            this.Close();
+
+        }
+
+        private void hervatten(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            var newWindow = new SaveFile();
             newWindow.Show();
             this.Close();
 
