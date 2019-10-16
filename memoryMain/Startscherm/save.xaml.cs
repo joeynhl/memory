@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using Microsoft.Win32;
 using System.IO;
-using Microsoft.Win32;
+using System.Windows;
 using Path = System.IO.Path;
 
 namespace save
@@ -26,12 +14,26 @@ namespace save
 
         private void btnSaveFile_Click(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "save file (*.sav)|*.sav";
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "save file (*.sav)|*.sav"
+            };
             string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             saveFileDialog.InitialDirectory = path;
             if (saveFileDialog.ShowDialog() == true)
+            {
                 File.WriteAllText(saveFileDialog.FileName, txtEditor.Text);
+            }
+        }
+
+        private void btnOpenFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
+            }
         }
     }
 }
+

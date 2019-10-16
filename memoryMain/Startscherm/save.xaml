@@ -5,7 +5,9 @@
     <DockPanel Margin="10">
         <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
             <Button Name="btnSaveFile" Click="btnSaveFile_Click">Save file</Button>
+            <Button Name="btnOpenFile" Click="btnOpenFile_Click">Open file</Button>
         </WrapPanel>
         <TextBox Name="txtEditor" TextWrapping="Wrap" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" />
     </DockPanel>
+    
 </Window>
