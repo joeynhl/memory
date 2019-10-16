@@ -58,6 +58,12 @@ namespace Startscherm
 
         }
 
+        private void Highscores_Click(object sender, RoutedEventArgs e)
+        {
+            var highScores = new Highscores();
+            highScores.Show();
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
