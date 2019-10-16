@@ -15,11 +15,11 @@ using System.IO;
 using Microsoft.Win32;
 using Path = System.IO.Path;
 
-namespace WpfTutorialSamples.Dialogs
+namespace save
 {
-    public partial class SaveFileDialogSample : Window
+    public partial class SaveFile : Window
     {
-        public SaveFileDialogSample()
+        public SaveFile()
         {
             InitializeComponent();
         }

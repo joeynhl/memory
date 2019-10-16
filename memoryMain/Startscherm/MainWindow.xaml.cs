@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfTutorialSamples.Dialogs;
+using save;
 
 namespace Startscherm
 {
@@ -44,9 +44,8 @@ namespace Startscherm
 
         private void hervatten(object sender, RoutedEventArgs e)
         {
-
             this.Hide();
-            var newWindow = new SaveFileDialogSample();
+            var newWindow = new SaveFile();
             newWindow.Show();
             this.Close();
 
