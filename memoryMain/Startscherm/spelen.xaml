@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowState="Maximized"
         Title="spelen" Width="auto" Height="auto">
-    <Grid RenderTransformOrigin="0.506,0.486" Background="#3ADA9A" Margin="-3,-141,-905,-647">
+    <Grid RenderTransformOrigin="0.506,0.486" Background="#3ADA9A" Margin="-15,-141,-905,-665">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
