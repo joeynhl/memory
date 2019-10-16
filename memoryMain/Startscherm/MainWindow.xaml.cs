@@ -46,10 +46,10 @@ namespace Startscherm
 
         private void hervatten(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+            
             var newWindow = new SaveFile();
             newWindow.Show();
-            this.Close();
+         
 
 
 
