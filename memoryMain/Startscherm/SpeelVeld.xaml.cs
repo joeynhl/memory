@@ -32,6 +32,7 @@ namespace Startscherm
         /// <summary>
         /// 2d array for cards (4x4 game)
         /// </summary>
+        /// 
         public string[,] cards = new string[2, 4]
              {
                 {"../../Image/mario.jpg", "../../Image/mario2.jpg", "../../Image/mario3.jpg", "../../Image/mario4.jpg"},
