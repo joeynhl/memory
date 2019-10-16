@@ -29,6 +29,13 @@ namespace Startscherm
             InitializeComponent();
             setField();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Speler1_naam.Text = "Speler : " + naam1;
+            Speler2_naam.Text = "Speler : " + naam2;
+        }
+
         /// <summary>
         /// 2d array for cards (4x4 game)
         /// </summary>
@@ -87,10 +94,6 @@ namespace Startscherm
         private void setField()
         {
             fillCards(); // get the duplicate cards array filled
-            namen naam = new namen();
-
-            speler1Naam.Text = naam1;
-            speler2Naam.Text = naam2;
 
             var rnd = new Random();
             Shuffle(rnd, multiplecards); //shuffle cards
