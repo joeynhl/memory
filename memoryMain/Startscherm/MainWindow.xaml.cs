@@ -22,9 +22,11 @@ namespace Startscherm
     public partial class MainWindow : Window
     {
         MediaPlayer Sound = new MediaPlayer();
+
         public MainWindow()
         {
             InitializeComponent();
+
             InitialiseerMuziek();
         }
 
