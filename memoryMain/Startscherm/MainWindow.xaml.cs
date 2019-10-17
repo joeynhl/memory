@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 using save;
 
 namespace Startscherm
@@ -46,9 +47,17 @@ namespace Startscherm
 
         private void hervatten(object sender, RoutedEventArgs e)
         {
-            
-            var newWindow = new SaveFile();
-            newWindow.Show();
+            //var newWindow = new SaveFile();
+            speelveld speelveld = new speelveld();
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                //txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
+                this.Close();
+                speelveld.Show();
+            }
+            //newWindow.Show();
          
 
 
