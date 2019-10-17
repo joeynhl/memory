@@ -23,12 +23,12 @@ namespace save
         {
 
 
-            SaveFileDialog saveFileDialog = new SaveFileDialog
-            {
-                Filter = "save file (*.sav)|*.sav"
-            };
-            string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            saveFileDialog.InitialDirectory = path;
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.Filter = "save file (*.sav)|*.sav";
+
+
+
             if (saveFileDialog.ShowDialog() == true)
             {
                 //txtEditor.Text = naam1;

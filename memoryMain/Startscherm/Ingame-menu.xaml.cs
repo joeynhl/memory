@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using Path = System.IO.Path;
 using save;
+using System.IO;
 
 namespace Startscherm
 {
@@ -27,7 +28,7 @@ namespace Startscherm
 
         public string score1 { get; internal set; }
         public string score2 { get; internal set; }
-        
+
 
         public Ingame_menu()
         {
@@ -63,23 +64,30 @@ namespace Startscherm
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-                       //var newWindow = new SaveFile();
-            speelveld speelveld = new speelveld();
+
             MainWindow mainWindow = new MainWindow();
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            {
-                //Filter = "save file (*.sav)|*.sav";
-            };
+
+            saveFileDialog.Filter = "save file (*.sav)|*.sav";
             string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             saveFileDialog.InitialDirectory = path;
             if (saveFileDialog.ShowDialog() == true)
             {
-                //txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
+
+                this.naam1 = naam1;
+                this.naam2 = naam2;
+                this.score1 = score1;
+                this.score2 = score2;
+
+                string[] createText = { naam1 + " " + score1, naam2 + " " + score2 };
+
+                File.WriteAllLines(saveFileDialog.FileName, createText);
+
                 this.Close();
                 mainWindow.Show();
             }
-            //newWindow.Show();
+
         }
     }
 }
