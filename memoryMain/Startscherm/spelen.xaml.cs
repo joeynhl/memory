@@ -48,5 +48,14 @@ namespace Startscherm
             this.Close();
         }
 
+        private void Textbox1_speler1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Textbox2_speler2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

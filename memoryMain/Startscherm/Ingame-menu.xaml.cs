@@ -51,5 +51,10 @@ namespace Startscherm
         {
 
         }
+
+        private void Slider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
     }
 }

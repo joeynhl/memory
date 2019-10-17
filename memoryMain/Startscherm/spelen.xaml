@@ -13,14 +13,14 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition MaxWidth="900"/>
+            <ColumnDefinition MaxWidth="800"/>
         </Grid.ColumnDefinitions>
         <Image HorizontalAlignment="Left" Height="186" VerticalAlignment="Top" Width="319" Grid.Column="4" Margin="7.346,27,0,0"/>
-        <Image Source="memory-logo.png" RenderTransformOrigin="5.086,0.249" Margin="530,-444,-271,568" Grid.Column="4"/>
-        <Label Content="Speler 1&#xD;&#xA;" Grid.Column="4" HorizontalAlignment="Left" Margin="793,532,-98,0" VerticalAlignment="Top" Width="206" FontSize="30" Foreground="White" FontWeight="Bold" Height="76" />
-        <Label Content="Speler 2&#xA;" Grid.Column="4" HorizontalAlignment="Left" Margin="793,726,-134,0" VerticalAlignment="Top" Width="242" FontSize="30" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.473,0.669" Height="128" />
-        <Button Content="Verder" Grid.Column="4" HorizontalAlignment="Left" Margin="727,921,-98,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Button_Click" ClickMode="Press" RenderTransformOrigin="0.732,0.395"/>
-        <TextBox x:Name="Textbox1_speler1" Grid.Column="4" HorizontalAlignment="Left" Height="42" Margin="629,613,-159,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="431" FontSize="28"/>
-        <TextBox x:Name="Textbox2_speler2" Grid.Column="4" HorizontalAlignment="Left" Height="40" Margin="629,814,-156,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" FontSize="28" RenderTransformOrigin="0.439,-0.4"/>
+        <Image Source="memory-logo.png" RenderTransformOrigin="5.086,0.249" Margin="570,-426,-311,550" Grid.Column="4"/>
+        <Label Content="Speler 1&#xD;&#xA;" Grid.Column="4" HorizontalAlignment="Left" Margin="763,534,-168,0" VerticalAlignment="Top" Width="206" FontSize="30" Foreground="White" FontWeight="Bold" Height="76" />
+        <Label Content="Speler 2&#xA;" Grid.Column="4" HorizontalAlignment="Left" Margin="759,724,-200,0" VerticalAlignment="Top" Width="242" FontSize="30" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.473,0.669" Height="128" />
+        <Button Content="Verder" Grid.Column="4" HorizontalAlignment="Left" Margin="707,919,-178,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Button_Click" ClickMode="Press" RenderTransformOrigin="0.732,0.395"/>
+        <TextBox x:Name="Textbox1_speler1" Grid.Column="4" HorizontalAlignment="Left" Height="42" Margin="613,617,-243,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="431" FontSize="28" TextChanged="Textbox1_speler1_TextChanged"/>
+        <TextBox x:Name="Textbox2_speler2" Grid.Column="4" HorizontalAlignment="Left" Height="40" Margin="605,804,-232,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" FontSize="28" RenderTransformOrigin="0.439,-0.4" TextChanged="Textbox2_speler2_TextChanged"/>
     </Grid>
 </Window>
