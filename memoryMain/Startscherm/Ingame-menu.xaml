@@ -21,11 +21,11 @@
         <Frame Content="" HorizontalAlignment="Left" Height="100" Margin="-4,919,-2,-1" VerticalAlignment="Top" Width="1414" Foreground="Black" Background="#FF2C2626" Grid.ColumnSpan="2"/>
         <Frame Content="" HorizontalAlignment="Left" Height="100" Margin="-4,-7,-4,0" VerticalAlignment="Top" Width="1416" Foreground="Black" Background="#FF2C2626" Grid.ColumnSpan="2"/>
         <Label Content="3:21" HorizontalAlignment="Left" Margin="23,18,0,0" VerticalAlignment="Top" Width="206" FontSize="30" Foreground="White" FontWeight="Bold" Height="68" />
-        <TextBox x:Name="Speler1_naam" HorizontalAlignment="Left" Height="34" Margin="118,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="18" Text="Speler 1: " RenderTransformOrigin="0.484,0.559" Background="#FF2C2626" TextChanged="Speler1_naam_TextChanged" Foreground="Snow"/>
-        <TextBox x:Name="Speler2_naam" HorizontalAlignment="Left" Height="37" Margin="443,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Text="Speler 2: " Background="#FF2C2626" FontSize="18" Foreground="White" Grid.ColumnSpan="2"/>
-        <TextBlock Foreground="#fff" FontSize="50" Margin="386,10,79,692"><Run x:Name="speler1Score" Text="0"/></TextBlock>
-        <TextBlock Foreground="#fff" FontSize="50" Margin="731,18,417,684" Grid.ColumnSpan="2"><Run x:Name="speler2Score" Text="0"/></TextBlock>
+        <TextBlock Foreground="#fff" FontSize="50" Margin="434,6,403,938"><Run x:Name="speler1Score" Text="0"/></TextBlock>
+        <TextBlock Foreground="#fff" FontSize="50" Margin="863,10,493,924" Grid.ColumnSpan="2"><Run x:Name="speler2Score" Text="0"/></TextBlock>
         <Button Content="Opslaan" HorizontalAlignment="Left" Margin="243,491,0,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold"/>
+        <TextBlock x:Name="Speler1_naam" Text="Speler 1:" Foreground="White" FontSize="36" Margin="120,14,422,942"/>
+        <TextBlock x:Name="Speler2_naam" Text="Speler 2:" Foreground="White" FontSize="36" Margin="500,16,28,940"/>
 
     </Grid>
 </Window>
