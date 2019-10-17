@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Startscherm"
         mc:Ignorable="d"
         WindowState="Maximized"
-        Title="spelen" Width="auto" Height="auto" ResizeMode="NoResize">
-    <Grid RenderTransformOrigin="0.506,0.486" Background="#3ADA9A" Margin="-3,-141,-905,-647">
+        Title="spelen" ResizeMode="NoResize">
+    <Grid RenderTransformOrigin="0.506,0.486" Background="#3ADA9A" Margin="0,-40,-633,-274" Width="auto" Height="auto">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
@@ -15,12 +15,14 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition MaxWidth="800"/>
         </Grid.ColumnDefinitions>
+        <Canvas Margin="0,0,0,60.187" Grid.RowSpan="2">
+            <Image Source="memory-logo.png" Stretch="Fill" Canvas.Left="485" Canvas.Top="95" Height="272" Width="647"/>
+        </Canvas>
         <Image HorizontalAlignment="Left" Height="186" VerticalAlignment="Top" Width="319" Grid.Column="4" Margin="7.346,27,0,0"/>
-        <Image Source="memory-logo.png" RenderTransformOrigin="5.086,0.249" Margin="570,-426,-311,550" Grid.Column="4"/>
-        <Label Content="Speler 1&#xD;&#xA;" Grid.Column="4" HorizontalAlignment="Left" Margin="763,534,-168,0" VerticalAlignment="Top" Width="206" FontSize="30" Foreground="White" FontWeight="Bold" Height="76" />
-        <Label Content="Speler 2&#xA;" Grid.Column="4" HorizontalAlignment="Left" Margin="759,724,-200,0" VerticalAlignment="Top" Width="242" FontSize="30" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.473,0.669" Height="128" />
-        <Button Content="Verder" Grid.Column="4" HorizontalAlignment="Left" Margin="707,919,-178,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Button_Click" ClickMode="Press" RenderTransformOrigin="0.732,0.395"/>
-        <TextBox x:Name="Textbox1_speler1" Grid.Column="4" HorizontalAlignment="Left" Height="42" Margin="613,617,-243,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="431" FontSize="28" TextChanged="Textbox1_speler1_TextChanged"/>
-        <TextBox x:Name="Textbox2_speler2" Grid.Column="4" HorizontalAlignment="Left" Height="40" Margin="605,804,-232,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" FontSize="28" RenderTransformOrigin="0.439,-0.4" TextChanged="Textbox2_speler2_TextChanged"/>
+        <Label Content="Speler 1&#xD;&#xA;" Grid.Column="4" HorizontalAlignment="Left" Margin="701,388,-38,0" VerticalAlignment="Top" Width="138" FontSize="30" Foreground="White" FontWeight="Bold" Height="56" />
+        <Label Content="Speler 2&#xA;" Grid.Column="4" HorizontalAlignment="Left" Margin="709,524,-52,0" VerticalAlignment="Top" Width="144" FontSize="30" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.473,0.669" Height="56" />
+        <Button Content="Verder" Grid.Column="4" HorizontalAlignment="Left" Margin="631,709,-102,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Button_Click" ClickMode="Press" RenderTransformOrigin="0.732,0.395"/>
+        <TextBox x:Name="Textbox1_speler1" Grid.Column="4" HorizontalAlignment="Left" Height="42" Margin="559,463,-189,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="431" FontSize="28" TextChanged="Textbox1_speler1_TextChanged"/>
+        <TextBox x:Name="Textbox2_speler2" Grid.Column="4" HorizontalAlignment="Left" Height="40" Margin="565,600,-192,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" FontSize="28" RenderTransformOrigin="0.439,-0.4" TextChanged="Textbox2_speler2_TextChanged"/>
     </Grid>
 </Window>
