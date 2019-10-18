@@ -22,7 +22,7 @@
                     <TextBlock Foreground="#fff" FontSize="50"><Run x:Name="speler1Score" Text="0"/></TextBlock>
                     <TextBlock x:Name="Speler2_naam" Text="Speler 2:" Height="62" Width="347" Foreground="White" FontSize="36"/>
                     <TextBlock Foreground="#fff" FontSize="50"><Run x:Name="speler2Score" Text="0"/></TextBlock>
-                    <Button Content="Pauze&#xA;" Width="174" Height="76" RenderTransformOrigin="1.162,0.768" Click="Menu" FontSize="42"/>
+                    <Button Content="Pauze" Width="179" Height="76" RenderTransformOrigin="1.162,0.768" Click="Menu" FontSize="42"/>
                 </Menu>
             </Grid>
         </Border>
