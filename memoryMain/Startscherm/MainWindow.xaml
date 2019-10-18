@@ -8,7 +8,8 @@
         Title="MainWindow"
         WindowState="Maximized"
         Loaded="Window_Loaded"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        WindowStyle="None">
 
     <Grid Margin="0,0,-456.667,-141.667" Background="#3ada9a" Width="auto" Height="auto">
 
