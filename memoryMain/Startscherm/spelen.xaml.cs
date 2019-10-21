@@ -24,24 +24,19 @@ namespace Startscherm
             InitializeComponent();
         }
 
+        public string chosenThema { get; internal set; }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string naam1 = Textbox1_speler1.Text;
             string naam2 = Textbox2_speler2.Text;
-            //namen namen = new namen();
-            ////speelveld speelveld = new speelveld();
-
-            //namen.naam1 = naam1;
-            //namen.naam2 = naam2;
-
-            //this.Hide();
-            //speelveld.Show();
-            //this.Close();
 
             speelveld speelveld = new speelveld();
             speelveld.naam1 = naam1;
             speelveld.naam2 = naam2;
+
+            string message = chosenThema;
+            MessageBox.Show(message);
 
             this.Hide();
             speelveld.Show();
