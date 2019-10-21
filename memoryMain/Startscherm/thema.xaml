@@ -7,20 +7,42 @@
         mc:Ignorable="d"
         Title="thema"
         WindowState="Maximized"
-        ResizeMode="NoResize"
         >
     <Grid Background="#3ada9a">
-        <Image Source="memory-logo.png" Stretch="Fill" Canvas.Left="297" Canvas.Top="9" Margin="180,27,203,333.2"/>
-        <Button HorizontalAlignment="Left" Margin="85,285,0,0" VerticalAlignment="Top" Width="114" Height="122">
-            <Image Source="./mario.png"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="138*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="122*"/>
+            <RowDefinition Height="102*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="115*"/>
+            <ColumnDefinition Width="28*"/>
+            <ColumnDefinition Width="61*"/>
+            <ColumnDefinition Width="55*"/>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="102*"/>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="116*"/>
+            <ColumnDefinition Width="120*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="memory-logo.png" Margin="91,3,35.6,9.4" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="1"/>
+        <Button HorizontalAlignment="Left" Margin="1,1.2,0,0" VerticalAlignment="Top" Width="114" Height="122" Grid.Column="1" Grid.Row="5" Grid.RowSpan="2">
+            <Image Source="mario.png"/>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="240,285,0,0" VerticalAlignment="Top" Width="114" Height="122">
-            <Image Source="./zelda.png"/>
+        <Button HorizontalAlignment="Left" Margin="2.8,1.2,0,0" VerticalAlignment="Top" Width="114" Height="122" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="5" Grid.RowSpan="2">
+            <Image Source="zelda.png"/>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="393,285,0,0" VerticalAlignment="Top" Width="114" Height="122">
-            <Image Source="././maple.png"/>
+        <Button HorizontalAlignment="Left" Margin="2,1.2,0,0" VerticalAlignment="Top" Width="114" Height="122" Grid.Column="6" Grid.ColumnSpan="3" Grid.Row="5" Grid.RowSpan="2">
+            <Image Source="maple.png"/>
         </Button>
-        <Button Content="eigenplaatje" HorizontalAlignment="Left" Margin="541,285,0,0" VerticalAlignment="Top" Width="114" Height="122"/>
+        <Button Content="eigenplaatje" HorizontalAlignment="Left" Margin="2.4,1.2,0,0" VerticalAlignment="Top" Width="114" Height="122" Grid.Column="9" Grid.ColumnSpan="2" Grid.Row="5" Grid.RowSpan="2"/>
+        <Label Content="Kies hier uw thema." FontSize="20" Grid.Column="4" HorizontalAlignment="Left" Margin="5,12.6,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="180" Height="43" Grid.RowSpan="2"/>
 
     </Grid>
 </Window>
