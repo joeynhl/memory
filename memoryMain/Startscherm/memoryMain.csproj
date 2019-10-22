@@ -73,6 +73,9 @@
     <Compile Include="save.xaml.cs">
       <DependentUpon>save.xaml</DependentUpon>
     </Compile>
+    <Compile Include="thema.xaml.cs">
+      <DependentUpon>thema.xaml</DependentUpon>
+    </Compile>
     <Page Include="Highscores.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +109,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="save.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="thema.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,6 +167,15 @@
     <Resource Include="Image\mario8.jpg" />
     <Resource Include="Image\mario8.png" />
     <Resource Include="Image\sjekkie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="maple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="mario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="zelda.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
