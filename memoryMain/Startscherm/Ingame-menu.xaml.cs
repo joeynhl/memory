@@ -94,5 +94,25 @@ namespace Startscherm
         {
 
         }
+        private void Resetten(object sender, RoutedEventArgs e)
+        {
+            speelveld speelveld = new speelveld();
+            speelveld.naam1 = naam1;
+            speelveld.naam2 = naam2;
+
+            this.Hide();
+            speelveld.Show();
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Hervatten(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
