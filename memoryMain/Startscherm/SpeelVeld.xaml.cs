@@ -28,7 +28,7 @@ namespace Startscherm
         public speelveld()
         {
             InitializeComponent();
-            SetTheme();
+            CreateGrid();
             getCardImages();
             setField();
 
@@ -42,10 +42,39 @@ namespace Startscherm
         }
 
         /// <summary>
+        /// Number of rows in the grid
+        /// </summary>
+        public int NumRows = 4;
+        /// <summary>
+        /// number of collumns in the grid
+        /// </summary>
+        public int NumCols = 4;
+
+        /// <summary>
+        /// generate the grid
+        /// </summary>
+        private void CreateGrid()
+        {
+            for (int i = 0; i < NumRows; i++)
+            {
+                cardgrid.RowDefinitions.Add(new RowDefinition());
+            }
+            for (int i = 0; i < NumCols; i++)
+            {
+                cardgrid.ColumnDefinitions.Add(new ColumnDefinition());
+            }
+        }
+
+
+
+        /// <summary>
         /// The theme (directory path) (directory)
         /// </summary>
         public static string theme;
 
+        /// <summary>
+        /// get directory path and set theme
+        /// </summary>
         private void SetTheme()
         {
             string[] directories = Directory.GetDirectories("../../themas/", "mario");
@@ -62,7 +91,9 @@ namespace Startscherm
         /// </summary>
         public void getCardImages()
         {
-            string[] files = Directory.GetFiles(theme); // get files(images) from directory
+            SetTheme(); // set theme 
+
+            string[] files = Directory.GetFiles(theme); // get files(images) from directory (theme)
 
             List<string> FileList = new List<string>(); // create new list for all files(images)
 
