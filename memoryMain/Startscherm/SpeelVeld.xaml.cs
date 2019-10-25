@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,24 +28,70 @@ namespace Startscherm
         public speelveld()
         {
             InitializeComponent();
+            SetTheme();
+            getCardImages();
             setField();
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Speler1_naam.Text = "Speler : " + naam1;
             Speler2_naam.Text = "Speler : " + naam2;
+
         }
+
+        /// <summary>
+        /// The theme (directory path) (directory)
+        /// </summary>
+        public static string theme;
+
+        private void SetTheme()
+        {
+            string[] directories = Directory.GetDirectories("../../themas/", "mario");
+
+            foreach (string directory in directories)
+            {
+                theme = directory;
+            }
+        }
+        /// <summary>
+        /// Get all images from the theme (directory) 
+        /// put the files in a list
+        /// loop trough the 2d array and add the list items
+        /// </summary>
+        public void getCardImages()
+        {
+            string[] files = Directory.GetFiles(theme); // get files(images) from directory
+
+            List<string> FileList = new List<string>(); // create new list for all files(images)
+
+            foreach (string File in files)// loop trough the files
+            {
+                FileList.Add(File); // add the files to the list
+            }
+
+            int count = 0; // count how many itterations
+
+
+            //loop trough 2d array and set values
+            for (int i = 0; i < cards.GetLength(0); i++) 
+            {
+                for (int j = 0; j < cards.GetLength(1); j++)
+                {
+                    count++;
+                    cards[i, j] = FileList[count]; // put cards in the 2d array
+                }
+            }
+        }
+       
+
 
         /// <summary>
         /// 2d array for cards (4x4 game)
         /// </summary>
         /// 
-        public string[,] cards = new string[2, 4]
-             {
-                {"../../Image/mario.jpg", "../../Image/mario2.jpg", "../../Image/mario3.jpg", "../../Image/mario4.jpg"},
-                { "../../Image/mario5.jpg", "../../Image/mario6.jpg", "../../Image/mario7.jpg", "../../Image/mario8.jpg"}
-             };
+        public string[,] cards = new string[2, 4];
 
         /// <summary>
         /// 2d array for double cards
@@ -104,7 +151,7 @@ namespace Startscherm
                 {
                     Rectangle Card = new Rectangle(); // create new card
 
-                    Card.Fill = new ImageBrush(new BitmapImage(new Uri("../../Image/background.jpg", UriKind.Relative))); //set imagebrush 
+                    Card.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); //set imagebrush 
 
                     Card.HorizontalAlignment = HorizontalAlignment.Stretch;
                     Card.VerticalAlignment = VerticalAlignment.Stretch;
@@ -121,30 +168,40 @@ namespace Startscherm
 
                     cardgrid.Children.Add(Card); // add card to grid
 
-                    /*              
-                                        Button btn = new Button(); // create new button
-                                        btn.Content = multiplecards[row, column]; // fill button content*/
-
-                    /*btn.HorizontalContentAlignment = HorizontalAlignment.Stretch;
-                    btn.VerticalContentAlignment = VerticalAlignment.Stretch;
-                    btn.Margin = new Thickness(10);
-
-                    btn.SetValue(Grid.RowProperty, row); //set row position
-                    btn.SetValue(Grid.ColumnProperty, column); // set col position
-                    cardgrid.Children.Add(btn);*/
-
                 }
             }
         }
 
+        /// <summary>
+        /// integer for counting when a card is clicked (resets after second click)
+        /// </summary>
         public int clickamount = 0;
 
+        /// <summary>
+        /// The first card that is clicked in a turn
+        /// resets every turn
+        /// </summary>
         public Rectangle card_one;
 
+        /// <summary>
+        /// The second card that is clicked in a turn
+        /// resets every turn
+        /// </summary>
         public Rectangle card_two;
 
-        public int player = 1;
+        /// <summary>
+        /// integer for checking whos turn it is (player1 or player2
+        /// </summary>
+        public int player = 1; // integer for player 1 or 2
+
+        /// <summary>
+        /// score for player 1
+        /// </summary>
         public int PlayerOneScore = 0;
+
+        /// <summary>
+        /// score for player two
+        /// </summary>
         public int PlayerTwoScore = 0;
 
 
@@ -159,7 +216,7 @@ namespace Startscherm
                 Rectangle cards = sender as Rectangle; // get clicked card
 
                 if (cards != card_one) // if same card is not clicked twice
-                { 
+                {
 
                     cards.Fill = new ImageBrush(new BitmapImage(new Uri(context, UriKind.Relative))); // show the card image
 
@@ -184,7 +241,7 @@ namespace Startscherm
                             card_one = null; // reset card one
                             card_two = null; // reset card two
 
-                            if(player == 1)//if player 1 has two equal cards
+                            if (player == 1)//if player 1 has two equal cards
                             {
                                 PlayerOneScore++;//score for player1 +1
                                 speler1Score.Text = Convert.ToString(PlayerOneScore);// set score in game
@@ -197,22 +254,23 @@ namespace Startscherm
 
                             clickamount = 0; // set amount clicks to 0;
 
-                            
+
                         }
                         else
                         { // if the images are not equal
                             MessageBox.Show("Deze kaarten zijn niet gelijk");
-                            card_one.Fill = new ImageBrush(new BitmapImage(new Uri("../../Image/background.jpg", UriKind.Relative))); //show general image(backside of the card)
-                            card_two.Fill = new ImageBrush(new BitmapImage(new Uri("../../Image/background.jpg", UriKind.Relative))); // show general image(backside of the card)
+                            card_one.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); //show general image(backside of the card)
+                            card_two.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); // show general image(backside of the card)
 
                             card_one = null;// reset card one
                             card_two = null;// reset card two
 
                             clickamount = 0; // reset after two clicks
-                            if(player == 1)
-                            { 
+                            if (player == 1)
+                            {
                                 player = 2;
-                            } else
+                            }
+                            else
                             {
                                 player = 1;
                             }

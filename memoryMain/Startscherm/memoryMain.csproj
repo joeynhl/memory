@@ -147,26 +147,16 @@
     <Resource Include="memory-logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\achtergrondafbeelding.jpg" />
-    <Resource Include="Image\background.jpg" />
-    <Resource Include="Image\goodestboi.jpg" />
-    <Resource Include="Image\mario.jpg" />
-    <Resource Include="Image\mario.png" />
-    <Resource Include="Image\mario2.jpg" />
-    <Resource Include="Image\mario2.png" />
-    <Resource Include="Image\mario3.jpg" />
-    <Resource Include="Image\mario3.png" />
-    <Resource Include="Image\mario4.jpg" />
-    <Resource Include="Image\mario4.png" />
-    <Resource Include="Image\mario5.jpg" />
-    <Resource Include="Image\mario5.png" />
-    <Resource Include="Image\mario6.jpg" />
-    <Resource Include="Image\mario6.png" />
-    <Resource Include="Image\mario7.jpg" />
-    <Resource Include="Image\mario7.png" />
-    <Resource Include="Image\mario8.jpg" />
-    <Resource Include="Image\mario8.png" />
-    <Resource Include="Image\sjekkie.jpg" />
+    <Resource Include="themas\mario\achtergrondafbeelding.jpg" />
+    <Resource Include="cardbackground\background.jpg" />
+    <Resource Include="themas\mario\mario.jpg" />
+    <Resource Include="themas\mario\mario2.jpg" />
+    <Resource Include="themas\mario\mario3.jpg" />
+    <Resource Include="themas\mario\mario4.jpg" />
+    <Resource Include="themas\mario\mario5.jpg" />
+    <Resource Include="themas\mario\mario6.jpg" />
+    <Resource Include="themas\mario\mario7.jpg" />
+    <Resource Include="themas\mario\mario8.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="maple.png" />
@@ -176,6 +166,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="zelda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="themas\test\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
