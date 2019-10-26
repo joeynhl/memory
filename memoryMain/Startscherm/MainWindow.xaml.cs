@@ -39,7 +39,7 @@ namespace Startscherm
         private void startBtn(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            var newWindow = new thema();
+            var newWindow = new thema_maken();
             newWindow.Show();
             this.Close();
 

@@ -73,6 +73,9 @@
     <Compile Include="save.xaml.cs">
       <DependentUpon>save.xaml</DependentUpon>
     </Compile>
+    <Compile Include="thema-maken.xaml.cs">
+      <DependentUpon>thema-maken.xaml</DependentUpon>
+    </Compile>
     <Compile Include="thema.xaml.cs">
       <DependentUpon>thema.xaml</DependentUpon>
     </Compile>
@@ -109,6 +112,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="save.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="thema-maken.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

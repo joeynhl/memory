@@ -68,7 +68,7 @@ namespace Startscherm
 
 
         /// <summary>
-        /// The theme (directory path) (directory)
+        /// The theme (directory path + directory)
         /// </summary>
         public static string theme;
 
@@ -77,7 +77,7 @@ namespace Startscherm
         /// </summary>
         private void SetTheme()
         {
-            string[] directories = Directory.GetDirectories("../../themas/", "mario");
+            string[] directories = Directory.GetDirectories("../../themas/", "test");
 
             foreach (string directory in directories)
             {
@@ -125,7 +125,7 @@ namespace Startscherm
         public string[,] cards = new string[2, 4];
 
         /// <summary>
-        /// 2d array for double cards
+        /// 2d array for double cards ( all cards with copies)
         /// </summary>
         public string[,] multiplecards = new string[4, 4];
 
@@ -148,6 +148,9 @@ namespace Startscherm
             }
         }
 
+        /// <summary>
+        ///  fill the field with the cards
+        /// </summary>
         private void fillCards()
         {
             for (int i = 0; i < 2; i++) //loop twice trough array
