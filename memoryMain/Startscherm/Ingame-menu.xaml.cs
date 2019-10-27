@@ -80,7 +80,7 @@ namespace Startscherm
                 this.score1 = score1;
                 this.score2 = score2;
 
-                string[] createText = { naam1 + " " + score1, naam2 + " " + score2 };
+                string[] createText = { naam1 + "," + score1 + "," + naam2 + "," + score2 };
 
                 File.WriteAllLines(saveFileDialog.FileName, createText);
 

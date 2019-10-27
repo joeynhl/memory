@@ -13,6 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
+using Path = System.IO.Path;
+using save;
+using System.IO;
 
 namespace Startscherm
 {
@@ -25,6 +29,9 @@ namespace Startscherm
         public string naam1 { get; internal set; }
         public string naam2 { get; internal set; }
 
+        public string score1 { get; internal set; }
+        public string score2 { get; internal set; }
+
         public speelveld()
         {
             InitializeComponent();
@@ -36,6 +43,25 @@ namespace Startscherm
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
+            //TODO relatief pad maken en daarna toevoegen
+
+            //string folderName = @"c:\test\test.sav";
+
+
+            //List<string> lines = File.ReadAllLines(folderName).ToList();
+
+            //foreach(var line in lines)
+            //{
+            //    string[] entries = line.Split(',');
+
+            //    Speler1_naam.Text = entries[0];
+            //    speler1Score.Text = entries[1];
+            //    Speler2_naam.Text = entries[2];
+            //    speler2Score.Text = entries[3];
+
+            //}
+
             Speler1_naam.Text = "Speler : " + naam1;
             Speler2_naam.Text = "Speler : " + naam2;
 
@@ -77,7 +103,7 @@ namespace Startscherm
         /// </summary>
         private void SetTheme()
         {
-            string[] directories = Directory.GetDirectories("../../themas/", "test");
+            string[] directories = Directory.GetDirectories("../../themas/");
 
             foreach (string directory in directories)
             {
