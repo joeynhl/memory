@@ -36,7 +36,7 @@ namespace Startscherm
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
+        {  
 
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)

@@ -94,5 +94,11 @@ namespace Startscherm
         {
             Sound.Stop();
         }
+
+        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            double value = slider.Value;
+            Sound.Volume = value;
+        }
     }
 }
