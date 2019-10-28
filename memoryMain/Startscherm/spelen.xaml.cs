@@ -24,29 +24,27 @@ namespace Startscherm
 
         public string score1 { get; internal set; }
         public string score2 { get; internal set; }
+        public string ThemeName { get; internal set; }
         public spelen()
         {
             InitializeComponent();
-        }
 
-        public string chosenThema { get; internal set; }
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string naam1 = Textbox1_speler1.Text;
             string naam2 = Textbox2_speler2.Text;
 
+
             speelveld speelveld = new speelveld();
+            speelveld.ThemeName = ThemeName;
             speelveld.naam1 = naam1;
             speelveld.naam2 = naam2;
 
             speelveld.Speler1_naam.Text = "Speler : " + naam1;
             speelveld.Speler2_naam.Text = "Speler : " + naam2;
 
-            
-
-            string message = chosenThema;
-            MessageBox.Show(message);
 
             this.Hide();
             speelveld.Show();

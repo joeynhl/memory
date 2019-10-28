@@ -32,6 +32,9 @@ namespace Startscherm
         public string score1 { get; internal set; }
         public string score2 { get; internal set; }
 
+
+        public string ThemeName { get; set; }
+
         public speelveld()
         {
             InitializeComponent();
@@ -340,11 +343,9 @@ namespace Startscherm
             Ingame_menu.score1 = score1;
             Ingame_menu.score2 = score2;
 
-<<<<<<< HEAD
-=======
 
             this.Hide();
->>>>>>> e368b7c35c638c02a9403a8c6aecfebd823e9d2e
+
             Ingame_menu.Show();
             
         }

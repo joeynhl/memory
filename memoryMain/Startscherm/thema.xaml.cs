@@ -56,14 +56,25 @@ namespace Startscherm
             }
         }
 
-        public string ThemeName { get; set; }
+
 
 
         private void chooseTheme(object sender, RoutedEventArgs e)
         {
             Button theme = sender as Button;
 
-            MessageBox.Show(Convert.ToString(theme.DataContext));
+            /* speelveld speelveld = new speelveld();
+
+             speelveld.ThemeName = Convert.ToString(theme.DataContext);*/
+            
+
+            spelen spelen = new spelen();
+
+            spelen.ThemeName = Convert.ToString(theme.DataContext); 
+            this.Hide();
+            spelen.Show();
+            this.Close();
+
         }
 
 
