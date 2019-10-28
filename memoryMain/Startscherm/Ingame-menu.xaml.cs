@@ -116,7 +116,8 @@ namespace Startscherm
 
         private void Hervatten(object sender, RoutedEventArgs e)
         {
-
+            this.Hide();
+            this.Close();
         }
     }
 }

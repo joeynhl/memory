@@ -44,7 +44,6 @@ namespace Startscherm
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-           
 
             //Speler1_naam.Text = "Speler : " + naam1;
             //Speler2_naam.Text = "Speler : " + naam2;
@@ -54,11 +53,11 @@ namespace Startscherm
         /// <summary>
         /// Number of rows in the grid
         /// </summary>
-        public int NumRows = 4;
+        private int NumRows = 4;
         /// <summary>
         /// number of collumns in the grid
         /// </summary>
-        public int NumCols = 4;
+        private int NumCols = 4;
 
         /// <summary>
         /// generate the grid
@@ -80,7 +79,7 @@ namespace Startscherm
         /// <summary>
         /// The theme (directory path + directory)
         /// </summary>
-        public static string theme;
+        private static string theme;
 
         /// <summary>
         /// get directory path and set theme
@@ -91,7 +90,10 @@ namespace Startscherm
 
             foreach (string directory in directories)
             {
+                if (Path.GetFileName(directory) == "test") 
                 theme = directory;
+
+
             }
         }
         /// <summary>
@@ -99,7 +101,7 @@ namespace Startscherm
         /// put the files in a list
         /// loop trough the 2d array and add the list items
         /// </summary>
-        public void getCardImages()
+        private void getCardImages()
         {
             SetTheme(); // set theme 
 
@@ -125,20 +127,20 @@ namespace Startscherm
                 }
             }
         }
-       
+
 
 
         /// <summary>
         /// 2d array for cards (4x4 game)
         /// </summary>        
-        public string[,] cards = new string[2, 4];
+        private string[,] cards = new string[2, 4];
 
         /// <summary>
         /// 2d array for double cards ( all cards with copies)
         /// </summary>
-        public string[,] multiplecards = new string[4, 4];
+        private string[,] multiplecards = new string[4, 4];
 
-        public static void Shuffle<T>(Random random, T[,] cards)
+        private static void Shuffle<T>(Random random, T[,] cards)
         {
             int lengthRow = cards.GetLength(1);
 
@@ -218,34 +220,34 @@ namespace Startscherm
         /// <summary>
         /// integer for counting when a card is clicked (resets after second click)
         /// </summary>
-        public int clickamount = 0;
+        private int clickamount = 0;
 
         /// <summary>
         /// The first card that is clicked in a turn
         /// resets every turn
         /// </summary>
-        public Rectangle card_one;
+        private Rectangle card_one;
 
         /// <summary>
         /// The second card that is clicked in a turn
         /// resets every turn
         /// </summary>
-        public Rectangle card_two;
+        private Rectangle card_two;
 
         /// <summary>
         /// integer for checking whos turn it is (player1 or player2
         /// </summary>
-        public int player = 1; // integer for player 1 or 2
+        private int player = 1; // integer for player 1 or 2
 
         /// <summary>
         /// score for player 1
         /// </summary>
-        public int PlayerOneScore = 0;
+        private int PlayerOneScore = 0;
 
         /// <summary>
         /// score for player two
         /// </summary>
-        public int PlayerTwoScore = 0;
+        private int PlayerTwoScore = 0;
 
 
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
@@ -335,9 +337,8 @@ namespace Startscherm
             Ingame_menu.score1 = score1;
             Ingame_menu.score2 = score2;
 
-            this.Hide();
             Ingame_menu.Show();
-            this.Close();
+            
         }
     }
 }
