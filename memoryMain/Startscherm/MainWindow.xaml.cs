@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,6 +54,22 @@ namespace Startscherm
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
             {
+
+                
+
+                string pathname = openFileDialog.FileName;
+                List<string> lines = File.ReadAllLines(pathname).ToList();
+
+                foreach (var line in lines)
+                {
+                    string[] entries = line.Split(',');
+
+                    speelveld.Speler1_naam.Text = entries[0];
+                    speelveld.speler1Score.Text = entries[1];
+                    speelveld.Speler2_naam.Text = entries[2];
+                    speelveld.speler2Score.Text = entries[3];
+                }
+
                 //txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
                 this.Close();
                 speelveld.Show();

@@ -44,26 +44,10 @@ namespace Startscherm
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            //TODO relatief pad maken en daarna toevoegen
+           
 
-            //string folderName = @"c:\test\test.sav";
-
-
-            //List<string> lines = File.ReadAllLines(folderName).ToList();
-
-            //foreach(var line in lines)
-            //{
-            //    string[] entries = line.Split(',');
-
-            //    Speler1_naam.Text = entries[0];
-            //    speler1Score.Text = entries[1];
-            //    Speler2_naam.Text = entries[2];
-            //    speler2Score.Text = entries[3];
-
-            //}
-
-            Speler1_naam.Text = "Speler : " + naam1;
-            Speler2_naam.Text = "Speler : " + naam2;
+            //Speler1_naam.Text = "Speler : " + naam1;
+            //Speler2_naam.Text = "Speler : " + naam2;
 
         }
 
