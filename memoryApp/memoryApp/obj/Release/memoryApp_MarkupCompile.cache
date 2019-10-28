@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\Gebruiker\Documents\GitHub\memory\memoryApp\memoryApp\obj\Debug\
+C:\Users\Gebruiker\Documents\GitHub\memory\memoryApp\memoryApp\obj\Release\
 memoryApp
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\Gebruiker\Documents\GitHub\memory\memoryApp\memoryApp\App.xaml
 2-2084114343
 
