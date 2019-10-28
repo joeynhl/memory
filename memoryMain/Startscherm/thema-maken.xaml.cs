@@ -55,8 +55,8 @@ namespace Startscherm
 
             }
             this.Hide();
-            var newWindow = new thema();
-            newWindow.Show();
+            speelveld speelveld = new speelveld();
+            speelveld.Show();
             this.Close();
 
         }

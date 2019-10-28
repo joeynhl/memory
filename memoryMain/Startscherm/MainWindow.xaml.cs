@@ -39,10 +39,9 @@ namespace Startscherm
         private void startBtn(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            var newWindow = new thema_maken();
-            newWindow.Show();
+            spelen naamspelers = new spelen();
+            naamspelers.Show();
             this.Close();
-
         }
 
         private void hervatten(object sender, RoutedEventArgs e)

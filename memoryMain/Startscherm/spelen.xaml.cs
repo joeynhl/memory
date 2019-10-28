@@ -32,18 +32,19 @@ namespace Startscherm
             string naam2 = Textbox2_speler2.Text;
 
             speelveld speelveld = new speelveld();
+            Speelveld_grootte grootte = new Speelveld_grootte();
             speelveld.naam1 = naam1;
             speelveld.naam2 = naam2;
 
-            string message = chosenThema;
-            MessageBox.Show(message);
+            //string message = chosenThema;
+            //MessageBox.Show(message);
 
             this.Hide();
-            speelveld.Show();
+            grootte.Show();
             this.Close();
         }
 
-        private void Textbox1_speler1_TextChanged(object sender, TextChangedEventArgs e)
+        public void Textbox1_speler1_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
