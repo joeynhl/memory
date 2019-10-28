@@ -41,10 +41,18 @@ namespace Startscherm
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Speler1_naam.Text = "Speler : " + naam1;
-            Speler2_naam.Text = "Speler : " + naam2;
-            speler1Score.Text = score1;
-            speler2Score.Text = score2;
+            
+            speelveld speelveld = new speelveld();
+
+
+                Speler1_naam.Text =  naam1;
+                Speler2_naam.Text = naam2;
+                speler1Score.Text = score1;
+                speler2Score.Text = score2;
+
+            
+
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -103,6 +111,9 @@ namespace Startscherm
             speelveld speelveld = new speelveld();
             speelveld.naam1 = naam1;
             speelveld.naam2 = naam2;
+
+            speelveld.Speler1_naam.Text = naam1;
+            speelveld.Speler2_naam.Text = naam2;
 
             this.Hide();
             speelveld.Show();
