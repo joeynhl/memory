@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace Startscherm
 {
@@ -27,7 +29,7 @@ namespace Startscherm
 
 
 
-        public List<string> FileList = new List<string>();
+        private List<string> FileList = new List<string>();
 
         private void btnOpenFiles_Click(object sender, RoutedEventArgs e)
         {
@@ -41,24 +43,34 @@ namespace Startscherm
                 {
                     themeImages.Items.Add(filename);
                     FileList.Add(filename);
-                    
+
                 }
             }
         }
         private void ImagesToFolder(object sender, RoutedEventArgs e)
         {
-            string targetPath = "../../themas/test";
-            
-            foreach(string file in FileList)
+            string ThemeDirectoryName = "../../themas/";
+
+            string targetPath = ThemeDirectoryName + themaNaam.Text;
+
+            if (Directory.Exists(targetPath))
             {
-                System.IO.File.Copy(file, System.IO.Path.Combine(targetPath, System.IO.Path.GetFileName(file)));
-
+                MessageBox.Show("Dit thema bestaat al kies een andere naam");
             }
-            this.Hide();
-            speelveld speelveld = new speelveld();
-            speelveld.Show();
-            this.Close();
+            else
+            {
+                Directory.CreateDirectory(targetPath);
 
+                foreach (string file in FileList)
+                {
+                    File.Copy(file, Path.Combine(targetPath, Path.GetFileName(file)));
+
+                }
+                this.Hide();
+                var newWindow = new thema();
+                newWindow.Show();
+                this.Close();
+            }
         }
 
 

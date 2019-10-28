@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,8 @@ namespace Startscherm
     {
         MediaPlayer Sound = new MediaPlayer();
 
+      
+
         public MainWindow()
         {
             InitializeComponent();
@@ -46,18 +49,42 @@ namespace Startscherm
 
         private void hervatten(object sender, RoutedEventArgs e)
         {
-            //var newWindow = new SaveFile();
+           
             speelveld speelveld = new speelveld();
+            Ingame_menu Ingame_menu = new Ingame_menu();
+
+          
+
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
             {
-                //txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
+
+                
+
+                string pathname = openFileDialog.FileName;
+                List<string> lines = File.ReadAllLines(pathname).ToList();
+
+                
+
+                    foreach (var line in lines)
+                {
+                    string[] entries = line.Split(',');
+
+                    speelveld.Speler1_naam.Text = entries[0];
+                    speelveld.speler1Score.Text = entries[1];
+                    speelveld.Speler2_naam.Text = entries[2];
+                    speelveld.speler2Score.Text = entries[3];
+                 
+                }
+
+               
+
+
                 this.Close();
                 speelveld.Show();
             }
-            //newWindow.Show();
-         
+          
 
 
 
