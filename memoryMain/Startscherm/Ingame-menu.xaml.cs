@@ -127,7 +127,15 @@ namespace Startscherm
 
         private void Hervatten(object sender, RoutedEventArgs e)
         {
+            speelveld speelveld = new speelveld();
+           
+            speelveld.Speler1_naam.Text = naam1;
+            speelveld.Speler2_naam.Text = naam2;
+            speelveld.speler1Score.Text = score1;
+            speelveld.speler2Score.Text = score2;
+
             this.Hide();
+            speelveld.Show();
             this.Close();
         }
     }
