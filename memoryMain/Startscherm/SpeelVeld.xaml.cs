@@ -325,8 +325,8 @@ namespace Startscherm
 
         private void Menu(object sender, RoutedEventArgs e)
         {
-            //Speler1_naam.Text = "Speler : " + naam1;
-            //Speler2_naam.Text = "Speler : " + naam2;
+            string naam1 = Speler1_naam.Text; 
+            string naam2 = Speler2_naam.Text; 
 
             string score1 = speler1Score.Text;
             string score2 = speler2Score.Text;
@@ -337,6 +337,7 @@ namespace Startscherm
 
             Ingame_menu.score1 = score1;
             Ingame_menu.score2 = score2;
+
 
             this.Hide();
             Ingame_menu.Show();
