@@ -112,6 +112,9 @@ namespace Startscherm
             speelveld.naam1 = naam1;
             speelveld.naam2 = naam2;
 
+            speelveld.Speler1_naam.Text = naam1;
+            speelveld.Speler2_naam.Text = naam2;
+
             this.Hide();
             speelveld.Show();
             this.Close();
