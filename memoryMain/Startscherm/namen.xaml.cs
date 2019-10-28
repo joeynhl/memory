@@ -35,8 +35,14 @@ namespace Startscherm
 
         public void setNames()
         {
+
+            speelveld speelveld = new speelveld();
+
             speler1Naam.Text = naam1;
             speler2Naam.Text = naam2;
+            speelveld.Speler1_naam.Text = "Speler : " + naam1;
+            speelveld.Speler2_naam.Text = "Speler : " + naam2;
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
