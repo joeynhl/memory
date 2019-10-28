@@ -50,6 +50,7 @@ namespace Startscherm
         {
             //var newWindow = new SaveFile();
             speelveld speelveld = new speelveld();
+            Ingame_menu Ingame_menu = new Ingame_menu();
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
@@ -68,14 +69,18 @@ namespace Startscherm
                     speelveld.speler1Score.Text = entries[1];
                     speelveld.Speler2_naam.Text = entries[2];
                     speelveld.speler2Score.Text = entries[3];
+                    Ingame_menu.Speler1_naam.Text = entries[0];
+                    Ingame_menu.Speler2_naam.Text = entries[2];
                 }
 
-                //txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
+                 
+              
+
+             
                 this.Close();
                 speelveld.Show();
             }
-            //newWindow.Show();
-         
+          
 
 
 

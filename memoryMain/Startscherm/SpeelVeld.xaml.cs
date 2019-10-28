@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using Path = System.IO.Path;
 using save;
-using System.IO;
+
 
 namespace Startscherm
 {
@@ -325,6 +325,9 @@ namespace Startscherm
 
         private void Menu(object sender, RoutedEventArgs e)
         {
+            //Speler1_naam.Text = "Speler : " + naam1;
+            //Speler2_naam.Text = "Speler : " + naam2;
+
             string score1 = speler1Score.Text;
             string score2 = speler2Score.Text;
 

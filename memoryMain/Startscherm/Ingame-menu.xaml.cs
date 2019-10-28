@@ -41,6 +41,9 @@ namespace Startscherm
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            
+
+
             Speler1_naam.Text = "Speler : " + naam1;
             Speler2_naam.Text = "Speler : " + naam2;
             speler1Score.Text = score1;
