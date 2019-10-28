@@ -17,7 +17,7 @@ using System.Windows.Threading;
 namespace Timer2
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interactie logica for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -26,15 +26,19 @@ namespace Timer2
             InitializeComponent();
         }
 
-        public void OnLoad(object sender, RoutedEventArgs e)
-        {
-            dt.Tick += dtTicker;
-        }
-
+        /// <summary>
+        /// Maakt een timer aan en de variabelen voor minuten en seconden
+        /// </summary>
         DispatcherTimer dt = new DispatcherTimer();
-        private int minutes = 5;
+        private int minutes = 0;
         private int seconds = 0;
 
+        /// <summary>
+        /// Zorgt voor de kloklogica en het correct weergeven van de tijd. Het programma
+        /// loopt elke seconde door deze code.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dtTicker(object sender, EventArgs e)
         {
             if (minutes < 0)
@@ -74,9 +78,16 @@ namespace Timer2
                 //TimerLabel.Content = "TIME UP";
                 System.Environment.Exit(1);
             }
-            //https://www.youtube.com/watch?v=QkT8fgoFz3g
 
         }
+
+        /// <summary>
+        /// Zorgt ervoor dat de klok start of verder gaat nadat er op de startknop is geklikt.
+        /// Zorgt er ook voor dat de stopknop wordt weergegeven ipv de startknop.
+        /// Zorgt er ook nog voor dat het tijd-instelmenu verdwijnd.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GoClick(object sender, EventArgs e)
         {
             if (seconds < 10 & seconds > -1)
@@ -104,6 +115,13 @@ namespace Timer2
             SecondsBox.Height = 0;
             SecondsBox.Width = 0;
         }
+
+        /// <summary>
+        /// Zorgt ervoor dat de timer stopt wanneer er op de stopknop geklikt wordt.
+        /// Zorgt er ook voor dat de startknop weer verschijnt en de stopknop verdwijnt.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Stopclick(object sender, EventArgs e)
         {
             dt.Tick -= dtTicker;
@@ -114,32 +132,60 @@ namespace Timer2
             StopButton.Width = 0;
         }
 
+        /// <summary>
+        /// Dit zorgt ervoor dat de ingevoerde minuten worden ingevoerd in de timer.
+        /// Hert controleert ook of de input van de gebruiker wel juist is.
+        /// Voor verschillende soorten verkeerde inputs doet het programma iets anders.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Minutes_Changed(object sender, TextChangedEventArgs e)
         {
-            //MinutesBox.Text = minutes.ToString();
             if (MinutesBox.Text == "")
             {
-                MinutesBox.Text =  0.ToString();
+                MinutesBox.Text = 0.ToString();
                 MinutesBox.SelectionStart = MinutesBox.Text.Length;
                 MinutesBox.SelectionLength = 0;
             }
             else if (MinutesBox.Text != "0")
             {
-                minutes = Convert.ToInt32(MinutesBox.Text);
+
+                try
+                {
+                    minutes = Convert.ToInt32(MinutesBox.Text);
+                }
+                catch (System.FormatException)
+                {
+                    minutes = 0;
+                }
+                catch (System.OverflowException)
+                {
+                    minutes = 2147483647;
+                }
+
                 MinutesBox.Text = minutes.ToString();
                 MinutesBox.SelectionStart = MinutesBox.Text.Length;
                 MinutesBox.SelectionLength = 0;
+
             }
-            else {
+            else
+            {
                 minutes = Convert.ToInt32(MinutesBox.Text);
                 MinutesBox.SelectionStart = MinutesBox.Text.Length;
                 MinutesBox.SelectionLength = 0;
             }
         }
 
+        /// <summary>
+        /// Dit zorgt ervoor dat de ingevoerde seconden worden ingevoerd in de timer.
+        /// Hert controleert ook of de input van de gebruiker wel juist is.
+        /// Voor verschillende soorten verkeerde inputs doet het programma iets anders.
+        /// Bij teveel ingevoerde seconden zet die het aantal seconden om in extra minuten.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Seconds_Changed(object sender, TextChangedEventArgs e)
         {
-            //SecondsBox.Text = seconds.ToString();
             if (SecondsBox.Text == "")
             {
                 SecondsBox.Text = 0.ToString();
@@ -151,7 +197,19 @@ namespace Timer2
             {
                 SecondsBox.SelectionStart = SecondsBox.Text.Length;
                 SecondsBox.SelectionLength = 0;
-                seconds = Convert.ToInt32(SecondsBox.Text);
+
+                try
+                {
+                    seconds = Convert.ToInt32(SecondsBox.Text);
+                }
+                catch (System.FormatException)
+                {
+                    seconds = 0;
+                }
+                catch (System.OverflowException)
+                {
+                    seconds = 59;
+                }
                 if (seconds > 59)
                 {
                     int extraminutes = 0;
@@ -166,10 +224,11 @@ namespace Timer2
                     SecondsBox.SelectionLength = 0;
 
                 }
-                else {
-                SecondsBox.Text = seconds.ToString();
-                SecondsBox.SelectionStart = SecondsBox.Text.Length;
-                SecondsBox.SelectionLength = 0;
+                else
+                {
+                    SecondsBox.Text = seconds.ToString();
+                    SecondsBox.SelectionStart = SecondsBox.Text.Length;
+                    SecondsBox.SelectionLength = 0;
                 }
 
             }
@@ -177,9 +236,6 @@ namespace Timer2
             {
                 seconds = Convert.ToInt32(SecondsBox.Text);
             }
-            
-                //seconds = 59;
-                //SecondsBox.Text = seconds.ToString();
         }
     }
 }
