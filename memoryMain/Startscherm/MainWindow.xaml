@@ -8,40 +8,31 @@
         Title="MainWindow"
         WindowState="Maximized"
         ResizeMode="NoResize"
-        WindowStyle="None" Height="661.6" Width="980.8">
+        WindowStyle="None" 
+        >
+    
 
-    <Grid Margin="0,0,-0.2,-0.4" Background="#3ada9a" Width="auto" Height="auto">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="190*"/>
-            <ColumnDefinition Width="601*"/>
-            <ColumnDefinition Width="190*"/>
-        </Grid.ColumnDefinitions>
+    <Grid Background="#3ada9a">
         <Grid.RowDefinitions>
-            <RowDefinition Height="310.4"/>
-            <RowDefinition Height="351.2"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-<<<<<<< HEAD
 
-        <Image Source="memory-logo.png" Stretch="Fill" Margin="9.6,37,30.2,36.4" Grid.Column="1"/>
-        <Slider x:Name="slider" ValueChanged="slider_ValueChanged" Maximum="1" Value="0.5" Margin="343.6,0,9.2,278.4" Grid.Column="1"/>
-
-        <GroupBox Header="" HorizontalAlignment="Left" Height="265" Margin="175.6,4.6,0,0" VerticalAlignment="Top" Width="214" Grid.Column="1" Grid.Row="1">
-=======
-        <Canvas Margin="0,0,0,2274" Grid.RowSpan="2">
-            <Image Source="memory-logo.png" Stretch="Fill" Canvas.Left="297" Canvas.Top="9"/>
+        <Image Source="memory-logo.png"  Grid.Row="0" HorizontalAlignment="Center" />
+        <Canvas Grid.Row="0" HorizontalAlignment="Center">
             <Slider x:Name="slider" Canvas.Left="745" Width="91" ValueChanged="slider_ValueChanged" Maximum="1" Value="0.5" />
         </Canvas>
             
-        <GroupBox Header="" HorizontalAlignment="Left" Height="265" Margin="502,58,0,0" Grid.Row="4" VerticalAlignment="Top" Width="214">
->>>>>>> 64e6977a5711f98af82aafb1ab08da6d67a35a29
-            <StackPanel VerticalAlignment="Bottom" Margin="33,0,32,21">
+        <!--<GroupBox HorizontalAlignment="Left" Height="265" Margin="502,58,0,0" Grid.Row="4" VerticalAlignment="Top" Width="214">-->
+
+            <StackPanel HorizontalAlignment="Center" Grid.Row="1">
                 <Button Foreground="White" Background="#666666" Content="Start spel" Width="137" Height="42" Click="startBtn"/>
                 <Button Foreground="White" Background="#666666" Content="Hervatten"  Width="137" Height="42" Click="hervatten"/>
                 <Button Foreground="White" Background="#666666" Content="Highscores" Width="137" Height="42" Click="Highscores_Click"/>
                 <Button Foreground="White" Background="#666666" Content="Opties" Width="137" Height="42" Click="Button_Click"/>
                 <Button Foreground="White" Background="#666666" Content="Afsluiten" Width="137" Height="42" Click="btnExit"/>
             </StackPanel>
-        </GroupBox>
+        <!--</GroupBox>-->
         <Button Content="Play" Click="playMuziek_Click" Margin="456.6,0,1.2,278.4" Grid.Column="1"/>
         <Button Content="Stop" Click="stopMuziek_Click" Margin="67.8,0,118.8,278.4" Grid.Column="2"/>
     </Grid>
