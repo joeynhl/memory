@@ -43,5 +43,6 @@
         <TextBox x:Name="Textbox1_speler1" Grid.Column="6" HorizontalAlignment="Left" Height="42" Margin="8.6,7.8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="431" FontSize="28" TextChanged="Textbox1_speler1_TextChanged" Grid.Row="4" Grid.ColumnSpan="3"/>
         <TextBox x:Name="Textbox2_speler2" Grid.Column="6" HorizontalAlignment="Left" Height="40" Margin="8.6,2.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" FontSize="28" RenderTransformOrigin="0.439,-0.4" TextChanged="Textbox2_speler2_TextChanged" Grid.Row="8" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
         <Image Source="memory-logo.png" Stretch="Fill" Grid.ColumnSpan="5" Grid.Column="5" Margin="5.8,86,4.045,4.4" Grid.RowSpan="3"/>
+        <Image Grid.ColumnSpan="3" Grid.Column="6" HorizontalAlignment="Left" Height="100" Margin="10,205,0,0" Grid.Row="1" Grid.RowSpan="3" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>

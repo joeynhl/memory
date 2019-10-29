@@ -324,6 +324,7 @@ namespace Startscherm
                             clickamount = 0; // set amount clicks to 0;
 
 
+
                         }
                         else
                         { // if the images are not equal
@@ -345,6 +346,41 @@ namespace Startscherm
                                 player = 1;
                                 Beurt.Text = naam1 + " is aan de beurt!";
                             }
+                        }
+
+                        if (PlayerOneScore+PlayerTwoScore == 3)
+                        {
+                            if (PlayerOneScore > PlayerTwoScore)
+                            {
+                                //MessageBox.Show("Player 1 is winaar");
+
+                                winaarscherm winaarscherm = new winaarscherm();
+                                winaarscherm.naam1 = naam1;
+                                winaarscherm.naam1 = Speler1_naam.Text;
+
+                                this.Hide();
+                                winaarscherm.Show();
+                                this.Close();
+                            } 
+                            if (PlayerTwoScore > PlayerOneScore)
+                            {
+                                //MessageBox.Show("Player 2 is winaar");
+
+                                winaarscherm winaarscherm = new winaarscherm();
+                                winaarscherm.naam2 = naam2;
+                                winaarscherm.naam2 = Speler1_naam.Text;
+
+                                this.Hide();
+                                winaarscherm.Show();
+                                this.Close();
+
+                            }
+
+
+
+
+
+                          
                         }
                     }
                 }

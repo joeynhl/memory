@@ -19,9 +19,33 @@ namespace Startscherm
     /// </summary>
     public partial class winaarscherm : Window
     {
+        public string naam1 { get; internal set; }
+        public string naam2 { get; internal set; }
+
+
+       
+
         public winaarscherm()
         {
             InitializeComponent();
+            
+        }
+
+        public void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //MessageBox.Show(naam1);
+            //MessageBox.Show(naam2);
+            speler1.Text = naam1;
+            speler1.Text = naam2;
+        }
+
+        private void speler1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+        private void speler2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
