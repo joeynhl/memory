@@ -56,9 +56,6 @@ namespace Startscherm
             }
         }
 
-
-
-
         private void chooseTheme(object sender, RoutedEventArgs e)
         {
             Button theme = sender as Button;
@@ -68,7 +65,7 @@ namespace Startscherm
              speelveld.ThemeName = Convert.ToString(theme.DataContext);*/
 
 
-            speelveld spelen = new speelveld();
+            spelen spelen = new spelen();
 
             spelen.ThemeName = Convert.ToString(theme.DataContext); 
             this.Hide();
@@ -90,7 +87,8 @@ namespace Startscherm
                 //string message = chosenThema;
                 //MessageBox.Show(message);
 
-                speelveld spelen = new speelveld();
+                spelen spelen = new spelen();
+
                 this.Hide();
                 spelen.Show();
                 this.Close();

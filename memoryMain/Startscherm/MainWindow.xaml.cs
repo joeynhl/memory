@@ -30,7 +30,6 @@ namespace Startscherm
         public MainWindow()
         {
             InitializeComponent();
-
             InitialiseerMuziek();
         }
 
@@ -42,8 +41,8 @@ namespace Startscherm
         private void startBtn(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            spelen naamspelers = new spelen();
-            naamspelers.Show();
+            Speelveld_grootte grote = new Speelveld_grootte();
+            grote.Show();
             this.Close();
         }
 
@@ -52,9 +51,6 @@ namespace Startscherm
            
             speelveld speelveld = new speelveld();
             Ingame_menu Ingame_menu = new Ingame_menu();
-
-          
-
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
