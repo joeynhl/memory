@@ -32,8 +32,8 @@ namespace Startscherm
         public string score1 { get; internal set; }
         public string score2 { get; internal set; }
         DispatcherTimer dt = new DispatcherTimer();
-        public int minutes = 0;
-        public int seconds = 10;
+        public int minutes = 5;
+        public int seconds = 0;
 
 
         public string ThemeName { get; set; }
@@ -50,8 +50,8 @@ namespace Startscherm
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            //Speler1_naam.Text = "Speler : " + naam1;
-            //Speler2_naam.Text = "Speler : " + naam2;
+            Speler1_naam.Text = "Speler : " + naam1;
+            Speler2_naam.Text = "Speler : " + naam2;
 
             if (seconds < 10 & seconds > -1)
             {
