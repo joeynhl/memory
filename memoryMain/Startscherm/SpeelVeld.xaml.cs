@@ -343,11 +343,6 @@ namespace Startscherm
             Ingame_menu.score1 = score1;
             Ingame_menu.score2 = score2;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> ce83bc4e9de5640dc40b5ed6becff88ba7d8ba72
-
             this.Hide();
 
             Ingame_menu.Show();

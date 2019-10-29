@@ -38,6 +38,15 @@ namespace Startscherm
 
 
             speelveld speelveld = new speelveld();
+
+            Speelveld_grootte grootte = new Speelveld_grootte();
+
+            speelveld.naam1 = naam1;
+            speelveld.naam2 = naam2;
+
+            //string message = chosenThema;
+            //MessageBox.Show(message);
+
             speelveld.ThemeName = ThemeName;
             speelveld.naam1 = naam1;
             speelveld.naam2 = naam2;
@@ -46,12 +55,13 @@ namespace Startscherm
             speelveld.Speler2_naam.Text = "Speler : " + naam2;
 
 
+
             this.Hide();
-            speelveld.Show();
+            grootte.Show();
             this.Close();
         }
 
-        private void Textbox1_speler1_TextChanged(object sender, TextChangedEventArgs e)
+        public void Textbox1_speler1_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

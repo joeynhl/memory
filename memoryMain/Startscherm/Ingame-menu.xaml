@@ -38,7 +38,7 @@
             <ColumnDefinition Width="589*"/>
         </Grid.ColumnDefinitions>
         <StackPanel VerticalAlignment = "Center" Margin = "10,57,10,37" Grid.ColumnSpan="6" Height="0" Grid.Row="10" />
-        <Button Content="Afsluiten" HorizontalAlignment="Left" Margin="5,4,0,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Button_Click" Grid.Column="3" Grid.Row="15" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Button Content="Afsluiten" HorizontalAlignment="Left" Margin="5,4,0,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Afsluiten" Grid.Column="3" Grid.Row="15" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
         <Button Content="Hervatten" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Grid.Column="3" Grid.Row="6" Grid.RowSpan="2" Grid.ColumnSpan="2" Click="Hervatten"/>
         <Slider Maximum = "100" Margin="0,11,57,11" RenderTransformOrigin="0.679,1.029" ValueChanged="Slider_ValueChanged_1" Grid.Row="10" Grid.Column="3" Grid.ColumnSpan="2" />
         <Label Content="Pauze&#xA;" HorizontalAlignment="Left" Margin="35,4,0,0" VerticalAlignment="Top" Width="236" FontSize="72" Foreground="White" FontWeight="Bold" Height="126" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" />
