@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Startscherm
 {
@@ -32,7 +33,27 @@ namespace Startscherm
         {
             InitializeComponent();
             DataContext = scores;
+            ReadFile();
 
+        }
+
+        private void ReadFile()
+        {
+                try
+                {
+                    string path = @"C:\Users\KHD\Desktop\highscores.txt";
+                    List<string> lines = File.ReadAllLines(path).ToList();
+                    foreach (var line in lines)
+                    {
+                        string[] entries = line.Split(',');
+                        scores.Add(new Score { Naam1 = entries[0], Naam2 = entries[1], Resultaat = Int32.Parse(entries[2]) });
+
+                    }
+            }
+                catch (Exception e)
+                {
+                return;
+                }
         }
 
         private void AddItemClick(object sender, RoutedEventArgs e)
