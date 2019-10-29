@@ -15,6 +15,7 @@ using Microsoft.Win32;
 using Path = System.IO.Path;
 using save;
 using System.IO;
+using System.Windows.Threading;
 
 namespace Startscherm
 {
@@ -23,12 +24,15 @@ namespace Startscherm
     /// </summary>
     public partial class Ingame_menu : Window
     {
+        speelveld speelveld = new speelveld();
         public string naam1 { get; internal set; }
         public string naam2 { get; internal set; }
 
         public string score1 { get; internal set; }
         public string score2 { get; internal set; }
-
+        public int minutes { get; internal set;  }
+        public int seconds { get; internal set; }
+        public DispatcherTimer dt { get; internal set; }
 
         public Ingame_menu()
         {
@@ -50,9 +54,44 @@ namespace Startscherm
                 speler1Score.Text = score1;
                 speler2Score.Text = score2;
 
-            
+            if (minutes < 0)
+            {
+                seconds = 0;
+                minutes = 0;
+            }
+            else
+            {
+                TimerLabel.Content = minutes.ToString() + ":" + seconds.ToString();
+                seconds--;
+                if (seconds < 0)
+                {
+                    seconds = 59;
+                    minutes--;
+                }
+                if (minutes < 0)
+                {
+                    seconds = 0;
+                    minutes = 0;
+                }
+                else
+                {
+                    if (seconds < 10 & seconds > -1)
+                    {
+                        TimerLabel.Content = minutes.ToString() + ":0" + seconds.ToString();
+                    }
+                    else
+                    {
+                        TimerLabel.Content = minutes.ToString() + ":" + seconds.ToString();
+                    }
+                }
+            }
+            if (minutes == 0 & seconds == 0)
+            {
+                //TimerLabel.Content = "TIME UP";
+                System.Environment.Exit(1);
+            }
 
-            
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -125,18 +164,78 @@ namespace Startscherm
 
         }
 
+        /// <summary>
+        /// Zorgt voor de kloklogica en het correct weergeven van de tijd. Het programma
+        /// loopt elke seconde door deze code.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dtTicker(object sender, EventArgs e)
+        {
+            if (minutes < 0)
+            {
+                seconds = 0;
+                minutes = 0;
+            }
+            else
+            {
+                TimerLabel.Content = minutes.ToString() + ":" + seconds.ToString();
+                seconds--;
+                if (seconds < 0)
+                {
+                    seconds = 59;
+                    minutes--;
+                }
+                if (minutes < 0)
+                {
+                    seconds = 0;
+                    minutes = 0;
+                }
+                else
+                {
+                    if (seconds < 10 & seconds > -1)
+                    {
+                        TimerLabel.Content = minutes.ToString() + ":0" + seconds.ToString();
+                    }
+                    else
+                    {
+                        TimerLabel.Content = minutes.ToString() + ":" + seconds.ToString();
+                    }
+                }
+            }
+            if (minutes == 0 & seconds == 0)
+            {
+                //TimerLabel.Content = "TIME UP";
+                System.Environment.Exit(1);
+            }
+        }
+
         private void Hervatten(object sender, RoutedEventArgs e)
         {
-            speelveld speelveld = new speelveld();
+ 
            
             speelveld.Speler1_naam.Text = naam1;
             speelveld.Speler2_naam.Text = naam2;
             speelveld.speler1Score.Text = score1;
             speelveld.speler2Score.Text = score2;
+            speelveld.minutes = minutes;
+            speelveld.seconds = seconds;
 
             this.Hide();
             speelveld.Show();
-            this.Close();
+
+            if (seconds < 10 & seconds > -1)
+            {
+                TimerLabel.Content = minutes.ToString() + ":0" + seconds.ToString();
+            }
+            else
+            {
+                TimerLabel.Content = minutes.ToString() + ":" + seconds.ToString();
+            }
+            dt.Interval = TimeSpan.FromSeconds(1);
+            dt.Tick += dtTicker;
+            dt.Start();
+
         }
     }
 }

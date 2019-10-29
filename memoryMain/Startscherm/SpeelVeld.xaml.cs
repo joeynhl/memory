@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using Path = System.IO.Path;
 using save;
-
+using System.Windows.Threading;
 
 namespace Startscherm
 {
@@ -31,6 +31,9 @@ namespace Startscherm
 
         public string score1 { get; internal set; }
         public string score2 { get; internal set; }
+        DispatcherTimer dt = new DispatcherTimer();
+        public int minutes = 0;
+        public int seconds = 10;
 
 
         public string ThemeName { get; set; }
@@ -44,12 +47,23 @@ namespace Startscherm
 
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        public void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
 
             //Speler1_naam.Text = "Speler : " + naam1;
             //Speler2_naam.Text = "Speler : " + naam2;
+
+            if (seconds < 10 & seconds > -1)
+            {
+                TimerLabel.Content = minutes.ToString() + ":0" + seconds.ToString();
+            }
+            else
+            {
+                TimerLabel.Content = minutes.ToString() + ":" + seconds.ToString();
+            }
+            dt.Interval = TimeSpan.FromSeconds(1);
+            dt.Tick += dtTicker;
+            dt.Start();
 
         }
 
@@ -328,7 +342,58 @@ namespace Startscherm
             }
         }
 
-        private void Menu(object sender, RoutedEventArgs e)
+
+       
+
+        /// <summary>
+        /// Zorgt voor de kloklogica en het correct weergeven van de tijd. Het programma
+        /// loopt elke seconde door deze code.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dtTicker(object sender, EventArgs e)
+        {
+            if (minutes < 0)
+            {
+                seconds = 0;
+                minutes = 0;
+            }
+            else
+            {
+                TimerLabel.Content = minutes.ToString() + ":" + seconds.ToString();
+                seconds--;
+                if (seconds < 0)
+                {
+                    seconds = 59;
+                    minutes--;
+                }
+                if (minutes < 0)
+                {
+                    seconds = 0;
+                    minutes = 0;
+                }
+                else
+                {
+                    if (seconds < 10 & seconds > -1)
+                    {
+                        TimerLabel.Content = minutes.ToString() + ":0" + seconds.ToString();
+                    }
+                    else
+                    {
+                        TimerLabel.Content = minutes.ToString() + ":" + seconds.ToString();
+                    }
+                }
+            }
+            if (minutes == 0 & seconds == 0)
+            {
+                //TimerLabel.Content = "TIME UP";
+                System.Environment.Exit(1);
+            }
+        }
+
+
+
+        public void Menu(object sender, RoutedEventArgs e)
         {
             string naam1 = Speler1_naam.Text; 
             string naam2 = Speler2_naam.Text; 
@@ -343,15 +408,16 @@ namespace Startscherm
             Ingame_menu.score1 = score1;
             Ingame_menu.score2 = score2;
 
-<<<<<<< HEAD
-=======
+            Ingame_menu.minutes = minutes;
+            Ingame_menu.seconds = seconds;
+            Ingame_menu.dt = dt;
 
->>>>>>> ce83bc4e9de5640dc40b5ed6becff88ba7d8ba72
+            dt.Stop();
 
             this.Hide();
-
             Ingame_menu.Show();
-            
+            this.Close();
+
         }
     }
 }
