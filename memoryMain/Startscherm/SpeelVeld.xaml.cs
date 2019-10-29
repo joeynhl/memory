@@ -137,7 +137,7 @@ namespace Startscherm
 
             int count = 0; // count how many itterations
 
-
+            cardgrid.Background = new ImageBrush(new BitmapImage(new Uri(FileList[0], UriKind.Relative))); // set the Grid background
             //loop trough 2d array and set values
             for (int i = 0; i < cards.GetLength(0); i++) 
             {
@@ -218,9 +218,9 @@ namespace Startscherm
                     Rectangle Card = new Rectangle(); // create new card
 
                     Card.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); //set imagebrush 
-
+/*
                     Card.HorizontalAlignment = HorizontalAlignment.Stretch;
-                    Card.VerticalAlignment = VerticalAlignment.Stretch;
+                    Card.VerticalAlignment = VerticalAlignment.Stretch;*/
                     Card.Margin = new Thickness(10);
 
                     Card.SetValue(Grid.RowProperty, row);// set row property
