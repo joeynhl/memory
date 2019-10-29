@@ -50,8 +50,7 @@ namespace Startscherm
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            Speler1_naam.Text = "Speler : " + naam1;
-            Speler2_naam.Text = "Speler : " + naam2;
+        
 
             if (seconds < 10 & seconds > -1)
             {
