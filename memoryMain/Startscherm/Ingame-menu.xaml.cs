@@ -62,7 +62,6 @@ namespace Startscherm
             else
             {
                 TimerLabel.Content = minutes.ToString() + ":" + seconds.ToString();
-                seconds--;
                 if (seconds < 0)
                 {
                     seconds = 59;

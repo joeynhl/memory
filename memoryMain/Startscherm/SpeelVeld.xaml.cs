@@ -414,10 +414,8 @@ namespace Startscherm
 
             dt.Stop();
 
-
             this.Hide();
             Ingame_menu.Show();
-            this.Close();
 
         }
     }
