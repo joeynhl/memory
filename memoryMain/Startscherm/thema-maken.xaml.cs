@@ -27,47 +27,69 @@ namespace Startscherm
             InitializeComponent();
         }
 
+        /// <summary>
+        /// list for all files ( images )
+        /// </summary>
         private List<string> FileList = new List<string>();
 
+        /// <summary>
+        /// open a file dialog so you can select images for the theme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOpenFiles_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Multiselect = true;
-            openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            if (openFileDialog.ShowDialog() == true)
+            OpenFileDialog openFileDialog = new OpenFileDialog(); // new file dialog
+            openFileDialog.Multiselect = true; // you can select multiple files ( images )
+            openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*"; // you can select files with this file extensions
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); // open the file dialog in my documents
+            if (openFileDialog.ShowDialog() == true) // if file dialog is open
             {
                 foreach (string filename in openFileDialog.FileNames)
                 {
-                    themeImages.Items.Add(filename);
-                    FileList.Add(filename);
+                    themeImages.Items.Add(filename); // add file to dockpanel 
+                    FileList.Add(filename); // add file to file list
 
                 }
             }
         }
+        /// <summary>
+        /// If the button is clicked create a directory 
+        /// put the files in the directory
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ImagesToFolder(object sender, RoutedEventArgs e)
         {
-            string ThemeDirectoryName = "../../themas/";
-
-            string targetPath = ThemeDirectoryName + themaNaam.Text;
-
-            if (Directory.Exists(targetPath))
+            if (FileList.Count < 9) // if you need more images
             {
-                MessageBox.Show("Dit thema bestaat al kies een andere naam");
+                MessageBox.Show("Voeg meer afbeeldingen toe"); // show error
+            }
+            else 
+            {
+                string ThemeDirectoryName = "../../themas/"; // directory with all themes
+
+            string targetPath = ThemeDirectoryName + themaNaam.Text; // directory for this theme
+
+            if (Directory.Exists(targetPath)) // if directory name already exist 
+            {
+                MessageBox.Show("Dit thema bestaat al kies een andere naam"); // show error 
             }
             else
             {
-                Directory.CreateDirectory(targetPath);
+                Directory.CreateDirectory(targetPath); // create the directory ( theme )
 
-                foreach (string file in FileList)
+                foreach (string file in FileList) // foreach image 
                 {
-                    File.Copy(file, Path.Combine(targetPath, Path.GetFileName(file)));
 
+                    File.Copy(file, Path.Combine(targetPath, Path.GetFileName(file))); // copy the images to theme directory
                 }
-                this.Hide();
-                var newWindow = new thema();
-                newWindow.Show();
-                this.Close();
+                
+                    this.Hide();
+                    var newWindow = new thema();
+                    newWindow.Show();
+                    this.Close();
+                }
             }
         }
 
