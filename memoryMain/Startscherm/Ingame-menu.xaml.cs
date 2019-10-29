@@ -94,11 +94,6 @@ namespace Startscherm
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         private void Speler1_naam_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -236,6 +231,14 @@ namespace Startscherm
             dt.Tick += dtTicker;
             dt.Start();
 
+            this.Hide();
+            this.Close();
+
+        }
+
+        private void Afsluiten(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(1);
         }
     }
 }

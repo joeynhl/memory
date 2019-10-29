@@ -66,9 +66,9 @@ namespace Startscherm
             /* speelveld speelveld = new speelveld();
 
              speelveld.ThemeName = Convert.ToString(theme.DataContext);*/
-            
 
-            spelen spelen = new spelen();
+
+            speelveld spelen = new speelveld();
 
             spelen.ThemeName = Convert.ToString(theme.DataContext); 
             this.Hide();
@@ -90,7 +90,7 @@ namespace Startscherm
                 //string message = chosenThema;
                 //MessageBox.Show(message);
 
-                spelen spelen = new spelen();
+                speelveld spelen = new speelveld();
                 this.Hide();
                 spelen.Show();
                 this.Close();
