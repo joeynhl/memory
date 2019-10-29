@@ -38,8 +38,10 @@
             <ColumnDefinition Width="589*"/>
         </Grid.ColumnDefinitions>
         <StackPanel VerticalAlignment = "Center" Margin = "10,57,10,37" Grid.ColumnSpan="6" Height="0" Grid.Row="10" />
+
         <Button Content="Afsluiten" HorizontalAlignment="Left" Margin="5,4,0,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Afsluiten" Grid.Column="3" Grid.Row="15" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-        <Button Content="Hervatten" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Grid.Column="3" Grid.Row="6" Grid.RowSpan="2" Grid.ColumnSpan="2" Click="Hervatten"/>
+        <Button Content="Hervatten" HorizontalAlignment="Left" Margin="5.667,9,0,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Grid.Column="3" Grid.Row="6" Grid.RowSpan="2" Grid.ColumnSpan="2" Click="Hervatten"/>
+
         <Slider Maximum = "100" Margin="0,11,57,11" RenderTransformOrigin="0.679,1.029" ValueChanged="Slider_ValueChanged_1" Grid.Row="10" Grid.Column="3" Grid.ColumnSpan="2" />
         <Label Content="Pauze&#xA;" HorizontalAlignment="Left" Margin="35,4,0,0" VerticalAlignment="Top" Width="236" FontSize="72" Foreground="White" FontWeight="Bold" Height="126" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" />
         <Label Content="Volume&#xA;" HorizontalAlignment="Left" Margin="63,51,0,0" VerticalAlignment="Top" Width="206" FontSize="30" Foreground="White" FontWeight="Bold" Height="68" Grid.Column="3" Grid.Row="7" Grid.RowSpan="3" Grid.ColumnSpan="2" />
@@ -48,7 +50,8 @@
             <TextBlock x:Name="Speler1_naam" Text="Speler 1:" Height="62" Width="333" Foreground="White" FontSize="36"/>
             <TextBlock Foreground="#fff" FontSize="50"><Run x:Name="speler1Score" Text="0"/></TextBlock>
             <TextBlock x:Name="Speler2_naam" Text="Speler 2:" Height="62" Width="347" Foreground="White" FontSize="36"/>
-            <TextBlock Foreground="#fff" FontSize="50" RenderTransformOrigin="2.815,0.701"><Run x:Name="speler2Score" Text="0"/></TextBlock>
+            <TextBlock FontSize="50" RenderTransformOrigin="2.815,0.701"><Run x:Name="speler2Score" Text="0"/></TextBlock>
+            <Label x:Name="TimerLabel" Foreground="#fff" Content="Klik op play" FontFamily="Segoe UI" FontSize="50" VerticalContentAlignment="Center" Margin="40,0,0,0"/>
         </Menu>
         <Frame Content="" Background="#FF2C2626" HorizontalAlignment="Left" Height="100" Margin="-16,18,-998,-21" VerticalAlignment="Top" Width="2430" Grid.ColumnSpan="6" Grid.Row="16"/>
         <Button Content="Resetten" HorizontalAlignment="Left" Margin="6,6,0,0" VerticalAlignment="Top" Width="256" Height="79" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Grid.Column="3" Grid.Row="11" Grid.ColumnSpan="2" Click="Resetten"/>
