@@ -20,6 +20,7 @@ namespace Startscherm
     public partial class spelen : Window
     {
         public string ThemeName { get; internal set; }
+
         public spelen()
         {
             InitializeComponent();
@@ -30,18 +31,19 @@ namespace Startscherm
         {
             string naam1 = Textbox1_speler1.Text;
             string naam2 = Textbox2_speler2.Text;
+            string chosenTheme = ThemeName;
 
             speelveld speelveld = new speelveld();
+
+            speelveld.ChoosenTheme = chosenTheme;
 
             speelveld.naam1 = naam1;
             speelveld.naam2 = naam2;
 
             //string message = chosenThema;
-            string chosenTheme = ThemeName;
 
 
 
-            speelveld.ThemeName = chosenTheme;
 
             speelveld.Speler1_naam.Text = "Speler : " + naam1;
             speelveld.Speler2_naam.Text = "Speler : " + naam2;

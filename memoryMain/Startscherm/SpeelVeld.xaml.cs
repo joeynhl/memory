@@ -28,6 +28,11 @@ namespace Startscherm
 
         public string naam1 { get; internal set; }
         public string naam2 { get; internal set; }
+        public string ChoosenTheme { get; internal set; }
+
+
+
+
 
         public string score1 { get; internal set; }
         public string score2 { get; internal set; }
@@ -36,21 +41,19 @@ namespace Startscherm
         public int seconds = 0;
 
 
-        public string ThemeName { get; internal set; }
-
         public speelveld()
         {
             InitializeComponent();
+            
+
+        }
+
+        public void Window_Loaded(object sender, RoutedEventArgs e)
+        {
             CreateGrid();
             getCardImages();
             setField();
 
-        }
-        private string TestTheme;
-        public void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-            TestTheme = ThemeName;
             if (seconds < 10 & seconds > -1)
             {
                 TimerLabel.Content = minutes.ToString() + ":0" + seconds.ToString();
@@ -79,6 +82,7 @@ namespace Startscherm
         /// </summary>
         private void CreateGrid()
         {
+            
             for (int i = 0; i < NumRows; i++)
             {
                 cardgrid.RowDefinitions.Add(new RowDefinition());
@@ -95,17 +99,17 @@ namespace Startscherm
         /// The theme (directory path + directory)
         /// </summary>
         private static string theme;
-
         /// <summary>
         /// get directory path and set theme
         /// </summary>
-        private void SetTheme()
+        public void SetTheme()
         {
             string[] directories = Directory.GetDirectories("../../themas/");
 
+
             foreach (string directory in directories)
             {
-                if (Path.GetFileName(directory) == TestTheme)
+                if (Path.GetFileName(directory) == ChoosenTheme)
                 {
                     theme = directory;
                 }

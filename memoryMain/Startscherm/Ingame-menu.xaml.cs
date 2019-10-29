@@ -213,8 +213,6 @@ namespace Startscherm
             speelveld.minutes = minutes;
             speelveld.seconds = seconds;
 
-            this.Hide();
-            speelveld.Show();
 
             if (seconds < 10 & seconds > -1)
             {
@@ -229,6 +227,7 @@ namespace Startscherm
             dt.Start();
 
             this.Hide();
+            speelveld.Show();
             this.Close();
 
         }
