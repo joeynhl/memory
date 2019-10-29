@@ -312,13 +312,13 @@ namespace Startscherm
                             {
                                 PlayerOneScore++;//score for player1 +1
                                 speler1Score.Text = Convert.ToString(PlayerOneScore);// set score in game
-                                Beurt.Text = naam2 + " is aan de beurt!";
+                                Beurt.Text = naam1 + " is aan de beurt!";
                             }
                             else// if player 2 has equal cards
                             {
                                 PlayerTwoScore++; // score for player2 +1
                                 speler2Score.Text = Convert.ToString(PlayerTwoScore);// set score in game
-                                Beurt.Text = naam1 + " is aan de beurt!";
+                                Beurt.Text = naam2 + " is aan de beurt!";
                             }
 
                             clickamount = 0; // set amount clicks to 0;
