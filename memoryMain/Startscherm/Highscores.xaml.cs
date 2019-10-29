@@ -39,16 +39,20 @@ namespace Startscherm
 
         private void ReadFile()
         {
-
-            string path = @"C:\Users\KHD\Desktop\highscores.txt";
-          
-                List<string> lines = File.ReadAllLines(path).ToList();
-
-                foreach (var line in lines)
+                try
                 {
-                    string[] entries = line.Split(',');
-                scores.Add(new Score { Naam1 = entries[0], Naam2 = entries[1], Resultaat = Int32.Parse(entries[2]) });
-     
+                    string path = @"C:\Users\KHD\Desktop\highscores.txt";
+                    List<string> lines = File.ReadAllLines(path).ToList();
+                    foreach (var line in lines)
+                    {
+                        string[] entries = line.Split(',');
+                        scores.Add(new Score { Naam1 = entries[0], Naam2 = entries[1], Resultaat = Int32.Parse(entries[2]) });
+
+                    }
+            }
+                catch (Exception e)
+                {
+                return;
                 }
         }
 
