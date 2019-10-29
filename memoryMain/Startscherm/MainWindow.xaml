@@ -21,10 +21,11 @@
             <RowDefinition Height="0*"/>
             <RowDefinition Height="371*"/>
         </Grid.RowDefinitions>
-        <Canvas Margin="0,0,0,274" Grid.RowSpan="2">
+        <Canvas Margin="0,0,0,2274" Grid.RowSpan="2">
             <Image Source="memory-logo.png" Stretch="Fill" Canvas.Left="297" Canvas.Top="9"/>
-            <Slider x:Name="slider" Canvas.Left="745" Width="91" ValueChanged="slider_ValueChanged" Maximum="1" Value="0.5"/>
+            <Slider x:Name="slider" Canvas.Left="745" Width="91" ValueChanged="slider_ValueChanged" Maximum="1" Value="0.5" />
         </Canvas>
+            
         <GroupBox Header="" HorizontalAlignment="Left" Height="265" Margin="502,58,0,0" Grid.Row="4" VerticalAlignment="Top" Width="214">
             <StackPanel VerticalAlignment="Bottom" Margin="33,0,32,21">
                 <Button Foreground="White" Background="#666666" Content="Start spel" Width="137" Height="42" Click="startBtn"/>
