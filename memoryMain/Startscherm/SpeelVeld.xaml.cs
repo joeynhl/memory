@@ -66,6 +66,7 @@ namespace Startscherm
             dt.Tick += dtTicker;
             dt.Start();
 
+            Beurt.Text = naam1 + " is aan de beurt!";
         }
 
         /// <summary>
@@ -311,11 +312,13 @@ namespace Startscherm
                             {
                                 PlayerOneScore++;//score for player1 +1
                                 speler1Score.Text = Convert.ToString(PlayerOneScore);// set score in game
+                                Beurt.Text = naam2 + " is aan de beurt!";
                             }
                             else// if player 2 has equal cards
                             {
                                 PlayerTwoScore++; // score for player2 +1
                                 speler2Score.Text = Convert.ToString(PlayerTwoScore);// set score in game
+                                Beurt.Text = naam1 + " is aan de beurt!";
                             }
 
                             clickamount = 0; // set amount clicks to 0;
@@ -335,10 +338,12 @@ namespace Startscherm
                             if (player == 1)
                             {
                                 player = 2;
+                                Beurt.Text = naam2 + " is aan de beurt!";
                             }
                             else
                             {
                                 player = 1;
+                                Beurt.Text = naam1 + " is aan de beurt!";
                             }
                         }
                     }

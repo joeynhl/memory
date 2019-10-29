@@ -42,9 +42,6 @@ namespace Startscherm
 
             //string message = chosenThema;
 
-
-
-
             speelveld.Speler1_naam.Text = "Speler : " + naam1;
             speelveld.Speler2_naam.Text = "Speler : " + naam2;
 

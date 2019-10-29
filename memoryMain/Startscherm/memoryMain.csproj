@@ -184,5 +184,8 @@
   <ItemGroup>
     <Folder Include="themas\test\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="media_pause-256.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
