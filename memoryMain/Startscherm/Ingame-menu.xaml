@@ -50,7 +50,7 @@
             <TextBlock x:Name="Speler1_naam" Text="Speler 1:" Height="62" Width="333" Foreground="White" FontSize="36"/>
             <TextBlock Foreground="#fff" FontSize="50"><Run x:Name="speler1Score" Text="0"/></TextBlock>
             <TextBlock x:Name="Speler2_naam" Text="Speler 2:" Height="62" Width="347" Foreground="White" FontSize="36"/>
-            <TextBlock FontSize="50" RenderTransformOrigin="2.815,0.701"><Run x:Name="speler2Score" Text="0"/></TextBlock>
+            <TextBlock FontSize="50" RenderTransformOrigin="2.815,0.701" Foreground="White"><Run x:Name="speler2Score" Text="0"/></TextBlock>
             <Label x:Name="TimerLabel" Foreground="#fff" Content="Klik op play" FontFamily="Segoe UI" FontSize="50" VerticalContentAlignment="Center" Margin="40,0,0,0"/>
         </Menu>
         <Frame Content="" Background="#FF2C2626" HorizontalAlignment="Left" Height="100" Margin="-16,18,-998,-21" VerticalAlignment="Top" Width="2430" Grid.ColumnSpan="6" Grid.Row="16"/>
