@@ -64,10 +64,12 @@ namespace Startscherm
 
              speelveld.ThemeName = Convert.ToString(theme.DataContext);*/
 
+            string ThemeNameFromButton = Convert.ToString(theme.DataContext);
 
             spelen spelen = new spelen();
 
-            spelen.ThemeName = Convert.ToString(theme.DataContext); 
+            spelen.ThemeName = ThemeNameFromButton;
+
             this.Hide();
             spelen.Show();
             this.Close();

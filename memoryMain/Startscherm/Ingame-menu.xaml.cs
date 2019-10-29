@@ -206,8 +206,6 @@ namespace Startscherm
 
         private void Hervatten(object sender, RoutedEventArgs e)
         {
- 
-           
             speelveld.Speler1_naam.Text = naam1;
             speelveld.Speler2_naam.Text = naam2;
             speelveld.speler1Score.Text = score1;
