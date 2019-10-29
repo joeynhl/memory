@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,12 +23,59 @@ namespace Startscherm
         public thema()
         {
             InitializeComponent();
+
+            loadButtons();
         }
 
         private bool buttonIsClicked = false;
 
         public string chosenThema = "";
 
+
+        private void loadButtons()
+        {
+            string[] directories = Directory.GetDirectories("../../themas/");
+
+
+            foreach (string theme in directories)
+            {
+                Button button = new Button();
+
+                string themeName = System.IO.Path.GetFileName(theme);
+
+                button.Content = themeName;
+                button.Width = 150;
+                button.Padding = new Thickness(10);
+                button.FontSize = 18;
+                button.FontWeight = FontWeights.Bold;
+                button.Margin = new Thickness(0,0,0,5);
+                button.SetValue(DataContextProperty, themeName);
+                ButtonHolder.Children.Add(button);
+                button.Click += chooseTheme;
+
+            }
+        }
+
+
+
+
+        private void chooseTheme(object sender, RoutedEventArgs e)
+        {
+            Button theme = sender as Button;
+
+            /* speelveld speelveld = new speelveld();
+
+             speelveld.ThemeName = Convert.ToString(theme.DataContext);*/
+            
+
+            spelen spelen = new spelen();
+
+            spelen.ThemeName = Convert.ToString(theme.DataContext); 
+            this.Hide();
+            spelen.Show();
+            this.Close();
+
+        }
 
 
 
@@ -41,57 +89,6 @@ namespace Startscherm
 
                 //string message = chosenThema;
                 //MessageBox.Show(message);
-
-                spelen spelen = new spelen();
-                this.Hide();
-                spelen.Show();
-                this.Close();
-            }
-
-
-        }
-        //keuze is zelda kaarten
-        private void btnZelda(object sender, RoutedEventArgs e)
-        {
-            buttonIsClicked = true;
-            if (buttonIsClicked == true)
-            {
-                chosenThema = "zelda";
-
-                //string message = chosenThema;
-                //MessageBox.Show(message);
-
-                spelen spelen = new spelen();
-                this.Hide();
-                spelen.Show();
-                this.Close();
-            }
-        }
-        //keuze is maple kaarten
-        private void btnMaple(object sender, RoutedEventArgs e)
-        {
-            buttonIsClicked = true;
-            if (buttonIsClicked == true)
-            {
-                chosenThema = "maple";
-
-                //string message = chosenThema;
-                //MessageBox.Show(message);
-
-                spelen spelen = new spelen();
-                this.Hide();
-                spelen.Show();
-                this.Close();
-            }
-        }
-        //keuze is eigen kaarten
-        private void btnEigen(object sender, RoutedEventArgs e)
-        {
-            buttonIsClicked = true;
-            if (buttonIsClicked == true)
-            {
-                string message = "eigen keuze is geklikt.";
-                MessageBox.Show(message);
 
                 spelen spelen = new spelen();
                 this.Hide();

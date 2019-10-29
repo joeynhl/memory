@@ -26,6 +26,8 @@
             <ColumnDefinition Width="125*" />
         </Grid.ColumnDefinitions>
         <Image Source="memory-logo.png" Grid.Column="1" Margin="8.2,0,4.8,4" Grid.ColumnSpan="5" />
+        <TextBox x:Name="themaNaam" Grid.Column="3" Height="21" Margin="10.6,40,9.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label FontWeight="Bold" Content="Thema naam:" Grid.Column="3" HorizontalAlignment="Left" Margin="9.6,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="126"/>
         <DockPanel Grid.Column="1" Grid.Row="1" Margin="45.2,99,45.8,0.6" Grid.ColumnSpan="5" >
             <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
                 <Button x:Name="btnOpenFiles" Click="btnOpenFiles_Click" Height="58" Width="90" Content="Open files"/>
@@ -33,8 +35,7 @@
             <ListBox Name="themeImages" Margin="0,0,0,10" Width="292" />
         </DockPanel>
         <Button Name="CreateTheme" Click="ImagesToFolder" Content="Maak thema" Margin="22.6,3.4,24.4,1.8" Grid.Row="2" Grid.Column="3"/>
-        <TextBox x:Name="themaNaam" Grid.Column="3" Height="21" Margin="10.6,40,9.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1"/>
-        <Label FontWeight="Bold" Content="Thema naam:" Grid.Column="3" HorizontalAlignment="Left" Margin="9.6,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="126"/>
+        
     </Grid>
 
 </Window>

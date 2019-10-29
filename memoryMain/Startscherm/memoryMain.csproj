@@ -65,6 +65,9 @@
     <Compile Include="namen.xaml.cs">
       <DependentUpon>namen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Speelveld-grootte.xaml.cs">
+      <DependentUpon>Speelveld-grootte.xaml</DependentUpon>
+    </Compile>
     <Compile Include="spelen.xaml.cs">
       <DependentUpon>spelen.xaml</DependentUpon>
     </Compile>
@@ -73,6 +76,9 @@
     </Compile>
     <Compile Include="save.xaml.cs">
       <DependentUpon>save.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Thema opties.xaml.cs">
+      <DependentUpon>Thema opties.xaml</DependentUpon>
     </Compile>
     <Compile Include="thema-maken.xaml.cs">
       <DependentUpon>thema-maken.xaml</DependentUpon>
@@ -104,6 +110,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Speelveld-grootte.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="spelen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -113,6 +123,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="save.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Thema opties.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
