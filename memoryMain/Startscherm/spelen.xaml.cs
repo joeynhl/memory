@@ -37,8 +37,11 @@ namespace Startscherm
             speelveld.naam2 = naam2;
 
             //string message = chosenThema;
+            string chosenTheme = ThemeName;
 
-            speelveld.ThemeName = ThemeName;
+
+
+            speelveld.ThemeName = chosenTheme;
 
             speelveld.Speler1_naam.Text = "Speler : " + naam1;
             speelveld.Speler2_naam.Text = "Speler : " + naam2;

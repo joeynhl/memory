@@ -36,7 +36,7 @@ namespace Startscherm
         public int seconds = 0;
 
 
-        public string ThemeName { get; set; }
+        public string ThemeName { get; internal set; }
 
         public speelveld()
         {
@@ -46,12 +46,11 @@ namespace Startscherm
             setField();
 
         }
-
+        private string TestTheme;
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-        
-
+            TestTheme = ThemeName;
             if (seconds < 10 & seconds > -1)
             {
                 TimerLabel.Content = minutes.ToString() + ":0" + seconds.ToString();
@@ -106,8 +105,10 @@ namespace Startscherm
 
             foreach (string directory in directories)
             {
-                if (Path.GetFileName(directory) == "test") 
-                theme = directory;
+                if (Path.GetFileName(directory) == TestTheme)
+                {
+                    theme = directory;
+                }
 
 
             }
