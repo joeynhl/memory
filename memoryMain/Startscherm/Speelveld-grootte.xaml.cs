@@ -32,6 +32,7 @@ namespace Startscherm
         private void Verder(object sender, RoutedEventArgs e)
         {
             Thema_opties opties = new Thema_opties();
+
             this.Hide();
             opties.Show();
             this.Close();

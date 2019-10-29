@@ -27,8 +27,6 @@ namespace Startscherm
             InitializeComponent();
         }
 
-
-
         private List<string> FileList = new List<string>();
 
         private void btnOpenFiles_Click(object sender, RoutedEventArgs e)
