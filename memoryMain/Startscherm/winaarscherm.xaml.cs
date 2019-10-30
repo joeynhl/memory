@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,7 +62,17 @@ namespace Startscherm
                 speler1.Text = "gelijkspel";
                 score11.Text = "4";
             }
+
+            addScore(naam1, score1, naam2, score2);
             
+        }
+
+        private void addScore(string Naam1, int Score1, string Naam2, int Score2)
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + "highscores.txt";
+            string score = Naam1 + "," + Score1 + "," + Naam2 + "," + Score2;
+            File.WriteAllText(path, score);
+
         }
 
         private void speler1_TextChanged(object sender, TextChangedEventArgs e)

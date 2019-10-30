@@ -34,10 +34,10 @@ namespace Startscherm
 
         }
 
-        private void addScore(string Naam1, int Score1, string Naam2, int Score2, int Tijd)
+        private void addScore(string Naam1, int Score1, string Naam2, int Score2)
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + "highscores.txt";
-            string score = Naam1 + "," + Score1 + "," + Naam2 + "," + Score2 + "," + Tijd;
+            string score = Naam1 + "," + Score1 + "," + Naam2 + "," + Score2;
             File.WriteAllText(path, score);
 
         }
@@ -56,7 +56,7 @@ namespace Startscherm
                     foreach (var line in lines)
                     {
                         string[] entries = line.Split(',');
-                        scores.Add(new Score { Naam1 = entries[0], Score1 = Int32.Parse(entries[1]), Naam2 = entries[2],Score2 = Int32.Parse(entries[3]),Tijd = Int32.Parse(entries[4]) });
+                        scores.Add(new Score { Naam1 = entries[0], Score1 = Int32.Parse(entries[1]), Naam2 = entries[2],Score2 = Int32.Parse(entries[3]) });
                     }
             }
                 catch (Exception e)
@@ -71,8 +71,6 @@ namespace Startscherm
             public int Score1 { set; get; }
             public string Naam2 { set; get; }
             public int Score2 { set; get; }
-            public int Tijd { set; get; }
-
         }
     }
 }
