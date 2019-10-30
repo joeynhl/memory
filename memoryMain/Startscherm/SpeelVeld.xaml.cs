@@ -28,6 +28,8 @@ namespace Startscherm
 
         public string naam1 { get; internal set; }
         public string naam2 { get; internal set; }
+        public string scorenaam1 { get; internal set; }
+        public string scorenaam2 { get; internal set; }
         public string ChoosenTheme { get; internal set; }
 
         //public string ThemeName { get; internal set; }
@@ -375,13 +377,15 @@ namespace Startscherm
                             }
                         }
                         //kijken waneer score gelijk is aan 8
-                        if (PlayerOneScore+PlayerTwoScore == 8)
+                        if (PlayerOneScore+PlayerTwoScore == 3)
                         {//als speler 1 meer punten geeft dan speler 2 
                             if (PlayerOneScore > PlayerTwoScore)
                             {//geef naam en score door aan het winnaarscherm
                                 winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
-                               
+                                scorenaam2 = naam2;
                                 winaarscherm.naam1 = naam1;
+                                winaarscherm.scorenaam2 = scorenaam2;
+
 
                                 this.Hide();
                                 winaarscherm.Show();
@@ -390,8 +394,10 @@ namespace Startscherm
                             if (PlayerTwoScore > PlayerOneScore)
                             {//geef naam en score door aan het winnaarscherm
                                 winaarscherm winaarscherm = new winaarscherm(PlayerTwoScore);
+                                scorenaam1 = naam1;
                                 winaarscherm.naam2 = naam2;
-
+                                winaarscherm.scorenaam1 = scorenaam1;
+                                
                                 this.Hide();
                                 winaarscherm.Show();
                                 this.Close();
