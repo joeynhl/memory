@@ -17,6 +17,9 @@ namespace Startscherm
     /// <summary>
     /// Interaction logic for spelen.xaml
     /// </summary>
+    /// 
+    
+
     public partial class spelen : Window
     {
         public string ThemeName { get; internal set; }
