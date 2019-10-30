@@ -206,8 +206,6 @@ namespace Startscherm
 
         private void Hervatten(object sender, RoutedEventArgs e)
         {
- 
-           
             speelveld.Speler1_naam.Text = naam1;
             speelveld.Speler2_naam.Text = naam2;
             speelveld.speler1Score.Text = score1;
@@ -215,8 +213,6 @@ namespace Startscherm
             speelveld.minutes = minutes;
             speelveld.seconds = seconds;
 
-            this.Hide();
-            speelveld.Show();
 
             if (seconds < 10 & seconds > -1)
             {
@@ -231,6 +227,7 @@ namespace Startscherm
             dt.Start();
 
             this.Hide();
+            speelveld.Show();
             this.Close();
 
         }

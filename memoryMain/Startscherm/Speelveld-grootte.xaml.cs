@@ -24,10 +24,8 @@ namespace Startscherm
             InitializeComponent();
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
+        
 
         private void Verder(object sender, RoutedEventArgs e)
         {

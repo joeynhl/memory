@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,9 +63,6 @@
     <Compile Include="Ingame-menu.xaml.cs">
       <DependentUpon>Ingame-menu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="namen.xaml.cs">
-      <DependentUpon>namen.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Speelveld-grootte.xaml.cs">
       <DependentUpon>Speelveld-grootte.xaml</DependentUpon>
     </Compile>
@@ -86,6 +84,9 @@
     <Compile Include="thema.xaml.cs">
       <DependentUpon>thema.xaml</DependentUpon>
     </Compile>
+    <Compile Include="winaarscherm.xaml.cs">
+      <DependentUpon>winaarscherm.xaml</DependentUpon>
+    </Compile>
     <Page Include="Highscores.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,10 +107,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="namen.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Speelveld-grootte.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="thema.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="winaarscherm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,16 +182,13 @@
     <Resource Include="themas\mario\mario8.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="maple.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="mario.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="zelda.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="themas\test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="media_pause-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound1.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,6 +28,11 @@ namespace Startscherm
 
         public string naam1 { get; internal set; }
         public string naam2 { get; internal set; }
+        public string ChoosenTheme { get; internal set; }
+
+
+
+
 
         public string score1 { get; internal set; }
         public string score2 { get; internal set; }
@@ -35,22 +40,18 @@ namespace Startscherm
         public int seconds { get; internal set; }
         DispatcherTimer dt = new DispatcherTimer();
 
-        public string ThemeName { get; set; }
-
         public speelveld()
         {
             InitializeComponent();
-            CreateGrid();
-            getCardImages();
-            setField();
+            
 
         }
 
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
-            Speler1_naam.Text = "Speler : " + naam1;
-            Speler2_naam.Text = "Speler : " + naam2;
+            CreateGrid();
+            getCardImages();
+            setField();
 
             if (seconds < 10 & seconds > -1)
             {
@@ -64,6 +65,7 @@ namespace Startscherm
             dt.Tick += dtTicker;
             dt.Start();
 
+            Beurt.Text = naam1 + " is aan de beurt!";
         }
 
         /// <summary>
@@ -80,6 +82,7 @@ namespace Startscherm
         /// </summary>
         private void CreateGrid()
         {
+            
             for (int i = 0; i < NumRows; i++)
             {
                 cardgrid.RowDefinitions.Add(new RowDefinition());
@@ -96,18 +99,20 @@ namespace Startscherm
         /// The theme (directory path + directory)
         /// </summary>
         private static string theme;
-
         /// <summary>
         /// get directory path and set theme
         /// </summary>
-        private void SetTheme()
+        public void SetTheme()
         {
             string[] directories = Directory.GetDirectories("../../themas/");
 
+
             foreach (string directory in directories)
             {
-                if (Path.GetFileName(directory) == "test") 
-                theme = directory;
+                if (Path.GetFileName(directory) == ChoosenTheme)
+                {
+                    theme = directory;
+                }
 
 
             }
@@ -132,7 +137,7 @@ namespace Startscherm
 
             int count = 0; // count how many itterations
 
-
+            cardgrid.Background = new ImageBrush(new BitmapImage(new Uri(FileList[0], UriKind.Relative))); // set the Grid background
             //loop trough 2d array and set values
             for (int i = 0; i < cards.GetLength(0); i++) 
             {
@@ -213,9 +218,9 @@ namespace Startscherm
                     Rectangle Card = new Rectangle(); // create new card
 
                     Card.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); //set imagebrush 
-
+/*
                     Card.HorizontalAlignment = HorizontalAlignment.Stretch;
-                    Card.VerticalAlignment = VerticalAlignment.Stretch;
+                    Card.VerticalAlignment = VerticalAlignment.Stretch;*/
                     Card.Margin = new Thickness(10);
 
                     Card.SetValue(Grid.RowProperty, row);// set row property
@@ -306,14 +311,17 @@ namespace Startscherm
                             {
                                 PlayerOneScore++;//score for player1 +1
                                 speler1Score.Text = Convert.ToString(PlayerOneScore);// set score in game
+                                Beurt.Text = naam1 + " is aan de beurt!";
                             }
                             else// if player 2 has equal cards
                             {
                                 PlayerTwoScore++; // score for player2 +1
                                 speler2Score.Text = Convert.ToString(PlayerTwoScore);// set score in game
+                                Beurt.Text = naam2 + " is aan de beurt!";
                             }
 
                             clickamount = 0; // set amount clicks to 0;
+
 
 
                         }
@@ -330,11 +338,48 @@ namespace Startscherm
                             if (player == 1)
                             {
                                 player = 2;
+                                Beurt.Text = naam2 + " is aan de beurt!";
                             }
                             else
                             {
                                 player = 1;
+                                Beurt.Text = naam1 + " is aan de beurt!";
                             }
+                        }
+
+                        if (PlayerOneScore+PlayerTwoScore == 3)
+                        {
+                            if (PlayerOneScore > PlayerTwoScore)
+                            {
+                                //MessageBox.Show("Player 1 is winaar");
+
+                                winaarscherm winaarscherm = new winaarscherm();
+                                winaarscherm.naam1 = naam1;
+                                winaarscherm.naam1 = Speler1_naam.Text;
+
+                                this.Hide();
+                                winaarscherm.Show();
+                                this.Close();
+                            } 
+                            if (PlayerTwoScore > PlayerOneScore)
+                            {
+                                //MessageBox.Show("Player 2 is winaar");
+
+                                winaarscherm winaarscherm = new winaarscherm();
+                                winaarscherm.naam2 = naam2;
+                                winaarscherm.naam2 = Speler1_naam.Text;
+
+                                this.Hide();
+                                winaarscherm.Show();
+                                this.Close();
+
+                            }
+
+
+
+
+
+                          
                         }
                     }
                 }

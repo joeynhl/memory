@@ -15,40 +15,37 @@ using System.Windows.Shapes;
 namespace Startscherm
 {
     /// <summary>
-    /// Interaction logic for namen.xaml
+    /// Interaction logic for winaarscherm.xaml
     /// </summary>
-    public partial class namen : Window
+    public partial class winaarscherm : Window
     {
         public string naam1 { get; internal set; }
         public string naam2 { get; internal set; }
 
-        public namen()
+
+       
+
+        public winaarscherm()
         {
             InitializeComponent();
-            setNames();
+            
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        public void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //MessageBox.Show(naam1);
+            //MessageBox.Show(naam2);
+            speler1.Text = naam1;
+            speler1.Text = naam2;
+        }
+
+        private void speler1_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
-
-        public void setNames()
+        private void speler2_TextChanged(object sender, TextChangedEventArgs e)
         {
 
-            speelveld speelveld = new speelveld();
-
-            speler1Naam.Text = naam1;
-            speler2Naam.Text = naam2;
-            speelveld.Speler1_naam.Text = "Speler : " + naam1;
-            speelveld.Speler2_naam.Text = "Speler : " + naam2;
-
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            speler1Naam.Text = naam1;
-            speler2Naam.Text = naam2;
         }
     }
 }
