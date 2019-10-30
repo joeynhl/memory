@@ -17,8 +17,13 @@ namespace Startscherm
     /// <summary>
     /// Interaction logic for Opties_Startscherm.xaml
     /// </summary>
+    /// 
+
     public partial class Opties_Startscherm : Window
     {
+
+            MediaPlayer Sound = new MediaPlayer();
+
         public Opties_Startscherm()
         {
             InitializeComponent();
@@ -31,10 +36,16 @@ namespace Startscherm
 
         private void Terug(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
+            //MainWindow main = new MainWindow();
             this.Hide();
-            main.Show();
+            //main.Show();
             this.Close();
+        }
+
+        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            double value = slider.Value;
+            Sound.Volume = value;
         }
     }
 }
