@@ -43,5 +43,9 @@
         <TextBox x:Name="Textbox1_speler1" Grid.Column="6" HorizontalAlignment="Left" Height="42" Margin="8.6,7.8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="431" FontSize="28" TextChanged="Textbox1_speler1_TextChanged" Grid.Row="4" Grid.ColumnSpan="3"/>
         <TextBox x:Name="Textbox2_speler2" Grid.Column="6" HorizontalAlignment="Left" Height="40" Margin="8.6,2.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" FontSize="28" RenderTransformOrigin="0.439,-0.4" TextChanged="Textbox2_speler2_TextChanged" Grid.Row="8" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
         <Image Source="memory-logo.png" Stretch="Fill" Grid.ColumnSpan="5" Grid.Column="5" Margin="5.8,86,4.045,4.4" Grid.RowSpan="3"/>
+        <Label x:Name="Minuten" Grid.Column="5" HorizontalAlignment="Center"  Content="Minuten" FontSize="25" VerticalAlignment="Center" Margin="0,0.2,134,31.6" Height="49" Width="118" Grid.Row="6"/>
+        <Label x:Name="Seconden" Grid.Column="5" HorizontalAlignment="Center"  Content="Seconden" FontSize="25" VerticalAlignment="Center" Margin="116,0.2,0,31.6" Height="49" Width="136" Grid.Row="6"/>
+        <TextBox x:Name="MinutesBox" Grid.Column="5" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="80" Margin="10,41.2,162,16.6" TextChanged="Minutes_Changed" Grid.Row="6" RenderTransformOrigin="-0.883,0.583"/>
+        <TextBox x:Name="SecondsBox" Grid.Column="5" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="80" Margin="133,41.2,39,16.6" TextChanged="Seconds_Changed" Grid.Row="6"/>
     </Grid>
 </Window>

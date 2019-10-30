@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Startscherm
 {
@@ -20,6 +21,10 @@ namespace Startscherm
     public partial class spelen : Window
     {
         public string ThemeName { get; internal set; }
+
+        public int minutes = 5;
+        public int seconds = 0;
+
         public spelen()
         {
             InitializeComponent();
@@ -35,6 +40,9 @@ namespace Startscherm
 
             speelveld.naam1 = naam1;
             speelveld.naam2 = naam2;
+
+            speelveld.minutes = minutes;
+            speelveld.seconds = seconds;
 
             //string message = chosenThema;
             //MessageBox.Show(message);
@@ -58,5 +66,105 @@ namespace Startscherm
         {
 
         }
+
+        private void Minutes_Changed(object sender, TextChangedEventArgs e)
+        {
+            if (MinutesBox.Text == "")
+            {
+                MinutesBox.Text = 0.ToString();
+                MinutesBox.SelectionStart = MinutesBox.Text.Length;
+                MinutesBox.SelectionLength = 0;
+            }
+            else if (MinutesBox.Text != "0")
+            {
+
+                try
+                {
+                    minutes = Convert.ToInt32(MinutesBox.Text);
+                }
+                catch (System.FormatException)
+                {
+                    minutes = 0;
+                }
+                catch (System.OverflowException)
+                {
+                    minutes = 2147483647;
+                }
+
+                MinutesBox.Text = minutes.ToString();
+                MinutesBox.SelectionStart = MinutesBox.Text.Length;
+                MinutesBox.SelectionLength = 0;
+
+            }
+            else
+            {
+                minutes = Convert.ToInt32(MinutesBox.Text);
+                MinutesBox.SelectionStart = MinutesBox.Text.Length;
+                MinutesBox.SelectionLength = 0;
+            }
+        }
+
+        /// <summary>
+        /// Dit zorgt ervoor dat de ingevoerde seconden worden ingevoerd in de timer.
+        /// Hert controleert ook of de input van de gebruiker wel juist is.
+        /// Voor verschillende soorten verkeerde inputs doet het programma iets anders.
+        /// Bij teveel ingevoerde seconden zet die het aantal seconden om in extra minuten.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Seconds_Changed(object sender, TextChangedEventArgs e)
+        {
+            if (SecondsBox.Text == "")
+            {
+                SecondsBox.Text = 0.ToString();
+                seconds = Convert.ToInt32(SecondsBox.Text);
+                SecondsBox.SelectionStart = SecondsBox.Text.Length;
+                SecondsBox.SelectionLength = 0;
+            }
+            else if (SecondsBox.Text != "0")
+            {
+                SecondsBox.SelectionStart = SecondsBox.Text.Length;
+                SecondsBox.SelectionLength = 0;
+
+                try
+                {
+                    seconds = Convert.ToInt32(SecondsBox.Text);
+                }
+                catch (System.FormatException)
+                {
+                    seconds = 0;
+                }
+                catch (System.OverflowException)
+                {
+                    seconds = 59;
+                }
+                if (seconds > 59)
+                {
+                    int extraminutes = 0;
+                    for (extraminutes = 0; seconds > 59; extraminutes++)
+                    {
+                        seconds -= 60;
+                    }
+                    minutes += extraminutes;
+                    MinutesBox.Text = minutes.ToString();
+                    SecondsBox.Text = seconds.ToString();
+                    SecondsBox.SelectionStart = SecondsBox.Text.Length;
+                    SecondsBox.SelectionLength = 0;
+
+                }
+                else
+                {
+                    SecondsBox.Text = seconds.ToString();
+                    SecondsBox.SelectionStart = SecondsBox.Text.Length;
+                    SecondsBox.SelectionLength = 0;
+                }
+
+            }
+            else
+            {
+                seconds = Convert.ToInt32(SecondsBox.Text);
+            }
+        }
     }
 }
+
