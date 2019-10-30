@@ -19,10 +19,7 @@
         </Grid.RowDefinitions>
 
         <Image Source="memory-logo.png"  Grid.Row="0" HorizontalAlignment="Center" />
-        <Canvas Grid.Row="0" HorizontalAlignment="Center">
-            <Slider x:Name="slider" Canvas.Left="745" Width="91" ValueChanged="slider_ValueChanged" Maximum="1" Value="0.5" />
-        </Canvas>
-            
+
         <!--<GroupBox HorizontalAlignment="Left" Height="265" Margin="502,58,0,0" Grid.Row="4" VerticalAlignment="Top" Width="214">-->
 
             <StackPanel HorizontalAlignment="Center" Grid.Row="1">
@@ -33,7 +30,5 @@
                 <Button Foreground="White" Background="#666666" Content="Afsluiten" Width="137" Height="42" Click="btnExit"/>
             </StackPanel>
         <!--</GroupBox>-->
-        <Button Content="Play" Click="playMuziek_Click" Margin="456.6,0,1.2,278.4" Grid.Column="1"/>
-        <Button Content="Stop" Click="stopMuziek_Click" Margin="67.8,0,118.8,278.4" Grid.Column="2"/>
     </Grid>
 </Window>

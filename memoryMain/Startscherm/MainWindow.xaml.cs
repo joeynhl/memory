@@ -130,23 +130,6 @@ namespace Startscherm
 
         }
 
-  
-
-        private void playMuziek_Click(object sender, RoutedEventArgs e)
-        {
-            Sound.Play();
-        }
-        private void stopMuziek_Click(object sender, RoutedEventArgs e)
-        {
-            Sound.Stop();
-        }
-
-        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            double value = slider.Value;
-            Sound.Volume = value;
-        }
-
         private void Opties(object sender, RoutedEventArgs e)
         {
             opties.Show();

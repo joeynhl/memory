@@ -37,9 +37,13 @@ namespace Startscherm
             Sound.Play();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void playMuziek_Click(object sender, RoutedEventArgs e)
         {
-
+            Sound.Play();
+        }
+        private void stopMuziek_Click(object sender, RoutedEventArgs e)
+        {
+            Sound.Stop();
         }
 
         private void Terug(object sender, RoutedEventArgs e)
@@ -55,5 +59,7 @@ namespace Startscherm
             double value = slider.Value;
             Sound.Volume = value;
         }
+
+      
     }
 }
