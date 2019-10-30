@@ -208,7 +208,7 @@ namespace Startscherm
 
         private void setField()
         {
-            if(multiplecards == null)
+            if(multiplecards != null)
             { 
             fillCards(); // get the duplicate cards array filled
 
