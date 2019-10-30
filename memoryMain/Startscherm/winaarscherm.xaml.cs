@@ -21,22 +21,47 @@ namespace Startscherm
     {
         public string naam1 { get; internal set; }
         public string naam2 { get; internal set; }
+        public string naam3 { get; internal set; }
+        public int score1 { get; internal set; }
+        public int score2 { get; internal set; }
+
+
 
 
        
 
-        public winaarscherm()
+        public winaarscherm(int score)
         {
+            score1 = score;
+            score2 = score;
             InitializeComponent();
             
         }
-
+        /// <summary>
+        /// window loaded zodat de data wordt geladen waneer het scherm geladen wordt.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show(naam1);
-            //MessageBox.Show(naam2);
-            speler1.Text = naam1;
-            speler1.Text = naam2;
+            //als speler 1 wint vul naam in bij winaar + score.
+            if (naam1 != null)
+            {
+                speler1.Text = naam1;//vult naam in
+                score11.Text = Convert.ToString(score1);//vult score in 
+
+            }
+            else if (naam2 != null)//als speler 2 wint 
+            {
+                speler1.Text = naam2;//vult naam in 
+                score11.Text = Convert.ToString(score2);//vult score van speler 2 in
+            }
+            else//gelijkspel 4 punten x 4 punten
+            {
+                speler1.Text = "gelijkspel";
+                score11.Text = "4";
+            }
+            
         }
 
         private void speler1_TextChanged(object sender, TextChangedEventArgs e)
@@ -46,6 +71,15 @@ namespace Startscherm
         private void speler2_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+
+            this.Hide();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }
