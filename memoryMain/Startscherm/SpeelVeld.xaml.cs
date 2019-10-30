@@ -30,9 +30,9 @@ namespace Startscherm
         public string naam2 { get; internal set; }
         public string ChoosenTheme { get; internal set; }
 
-        public string ThemeName { get; internal set; }
+        //public string ThemeName { get; internal set; }
 
-        public string score1 { get; internal set; }
+        public int score1 { get; internal set; }
         public string score2 { get; internal set; }
         public int minutes { get; internal set; }
         public int seconds { get; internal set; }
@@ -63,7 +63,7 @@ namespace Startscherm
             dt.Tick += dtTicker;
             dt.Start();
 
-            Beurt.Text = naam1 + " is aan de beurt!";
+            Beurt.Text = "Beurt:" + naam1;
         }
 
         /// <summary>
@@ -204,13 +204,17 @@ namespace Startscherm
             }
         }
 
+        public List<string> CardCheckList = new List<string>();
+
         private void setField()
         {
+            if(multiplecards == null)
+            { 
             fillCards(); // get the duplicate cards array filled
 
             var rnd = new Random();
             Shuffle(rnd, multiplecards); //shuffle cards
-
+            }
             for (int row = 0; row < multiplecards.GetLength(0); row++) //loop trough rows
             {
                 for (int column = 0; column < multiplecards.GetLength(1); column++) // loop trough columns
@@ -229,8 +233,15 @@ namespace Startscherm
 
                     Card.SetValue(DataContextProperty, multiplecards[row, column]); // set img url as data context 
 
+                    CardCheckList.Add(multiplecards[row, column]);
+
 
                     Card.MouseLeftButtonDown += Rectangle_MouseDown; // set mousedown event on card
+
+                    if(multiplecards[row,column] == "")
+                    {
+                        Card.Visibility = Visibility.Hidden;
+                    }
 
                     cardgrid.Children.Add(Card); // add card to grid
 
@@ -301,23 +312,40 @@ namespace Startscherm
                         {
                             MessageBox.Show("Deze kaarten zijn gelijk");
 
+
+
                             card_one.Visibility = Visibility.Hidden; // hide first card
                             card_two.Visibility = Visibility.Hidden; // hide second card
 
+
+
+                            for(int i=0; i<CardCheckList.Count; i++)
+                            {
+                                if (CardCheckList[i].Contains(Convert.ToString(card_one.DataContext)))
+                                {
+                                    CardCheckList[i] = "";
+                                }
+                            }
+
+
+
                             card_one = null; // reset card one
                             card_two = null; // reset card two
+
+
+                            
 
                             if (player == 1)//if player 1 has two equal cards
                             {
                                 PlayerOneScore++;//score for player1 +1
                                 speler1Score.Text = Convert.ToString(PlayerOneScore);// set score in game
-                                Beurt.Text = naam1 + " is aan de beurt!";
+                                Beurt.Text ="Beurt:" + naam1;
                             }
                             else// if player 2 has equal cards
                             {
                                 PlayerTwoScore++; // score for player2 +1
                                 speler2Score.Text = Convert.ToString(PlayerTwoScore);// set score in game
-                                Beurt.Text = naam2 + " is aan de beurt!";
+                                Beurt.Text = "Beurt:" + naam2;
                             }
 
                             clickamount = 0; // set amount clicks to 0;
@@ -338,41 +366,45 @@ namespace Startscherm
                             if (player == 1)
                             {
                                 player = 2;
-                                Beurt.Text = naam2 + " is aan de beurt!";
+                                Beurt.Text = "Beurt:" + naam2;
                             }
                             else
                             {
                                 player = 1;
-                                Beurt.Text = naam1 + " is aan de beurt!";
+                                Beurt.Text = "Beurt:" + naam1;
                             }
                         }
-
-                        if (PlayerOneScore+PlayerTwoScore == 3)
-                        {
+                        //kijken waneer score gelijk is aan 8
+                        if (PlayerOneScore+PlayerTwoScore == 8)
+                        {//als speler 1 meer punten geeft dan speler 2 
                             if (PlayerOneScore > PlayerTwoScore)
-                            {
-                                //MessageBox.Show("Player 1 is winaar");
-
-                                winaarscherm winaarscherm = new winaarscherm();
+                            {//geef naam en score door aan het winnaarscherm
+                                winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
+                               
                                 winaarscherm.naam1 = naam1;
-                                winaarscherm.naam1 = Speler1_naam.Text;
 
                                 this.Hide();
                                 winaarscherm.Show();
                                 this.Close();
-                            } 
+                            } //kijken als speler 2 meer punten heeft als speler 1
                             if (PlayerTwoScore > PlayerOneScore)
-                            {
-                                //MessageBox.Show("Player 2 is winaar");
-
-                                winaarscherm winaarscherm = new winaarscherm();
+                            {//geef naam en score door aan het winnaarscherm
+                                winaarscherm winaarscherm = new winaarscherm(PlayerTwoScore);
                                 winaarscherm.naam2 = naam2;
-                                winaarscherm.naam2 = Speler1_naam.Text;
 
                                 this.Hide();
                                 winaarscherm.Show();
                                 this.Close();
+                            }
+                            if (PlayerOneScore == PlayerTwoScore)
+                            {
+                                //string naam3 = "Gelijkspel";
+                                winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
+                                //winaarscherm.naam1 = naam3;
 
+                                this.Hide();
+                                winaarscherm.Show();
+                                this.Close();
                             }
 
 
@@ -436,7 +468,7 @@ namespace Startscherm
                 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╭━╮┃╭━━┫┃╱╭┫╰━╯┃┃╰╮┃┃┃╭━┫╭╮╭╯┃┃╭╮┃┃╭╮┃
                 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╰━╯┃╰━━┫╰━╯┃╭━╮┃┃╱┃┃┃╰┻━┃┃┃╰┳┫┣┫╰╯┃┃┃╰╮
                 //                                         ╰━━━┻━━━┻━━━┻╯╱╰┻╯╱╰━┻━━━┻╯╰━┻━━┻━━┻╯╰━╯
-                System.Environment.Exit(1);
+                //System.Environment.Exit(1);
             }
         }
 
@@ -455,6 +487,8 @@ namespace Startscherm
 
             string themaNaam = theme;
 
+            List<string> checklist = CardCheckList;
+
             Ingame_menu Ingame_menu = new Ingame_menu(); //Object van maken
             Ingame_menu.naam1 = naam1;
             Ingame_menu.naam2 = naam2;
@@ -465,6 +499,8 @@ namespace Startscherm
             Ingame_menu.cards = cards;
 
             Ingame_menu.themaNaam = themaNaam;
+
+            Ingame_menu.checklist = checklist;
 
             Ingame_menu.minutes = minutes;
             Ingame_menu.seconds = seconds;

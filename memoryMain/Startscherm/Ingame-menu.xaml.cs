@@ -35,6 +35,7 @@ namespace Startscherm
         public DispatcherTimer dt { get; internal set; }
         public string[,] cards { get; internal set; }
         public string themaNaam { get; internal set; }
+        public List<string> checklist { get; internal set; }
 
         public Ingame_menu()
         {
@@ -89,7 +90,7 @@ namespace Startscherm
             if (minutes == 0 & seconds == 0)
             {
                 //TimerLabel.Content = "TIME UP";
-                System.Environment.Exit(1);
+                //System.Environment.Exit(1);
             }
 
 
@@ -115,7 +116,7 @@ namespace Startscherm
 
            
 
-                    saveFileDialog.Filter = "save file (*.sav)|*.sav";
+            saveFileDialog.Filter = "save file (*.sav)|*.sav";
             string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             saveFileDialog.InitialDirectory = path;
             if (saveFileDialog.ShowDialog() == true)
@@ -133,19 +134,19 @@ namespace Startscherm
                 //List<String> newList = Arrays.asList(images);
 
 
-                for (int row = 0; row < cards.GetLength(0); row++) //loop trough rows
-                {
-                    for (int column = 0; column < cards.GetLength(1); column++) // loop trough columns
-                    {
-                        images += cards[row, column] + ", ";
+              
+                        //images += cards[row, column] + ",";
 
-                    }
+
+                foreach(string image in checklist)
+                {
+                    images += image + ",";
+
                 }
 
 
 
-
-                string[] createText = { naam1 + "," + score1 + "," + naam2 + "," + score2 + "," + themaNaam + "," + images };
+                string[] createText = { images + "," + naam1 + "," + score1 + "," + naam2 + "," + score2 + "," + themaNaam };
                 
 
                 File.WriteAllLines(saveFileDialog.FileName, createText);

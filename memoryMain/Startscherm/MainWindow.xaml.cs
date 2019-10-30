@@ -24,13 +24,14 @@ namespace Startscherm
     public partial class MainWindow : Window
     {
         MediaPlayer Sound = new MediaPlayer();
+        Opties_Startscherm opties = new Opties_Startscherm();
 
-      
+
 
         public MainWindow()
         {
             InitializeComponent();
-            InitialiseerMuziek();
+
         }
 
         private void btnExit(object sender, RoutedEventArgs e)
@@ -67,20 +68,24 @@ namespace Startscherm
                 {
                     string[] entries = line.Split(',');
 
-                    speelveld.Speler1_naam.Text = entries[0];
-                    speelveld.speler1Score.Text = entries[1];
-                    speelveld.Speler2_naam.Text = entries[2];
-                    speelveld.speler2Score.Text = entries[3];
-                    speelveld.theme = entries[4];
+                    speelveld.Speler1_naam.Text = entries[17];
+                    speelveld.speler1Score.Text = entries[18];
+                    speelveld.Speler2_naam.Text = entries[19];
+                    speelveld.speler2Score.Text = entries[20];
+                    speelveld.theme = entries[21];
 
 
-                   
+                    //speelveld.cardgrid = entries[5];
+
+                    int k = 0;
+
                     for (int i = 0; i < speelveld.multiplecards.GetLength(0); i++)
                     {
                         for (int j = 0; j < speelveld.multiplecards.GetLength(1); j++)
                         {
-                            count++;
-                            speelveld.multiplecards[i, j] = entries[count]; // put cards in the 2d array
+                           
+                            speelveld.multiplecards[i, j] = entries[k]; // put cards in the 2d array
+                            k++;
                         }
                     }
 
@@ -127,32 +132,8 @@ namespace Startscherm
 
         }
 
-        public void InitialiseerMuziek()
-        {
-            string path = AppDomain.CurrentDomain.BaseDirectory + "/muziek/Sound1.wav";
-            Sound.Open(new Uri(path));
-            Sound.Play();
-        }
-
-        private void playMuziek_Click(object sender, RoutedEventArgs e)
-        {
-            Sound.Play();
-        }
-        private void stopMuziek_Click(object sender, RoutedEventArgs e)
-        {
-            Sound.Stop();
-        }
-
-        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            double value = slider.Value;
-            Sound.Volume = value;
-        }
-
         private void Opties(object sender, RoutedEventArgs e)
         {
-            Opties_Startscherm opties = new Opties_Startscherm();
-            //this.Hide();
             opties.Show();
 
         }

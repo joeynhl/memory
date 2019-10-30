@@ -27,11 +27,23 @@ namespace Startscherm
         public Opties_Startscherm()
         {
             InitializeComponent();
+            InitialiseerMuziek();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void InitialiseerMuziek()
         {
+            string path = AppDomain.CurrentDomain.BaseDirectory + "/muziek/Sound1.wav";
+            Sound.Open(new Uri(path));
+            Sound.Play();
+        }
 
+        private void playMuziek_Click(object sender, RoutedEventArgs e)
+        {
+            Sound.Play();
+        }
+        private void stopMuziek_Click(object sender, RoutedEventArgs e)
+        {
+            Sound.Stop();
         }
 
         private void Terug(object sender, RoutedEventArgs e)
@@ -47,5 +59,7 @@ namespace Startscherm
             double value = slider.Value;
             Sound.Volume = value;
         }
+
+      
     }
 }
