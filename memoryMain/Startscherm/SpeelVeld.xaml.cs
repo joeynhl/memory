@@ -30,16 +30,13 @@ namespace Startscherm
         public string naam2 { get; internal set; }
         public string ChoosenTheme { get; internal set; }
 
-
-
-
+        //public string ThemeName { get; internal set; }
 
         public int score1 { get; internal set; }
         public string score2 { get; internal set; }
+        public int minutes { get; internal set; }
+        public int seconds { get; internal set; }
         DispatcherTimer dt = new DispatcherTimer();
-        public int minutes = 5;
-        public int seconds = 0;
-
 
         public speelveld()
         {
@@ -99,7 +96,7 @@ namespace Startscherm
         /// <summary>
         /// The theme (directory path + directory)
         /// </summary>
-        private static string theme;
+        public static string theme;
         /// <summary>
         /// get directory path and set theme
         /// </summary>
@@ -160,7 +157,9 @@ namespace Startscherm
         /// <summary>
         /// 2d array for double cards ( all cards with copies)
         /// </summary>
-        private string[,] multiplecards = new string[4, 4];
+        public string[,] multiplecards = new string[4, 4];
+
+        
 
         private static void Shuffle<T>(Random random, T[,] cards)
         {
@@ -435,7 +434,12 @@ namespace Startscherm
             }
             if (minutes == 0 & seconds == 0)
             {
-                //TimerLabel.Content = "TIME UP";
+                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!╭━━╮╭━━━┳╮╱╱╭━━━┳━╮╱╭┳━━━┳━━━┳━━╮╱╭┳╮╭━╮
+                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╭╮┃┃╭━━┫┃╱╱┃╭━╮┃┃╰╮┃┃╭━╮┃╭━╮┣┫┣╯╱┃┃┃┃╭╯
+                //Moet eigenlijk naar het winnaarsscherm   ┃╰╯╰┫╰━━┫┃╱╱┃┃╱┃┃╭╮╰╯┃┃╱╰┫╰━╯┃┃┃╱╱┃┃╰╯╯
+                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╭━╮┃╭━━┫┃╱╭┫╰━╯┃┃╰╮┃┃┃╭━┫╭╮╭╯┃┃╭╮┃┃╭╮┃
+                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╰━╯┃╰━━┫╰━╯┃╭━╮┃┃╱┃┃┃╰┻━┃┃┃╰┳┫┣┫╰╯┃┃┃╰╮
+                //                                         ╰━━━┻━━━┻━━━┻╯╱╰┻╯╱╰━┻━━━┻╯╰━┻━━┻━━┻╯╰━╯
                 System.Environment.Exit(1);
             }
         }
@@ -450,12 +454,21 @@ namespace Startscherm
             string score1 = speler1Score.Text;
             string score2 = speler2Score.Text;
 
+
+            string[,] cards = multiplecards;
+
+            string themaNaam = theme;
+
             Ingame_menu Ingame_menu = new Ingame_menu(); //Object van maken
             Ingame_menu.naam1 = naam1;
             Ingame_menu.naam2 = naam2;
 
             Ingame_menu.score1 = score1;
             Ingame_menu.score2 = score2;
+
+            Ingame_menu.cards = cards;
+
+            Ingame_menu.themaNaam = themaNaam;
 
             Ingame_menu.minutes = minutes;
             Ingame_menu.seconds = seconds;

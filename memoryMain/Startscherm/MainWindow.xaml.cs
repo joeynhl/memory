@@ -35,7 +35,7 @@ namespace Startscherm
 
         private void btnExit(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Environment.Exit(1);
         }
 
         private void startBtn(object sender, RoutedEventArgs e)
@@ -61,9 +61,9 @@ namespace Startscherm
                 string pathname = openFileDialog.FileName;
                 List<string> lines = File.ReadAllLines(pathname).ToList();
 
+                int count = 0;
                 
-
-                    foreach (var line in lines)
+                foreach (var line in lines)
                 {
                     string[] entries = line.Split(',');
 
@@ -71,7 +71,32 @@ namespace Startscherm
                     speelveld.speler1Score.Text = entries[1];
                     speelveld.Speler2_naam.Text = entries[2];
                     speelveld.speler2Score.Text = entries[3];
-                 
+                    speelveld.theme = entries[4];
+
+
+                   
+                    for (int i = 0; i < speelveld.multiplecards.GetLength(0); i++)
+                    {
+                        for (int j = 0; j < speelveld.multiplecards.GetLength(1); j++)
+                        {
+                            count++;
+                            speelveld.multiplecards[i, j] = entries[count]; // put cards in the 2d array
+                        }
+                    }
+
+
+
+                    //for (var i = 0; i < lines.Count; i++)
+                    //{
+                    //    speelveld.multiplecards = entries[];
+                    //}
+
+
+                    //foreach(string image in entries[4])
+                    //{
+                    //    speelveld.cardgrid = entries[4];
+                    //}
+
                 }
 
                
@@ -104,7 +129,8 @@ namespace Startscherm
 
         public void InitialiseerMuziek()
         {
-            Sound.Open(new Uri("C:/Sound1.wav"));
+            string path = AppDomain.CurrentDomain.BaseDirectory + "/muziek/Sound1.wav";
+            Sound.Open(new Uri(path));
             Sound.Play();
         }
 
@@ -121,6 +147,14 @@ namespace Startscherm
         {
             double value = slider.Value;
             Sound.Volume = value;
+        }
+
+        private void Opties(object sender, RoutedEventArgs e)
+        {
+            Opties_Startscherm opties = new Opties_Startscherm();
+            //this.Hide();
+            opties.Show();
+
         }
     }
 }
