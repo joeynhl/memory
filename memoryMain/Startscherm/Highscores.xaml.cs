@@ -22,11 +22,13 @@ namespace Startscherm
     public partial class Highscores : Window
     {
 
+
         ObservableCollection<Score> scores = new ObservableCollection<Score>
         {
-            new Score{Naam1 = "Erik", Naam2 = "Rienk", Resultaat = 500},
-            new Score{Naam1 = "Kevin", Naam2 = "Joey", Resultaat = 1000},
-            new Score{Naam1 = "Joey", Naam2 = "Rienk", Resultaat = 7000},
+            new Score{Naam1 = "Erik", Score1 = 100 , Naam2 = "Rienk", Score2 = 500},
+            new Score{Naam1 = "Erik", Score1 = 100 , Naam2 = "Rienk", Score2 = 500},
+            new Score{Naam1 = "Erik", Score1 = 100 , Naam2 = "Rienk", Score2 = 500},
+     
 
         };
         public Highscores()
@@ -37,16 +39,30 @@ namespace Startscherm
 
         }
 
+        private void addScore(string Naam1, int Score1, string Naam2, int Score2, int Tijd)
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + "highscores.txt";
+            string score = Naam1 + "," + Score1 + "," + Naam2 + "," + Score2 + "," + Tijd;
+            File.WriteAllText(score, path);
+
+        }
+
         private void ReadFile()
         {
-                try
+            string path = AppDomain.CurrentDomain.BaseDirectory + "highscores.txt";
+            if (!File.Exists(path))
+            {
+                TextWriter tw = new StreamWriter(path);
+                addScore("lol", 500, "Eelco", 5000, 39309);
+                tw.Close();
+            }
+            try
                 {
-                    string path = @"C:\Users\KHD\Desktop\highscores.txt";
-                    List<string> lines = File.ReadAllLines(path).ToList();
+                List<string> lines = File.ReadAllLines(path).ToList();
                     foreach (var line in lines)
                     {
                         string[] entries = line.Split(',');
-                        scores.Add(new Score { Naam1 = entries[0], Naam2 = entries[1], Resultaat = Int32.Parse(entries[2]) });
+                        scores.Add(new Score { Naam1 = entries[0], Score1 = Int32.Parse(entries[1]), Naam2 = entries[2],Score2 = Int32.Parse(entries[3]),Tijd = Int32.Parse(entries[4]) });
 
                     }
             }
@@ -56,17 +72,18 @@ namespace Startscherm
                 }
         }
 
-        private void AddItemClick(object sender, RoutedEventArgs e)
-        {
-            scores.Add(new Score{ Naam1 = "Erik", Naam2 = "Rienk", Resultaat = 500});
-        }
-
         public class Score
         {
             public string Naam1 { set; get; }
+            public int Score1 { set; get; }
             public string Naam2 { set; get; }
-            public int Resultaat { set; get; }
+            public int Score2 { set; get; }
+            public int Tijd { set; get; }
 
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
         }
     }

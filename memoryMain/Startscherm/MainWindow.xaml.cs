@@ -61,8 +61,7 @@ namespace Startscherm
                 string pathname = openFileDialog.FileName;
                 List<string> lines = File.ReadAllLines(pathname).ToList();
 
-                
-
+             
                     foreach (var line in lines)
                 {
                     string[] entries = line.Split(',');
