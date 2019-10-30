@@ -212,6 +212,7 @@ namespace Startscherm
         {
             if(multiplecards != null)
             { 
+               
             fillCards(); // get the duplicate cards array filled
 
             var rnd = new Random();
@@ -283,7 +284,10 @@ namespace Startscherm
         /// </summary>
         private int PlayerTwoScore = 0;
 
-
+        /// <summary>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
             var Card = e.Source as FrameworkElement;
@@ -468,13 +472,44 @@ namespace Startscherm
             }
             if (minutes == 0 & seconds == 0)
             {
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!╭━━╮╭━━━┳╮╱╱╭━━━┳━╮╱╭┳━━━┳━━━┳━━╮╱╭┳╮╭━╮
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╭╮┃┃╭━━┫┃╱╱┃╭━╮┃┃╰╮┃┃╭━╮┃╭━╮┣┫┣╯╱┃┃┃┃╭╯
-                //Moet eigenlijk naar het winnaarsscherm   ┃╰╯╰┫╰━━┫┃╱╱┃┃╱┃┃╭╮╰╯┃┃╱╰┫╰━╯┃┃┃╱╱┃┃╰╯╯
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╭━╮┃╭━━┫┃╱╭┫╰━╯┃┃╰╮┃┃┃╭━┫╭╮╭╯┃┃╭╮┃┃╭╮┃
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╰━╯┃╰━━┫╰━╯┃╭━╮┃┃╱┃┃┃╰┻━┃┃┃╰┳┫┣┫╰╯┃┃┃╰╮
-                //                                         ╰━━━┻━━━┻━━━┻╯╱╰┻╯╱╰━┻━━━┻╯╰━┻━━┻━━┻╯╰━╯
+                                       
                 //System.Environment.Exit(1);
+
+           
+                //TODO: infinite loop if players have equal score
+
+                //if (PlayerOneScore > PlayerTwoScore)
+                //{//geef naam en score door aan het winnaarscherm
+                //    winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
+
+                //    winaarscherm.naam1 = naam1;
+
+                //    this.Hide();
+                //    winaarscherm.Show();
+                //    this.Close();
+                //} //kijken als speler 2 meer punten heeft als speler 1
+                //else if (PlayerTwoScore > PlayerOneScore)
+                //{//geef naam en score door aan het winnaarscherm
+                //    winaarscherm winaarscherm = new winaarscherm(PlayerTwoScore);
+                //    winaarscherm.naam2 = naam2;
+
+                //    this.Hide();
+                //    winaarscherm.Show();
+                //    this.Close();
+                //}
+                //else if (PlayerOneScore == PlayerTwoScore)
+                //{
+                //    //string naam3 = "Gelijkspel";
+                //    winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
+                //    //winaarscherm.naam1 = naam3;
+
+
+                //    this.Hide();
+                //    winaarscherm.Show();
+                //    this.Close();
+
+                //}
+
             }
         }
 
