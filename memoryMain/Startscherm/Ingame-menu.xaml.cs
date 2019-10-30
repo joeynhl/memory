@@ -33,6 +33,8 @@ namespace Startscherm
         public int minutes { get; internal set;  }
         public int seconds { get; internal set; }
         public DispatcherTimer dt { get; internal set; }
+        public string[,] cards { get; internal set; }
+        public string themaNaam { get; internal set; }
 
         public Ingame_menu()
         {
@@ -110,7 +112,10 @@ namespace Startscherm
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
-            saveFileDialog.Filter = "save file (*.sav)|*.sav";
+
+           
+
+                    saveFileDialog.Filter = "save file (*.sav)|*.sav";
             string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             saveFileDialog.InitialDirectory = path;
             if (saveFileDialog.ShowDialog() == true)
@@ -120,11 +125,27 @@ namespace Startscherm
                 this.naam2 = naam2;
                 this.score1 = score1;
                 this.score2 = score2;
-                
-                
+                this.themaNaam = themaNaam;
 
 
-                string[] createText = { naam1 + "," + score1 + "," + naam2 + "," + score2 };
+                string images = "";
+
+                //List<String> newList = Arrays.asList(images);
+
+
+                for (int row = 0; row < cards.GetLength(0); row++) //loop trough rows
+                {
+                    for (int column = 0; column < cards.GetLength(1); column++) // loop trough columns
+                    {
+                        images += cards[row, column] + ", ";
+
+                    }
+                }
+
+
+
+
+                string[] createText = { naam1 + "," + score1 + "," + naam2 + "," + score2 + "," + themaNaam + "," + images };
                 
 
                 File.WriteAllLines(saveFileDialog.FileName, createText);
