@@ -34,7 +34,7 @@ namespace Startscherm
 
 
 
-        public string score1 { get; internal set; }
+        public int score1 { get; internal set; }
         public string score2 { get; internal set; }
         DispatcherTimer dt = new DispatcherTimer();
         public int minutes = 5;
@@ -347,33 +347,27 @@ namespace Startscherm
                                 Beurt.Text = naam1 + " is aan de beurt!";
                             }
                         }
-
-                        if (PlayerOneScore+PlayerTwoScore == 3)
-                        {
+                        //kijken waneer score gelijk is aan 8
+                        if (PlayerOneScore+PlayerTwoScore == 8)
+                        {//als speler 1 meer punten geeft dan speler 2 
                             if (PlayerOneScore > PlayerTwoScore)
-                            {
-                                //MessageBox.Show("Player 1 is winaar");
-
-                                winaarscherm winaarscherm = new winaarscherm();
+                            {//geef naam en score door aan het winnaarscherm
+                                winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
+                               
                                 winaarscherm.naam1 = naam1;
-                                winaarscherm.naam1 = Speler1_naam.Text;
 
                                 this.Hide();
                                 winaarscherm.Show();
                                 this.Close();
-                            } 
+                            } //kijken als speler 2 meer punten heeft als speler 1
                             if (PlayerTwoScore > PlayerOneScore)
-                            {
-                                //MessageBox.Show("Player 2 is winaar");
-
-                                winaarscherm winaarscherm = new winaarscherm();
+                            {//geef naam en score door aan het winnaarscherm
+                                winaarscherm winaarscherm = new winaarscherm(PlayerTwoScore);
                                 winaarscherm.naam2 = naam2;
-                                winaarscherm.naam2 = Speler1_naam.Text;
 
                                 this.Hide();
                                 winaarscherm.Show();
                                 this.Close();
-
                             }
 
 
