@@ -13,7 +13,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Image Source="memory-logo.png"  Grid.Row="0" />
+        <Image Source="memory-logo.png"  Grid.Row="0" Margin="222,105,195,102" />
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Center">
             <Label Content="Kies speelveld" HorizontalAlignment="Center" FontSize="24" Foreground="White" FontWeight="Bold"/>
