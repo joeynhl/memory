@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Startscherm
 {
@@ -22,13 +23,9 @@ namespace Startscherm
     public partial class Highscores : Window
     {
 
-        ObservableCollection<Score> scores = new ObservableCollection<Score>
-        {
-            new Score{Naam1 = "Erik", Naam2 = "Rienk", Resultaat = 500},
-            new Score{Naam1 = "Kevin", Naam2 = "Joey", Resultaat = 1000},
-            new Score{Naam1 = "Joey", Naam2 = "Rienk", Resultaat = 7000},
 
-        };
+        ObservableCollection<Score> scores = new ObservableCollection<Score>
+        {};
         public Highscores()
         {
             InitializeComponent();
@@ -37,17 +34,29 @@ namespace Startscherm
 
         }
 
+        private void addScore(string Naam1, int Score1, string Naam2, int Score2, int Tijd)
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + "highscores.txt";
+            string score = Naam1 + "," + Score1 + "," + Naam2 + "," + Score2 + "," + Tijd;
+            File.WriteAllText(path, score);
+
+        }
+
         private void ReadFile()
         {
-                try
+            string path = AppDomain.CurrentDomain.BaseDirectory + "highscores.txt";
+            if (!File.Exists(path))
+            {
+                TextWriter tw = new StreamWriter(path);
+                tw.Close();
+            }
+            try
                 {
-                    string path = @"C:\Users\KHD\Desktop\highscores.txt";
-                    List<string> lines = File.ReadAllLines(path).ToList();
+                List<string> lines = File.ReadAllLines(path).ToList();
                     foreach (var line in lines)
                     {
                         string[] entries = line.Split(',');
-                        scores.Add(new Score { Naam1 = entries[0], Naam2 = entries[1], Resultaat = Int32.Parse(entries[2]) });
-
+                        scores.Add(new Score { Naam1 = entries[0], Score1 = Int32.Parse(entries[1]), Naam2 = entries[2],Score2 = Int32.Parse(entries[3]),Tijd = Int32.Parse(entries[4]) });
                     }
             }
                 catch (Exception e)
@@ -56,17 +65,13 @@ namespace Startscherm
                 }
         }
 
-        private void AddItemClick(object sender, RoutedEventArgs e)
-        {
-            scores.Add(new Score{ Naam1 = "Erik", Naam2 = "Rienk", Resultaat = 500});
-        }
-
         public class Score
         {
             public string Naam1 { set; get; }
+            public int Score1 { set; get; }
             public string Naam2 { set; get; }
-            public int Resultaat { set; get; }
-
+            public int Score2 { set; get; }
+            public int Tijd { set; get; }
 
         }
     }

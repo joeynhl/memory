@@ -10,9 +10,12 @@
         <Label Content="Highscores" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36"/>
         <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="10,58,10,10">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Resultaat" Binding="{Binding Resultaat}"/>
                 <DataGridTextColumn Header="Naam 1" Binding="{Binding Naam1}"/>
+                <DataGridTextColumn Header="Score 1" Binding="{Binding Score1}"/>
                 <DataGridTextColumn Header="Naam 2" Binding="{Binding Naam2}"/>
+                <DataGridTextColumn Header="Score 2" Binding="{Binding Naam2}"/>
+                <DataGridTextColumn Header="Tijd" Binding="{Binding Tijd}"/>
+
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
