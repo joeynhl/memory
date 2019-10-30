@@ -28,6 +28,8 @@ namespace Startscherm
 
         public string naam1 { get; internal set; }
         public string naam2 { get; internal set; }
+        public string scorenaam1 { get; internal set; }
+        public string scorenaam2 { get; internal set; }
         public string ChoosenTheme { get; internal set; }
 
         //public string ThemeName { get; internal set; }
@@ -208,8 +210,9 @@ namespace Startscherm
 
         private void setField()
         {
-            if(multiplecards == null)
+            if(multiplecards != null)
             { 
+               
             fillCards(); // get the duplicate cards array filled
 
             var rnd = new Random();
@@ -281,7 +284,10 @@ namespace Startscherm
         /// </summary>
         private int PlayerTwoScore = 0;
 
-
+        /// <summary>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
             var Card = e.Source as FrameworkElement;
@@ -375,13 +381,15 @@ namespace Startscherm
                             }
                         }
                         //kijken waneer score gelijk is aan 8
-                        if (PlayerOneScore+PlayerTwoScore == 8)
+                        if (PlayerOneScore+PlayerTwoScore == 3)
                         {//als speler 1 meer punten geeft dan speler 2 
                             if (PlayerOneScore > PlayerTwoScore)
                             {//geef naam en score door aan het winnaarscherm
                                 winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
-                               
+                                scorenaam2 = naam2;
                                 winaarscherm.naam1 = naam1;
+                                winaarscherm.scorenaam2 = scorenaam2;
+
 
                                 this.Hide();
                                 winaarscherm.Show();
@@ -390,8 +398,10 @@ namespace Startscherm
                             if (PlayerTwoScore > PlayerOneScore)
                             {//geef naam en score door aan het winnaarscherm
                                 winaarscherm winaarscherm = new winaarscherm(PlayerTwoScore);
+                                scorenaam1 = naam1;
                                 winaarscherm.naam2 = naam2;
-
+                                winaarscherm.scorenaam1 = scorenaam1;
+                                
                                 this.Hide();
                                 winaarscherm.Show();
                                 this.Close();
@@ -462,13 +472,44 @@ namespace Startscherm
             }
             if (minutes == 0 & seconds == 0)
             {
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!╭━━╮╭━━━┳╮╱╱╭━━━┳━╮╱╭┳━━━┳━━━┳━━╮╱╭┳╮╭━╮
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╭╮┃┃╭━━┫┃╱╱┃╭━╮┃┃╰╮┃┃╭━╮┃╭━╮┣┫┣╯╱┃┃┃┃╭╯
-                //Moet eigenlijk naar het winnaarsscherm   ┃╰╯╰┫╰━━┫┃╱╱┃┃╱┃┃╭╮╰╯┃┃╱╰┫╰━╯┃┃┃╱╱┃┃╰╯╯
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╭━╮┃╭━━┫┃╱╭┫╰━╯┃┃╰╮┃┃┃╭━┫╭╮╭╯┃┃╭╮┃┃╭╮┃
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╰━╯┃╰━━┫╰━╯┃╭━╮┃┃╱┃┃┃╰┻━┃┃┃╰┳┫┣┫╰╯┃┃┃╰╮
-                //                                         ╰━━━┻━━━┻━━━┻╯╱╰┻╯╱╰━┻━━━┻╯╰━┻━━┻━━┻╯╰━╯
+                                       
                 //System.Environment.Exit(1);
+
+           
+                //TODO: infinite loop if players have equal score
+
+                //if (PlayerOneScore > PlayerTwoScore)
+                //{//geef naam en score door aan het winnaarscherm
+                //    winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
+
+                //    winaarscherm.naam1 = naam1;
+
+                //    this.Hide();
+                //    winaarscherm.Show();
+                //    this.Close();
+                //} //kijken als speler 2 meer punten heeft als speler 1
+                //else if (PlayerTwoScore > PlayerOneScore)
+                //{//geef naam en score door aan het winnaarscherm
+                //    winaarscherm winaarscherm = new winaarscherm(PlayerTwoScore);
+                //    winaarscherm.naam2 = naam2;
+
+                //    this.Hide();
+                //    winaarscherm.Show();
+                //    this.Close();
+                //}
+                //else if (PlayerOneScore == PlayerTwoScore)
+                //{
+                //    //string naam3 = "Gelijkspel";
+                //    winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
+                //    //winaarscherm.naam1 = naam3;
+
+
+                //    this.Hide();
+                //    winaarscherm.Show();
+                //    this.Close();
+
+                //}
+
             }
         }
 

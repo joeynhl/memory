@@ -41,9 +41,10 @@ namespace Startscherm
 
         private void startBtn(object sender, RoutedEventArgs e)
         {
+            Thema_opties opties = new Thema_opties();
+
             this.Hide();
-            Speelveld_grootte grote = new Speelveld_grootte();
-            grote.Show();
+            opties.Show();
             this.Close();
         }
 

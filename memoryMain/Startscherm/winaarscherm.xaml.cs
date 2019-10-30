@@ -22,7 +22,8 @@ namespace Startscherm
     {
         public string naam1 { get; internal set; }
         public string naam2 { get; internal set; }
-        public string naam3 { get; internal set; }
+        public string scorenaam1 { get; internal set; }
+        public string scorenaam2 { get; internal set; }
         public int score1 { get; internal set; }
         public int score2 { get; internal set; }
 
@@ -50,12 +51,17 @@ namespace Startscherm
             {
                 speler1.Text = naam1;//vult naam in
                 score11.Text = Convert.ToString(score1);//vult score in 
+                scorenaam2 = scorenaam2;//speler 2 naam (verliezer)
 
             }
             else if (naam2 != null)//als speler 2 wint 
             {
                 speler1.Text = naam2;//vult naam in 
                 score11.Text = Convert.ToString(score2);//vult score van speler 2 in
+                scorenaam1 = scorenaam1;//speler 1 naam (verliezer)
+                Console.WriteLine(scorenaam1);
+                addScore(naam2, score2, scorenaam1, score1);
+                Console.WriteLine("na de addscore writeline: " + naam2 + " " + score2 + " " + scorenaam1 + " " + score1);
             }
             else//gelijkspel 4 punten x 4 punten
             {
@@ -63,14 +69,15 @@ namespace Startscherm
                 score11.Text = "4";
             }
 
-            addScore(naam1, score1, naam2, score2);
-            
+            //addScore(naam1, score1, scorenaam2, score2);
+            //Console.WriteLine("na de if elses: " + naam2 + " " + score2 + " " + scorenaam1 + " " + score1);
+
         }
 
-        private void addScore(string Naam1, int Score1, string Naam2, int Score2)
+        private void addScore(string scorenaam1, int score1, string naam2, int score2)
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + "highscores.txt";
-            string score = Naam1 + "," + Score1 + "," + Naam2 + "," + Score2;
+            string score = naam2 + "," + score1 + "," + scorenaam1 + "," + score1;
             File.WriteAllText(path, score);
 
         }
