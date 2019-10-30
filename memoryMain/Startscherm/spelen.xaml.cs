@@ -50,15 +50,13 @@ namespace Startscherm
             speelveld.minutes = minutes;
             speelveld.seconds = seconds;
 
-            //string message = chosenThema;
-            //MessageBox.Show(message);
+          
 
             speelveld.Speler1_naam.Text = "Speler : " + naam1;
             speelveld.Speler2_naam.Text = "Speler : " + naam2;
            
 
-            //speelveld.Speler1_naam.Text = "Speler : " + naam1;
-            //speelveld.Speler2_naam.Text = "Speler : " + naam2;
+         
 
             this.Hide();
             speelveld.Show();
