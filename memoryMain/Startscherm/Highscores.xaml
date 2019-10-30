@@ -8,7 +8,7 @@
         Title="Highscores" Height="450" Width="800">
     <Grid>
         <Label Content="Highscores" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36"/>
-        <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="10,58,10,10" SelectionChanged="DataGrid_SelectionChanged">
+        <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="10,58,10,10">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naam 1" Binding="{Binding Naam1}"/>
                 <DataGridTextColumn Header="Score 1" Binding="{Binding Score1}"/>

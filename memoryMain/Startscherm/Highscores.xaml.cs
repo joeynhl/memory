@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Startscherm
 {
@@ -24,13 +25,7 @@ namespace Startscherm
 
 
         ObservableCollection<Score> scores = new ObservableCollection<Score>
-        {
-            new Score{Naam1 = "Erik", Score1 = 100 , Naam2 = "Rienk", Score2 = 500},
-            new Score{Naam1 = "Erik", Score1 = 100 , Naam2 = "Rienk", Score2 = 500},
-            new Score{Naam1 = "Erik", Score1 = 100 , Naam2 = "Rienk", Score2 = 500},
-     
-
-        };
+        {};
         public Highscores()
         {
             InitializeComponent();
@@ -43,7 +38,7 @@ namespace Startscherm
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + "highscores.txt";
             string score = Naam1 + "," + Score1 + "," + Naam2 + "," + Score2 + "," + Tijd;
-            File.WriteAllText(score, path);
+            File.WriteAllText(path, score);
 
         }
 
@@ -53,8 +48,8 @@ namespace Startscherm
             if (!File.Exists(path))
             {
                 TextWriter tw = new StreamWriter(path);
-                addScore("lol", 500, "Eelco", 5000, 39309);
                 tw.Close();
+                addScore("lol", 500, "Eelco", 5000, 39309);
             }
             try
                 {
@@ -63,7 +58,6 @@ namespace Startscherm
                     {
                         string[] entries = line.Split(',');
                         scores.Add(new Score { Naam1 = entries[0], Score1 = Int32.Parse(entries[1]), Naam2 = entries[2],Score2 = Int32.Parse(entries[3]),Tijd = Int32.Parse(entries[4]) });
-
                     }
             }
                 catch (Exception e)
@@ -79,11 +73,6 @@ namespace Startscherm
             public string Naam2 { set; get; }
             public int Score2 { set; get; }
             public int Tijd { set; get; }
-
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
         }
     }
