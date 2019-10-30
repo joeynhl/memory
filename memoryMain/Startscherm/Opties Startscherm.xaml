@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowState="Maximized"
+
         WindowStyle="None" 
         Title="Opties_Startscherm" Height="Auto" Width="Auto" Background="#3ADA9A">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto">
@@ -23,11 +24,11 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto" MinWidth="291"/>
+            <ColumnDefinition Width="Auto" MinWidth="404"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Image Source="memory-logo.png" Stretch="Fill" Margin="13,-2,16,79" Grid.Column="2" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3" >
+        <Image Source="memory-logo.png" Stretch="Fill" Margin="21,-85,3,162" Grid.Column="2" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" >
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -37,12 +38,12 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Slider x:Name="slider" Maximum="1" Value="0.5" Margin="216,19,241,9.667" Grid.Column="2" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" ValueChanged="slider_ValueChanged" />
-        <Label Content="Opties" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,303,0,0" Height="39" Width="83" FontSize="24" FontWeight="Bold" Grid.Column="3"/>
-        <Button Content="Terug" HorizontalAlignment="Left" Margin="200,12,0,0" VerticalAlignment="Top" Width="256" Height="79" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Terug" Grid.Column="2" Grid.Row="6" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-        <Label Content="Volume" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,17,0,0" Height="39" Width="101" FontSize="18" FontWeight="Bold" Foreground="White" Grid.Column="3" Grid.Row="3" RenderTransformOrigin="2.325,0.59" Grid.RowSpan="2"/>
-        <Button x:Name="button" Content="Play" Grid.Column="2" HorizontalAlignment="Left" Margin="216,23,0,0" Grid.Row="5" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="playMuziek_Click"/>
-        <Button x:Name="button_Copy" Content="Stop" Grid.Column="3" HorizontalAlignment="Left" Margin="57,23,0,0" Grid.Row="5" VerticalAlignment="Top" Width="75" Click="stopMuziek_Click"/>
+        <Slider x:Name="slider" Maximum="1" Value="0.5" Margin="216,19,241,10" Grid.Column="2" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" ValueChanged="slider_ValueChanged" />
+        <Label Content="Opties" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,279,0,0" Height="39" Width="83" FontSize="24" FontWeight="Bold" Grid.Column="3"/>
+        <Button Content="Terug" HorizontalAlignment="Left" Margin="209,16,0,-4" VerticalAlignment="Top" Width="256" Height="79" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Terug" Grid.Column="2" Grid.Row="6" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Label Content="Volume" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3,14,0,0" Height="39" Width="101" FontSize="18" FontWeight="Bold" Foreground="White" Grid.Column="3" Grid.Row="3" RenderTransformOrigin="2.325,0.59" Grid.RowSpan="2"/>
+        <Button x:Name="button" Content="Play" Grid.Column="2" HorizontalAlignment="Left" Margin="216,23,0,0" Grid.Row="5" VerticalAlignment="Top" Width="75" Click="playMuziek_Click" Height="20"/>
+        <Button x:Name="button_Copy" Content="Stop" Grid.Column="3" HorizontalAlignment="Left" Margin="57,23,0,0" Grid.Row="5" VerticalAlignment="Top" Width="75" Click="stopMuziek_Click" Height="20"/>
 
     </Grid>
 </Window>

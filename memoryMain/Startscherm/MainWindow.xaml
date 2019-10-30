@@ -6,29 +6,38 @@
         xmlns:local="clr-namespace:Startscherm"
         mc:Ignorable="d"
         Title="MainWindow"
+        Background="#3ada9a"
+        WindowStyle="None" 
         ResizeMode="NoResize"
         WindowState="Maximized"
-        WindowStyle="None" 
         >
-    
-
-    <Grid Background="#3ada9a">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Image Source="memory-logo.png"  Grid.Row="0" HorizontalAlignment="Center" />
+        <Image Source="memory-logo.png"  Stretch="Fill" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="260" Margin="-7,-158,66,116" Width="590" Grid.ColumnSpan="4" Grid.Column="1"/>
 
         <!--<GroupBox HorizontalAlignment="Left" Height="265" Margin="502,58,0,0" Grid.Row="4" VerticalAlignment="Top" Width="214">-->
 
-            <StackPanel HorizontalAlignment="Center" Grid.Row="1">
-                <Button Foreground="White" Background="#666666" Content="Start spel" Width="137" Height="42" Click="startBtn"/>
-                <Button Foreground="White" Background="#666666" Content="Hervatten"  Width="137" Height="42" Click="hervatten"/>
-                <Button Foreground="White" Background="#666666" Content="Highscores" Width="137" Height="42" Click="Highscores_Click"/>
-                <Button Foreground="White" Background="#666666" Content="Opties" Width="137" Height="42" Click="Opties"/>
-                <Button Foreground="White" Background="#666666" Content="Afsluiten" Width="137" Height="42" Click="btnExit"/>
-            </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="3" Grid.Column="2" Margin="32,0,36,0">
+            <Button Foreground="White" Background="#666666" Content="Start spel" Width="137" Height="42" Click="startBtn"/>
+            <Button Foreground="White" Background="#666666" Content="Hervatten"  Width="137" Height="42" Click="hervatten"/>
+            <Button Foreground="White" Background="#666666" Content="Highscores" Width="137" Height="42" Click="Highscores_Click"/>
+            <Button Foreground="White" Background="#666666" Content="Opties" Width="137" Height="42" Click="Opties"/>
+            <Button Foreground="White" Background="#666666" Content="Afsluiten" Width="137" Height="42" Click="btnExit"/>
+        </StackPanel>
         <!--</GroupBox>-->
     </Grid>
 </Window>

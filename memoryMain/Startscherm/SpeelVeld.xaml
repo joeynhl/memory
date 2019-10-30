@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Startscherm"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="MainWindow"  WindowState="Maximized" Height="828.661" Width="1234.402" >
+        Title="MainWindow"  Height="828.661" Width="1234.402" >
 
     <Window.Resources>
         <BitmapImage x:Key="openImage" UriSource="Image/goodestboi.jpg" />

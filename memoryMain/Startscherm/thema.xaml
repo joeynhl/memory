@@ -6,19 +6,32 @@
         xmlns:local="clr-namespace:Startscherm"
         mc:Ignorable="d"
         Title="thema"
+        WindowStyle="None"
+        ResizeMode="NoResize"
         WindowState="Maximized"
-        >
-    <Grid Background="#3ada9a">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+        Background="#3ada9a"
 
+        >
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="233.167"/>
+            <ColumnDefinition Width="436.833"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Image Source="memory-logo.png" Grid.Row="0"/>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Height="250" Grid.Row="1" HorizontalAlignment="Center">
+        <Image Source="memory-logo.png" Stretch="Fill" Grid.Row="0" Margin="5,-167,-6,192" Grid.ColumnSpan="8" RenderTransformOrigin="0.488,0.305"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" Margin="35.833,16,264,-154" Width="137" Grid.Column="4" Grid.Row="1">
             <StackPanel CanVerticallyScroll="True" x:Name="ButtonHolder" >
                 <Button Click="btnMario" Content="Mario"/>
-        </StackPanel>
+            </StackPanel>
         </ScrollViewer>
 
         <!--<Button HorizontalAlignment="Left" Margin="1,1.2,0,0" VerticalAlignment="Top" Width="114" Height="122" Grid.Column="1" Grid.Row="5" Grid.RowSpan="2" Click="btnMario">

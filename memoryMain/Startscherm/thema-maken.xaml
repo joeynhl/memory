@@ -6,36 +6,40 @@
         xmlns:local="clr-namespace:Startscherm"
         mc:Ignorable="d"
         Title="thema_maken"
+        ResizeMode="NoResize"
         WindowState="Maximized"
+        Background="#3ada9a"
         WindowStyle="None"
         >
-    <Grid Background="#3ada9a">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto">
         <Grid.RowDefinitions>
-            <RowDefinition Height="172*"/>
-            <RowDefinition Height="270*"/>
-            <RowDefinition Height="47*"/>
-            <RowDefinition Height="17*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="125*" />
-            <ColumnDefinition Width="156*" />
-            <ColumnDefinition Width="30*"/>
-            <ColumnDefinition Width="136*"/>
-            <ColumnDefinition Width="26*"/>
-            <ColumnDefinition Width="164*"/>
-            <ColumnDefinition Width="125*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <Image Source="memory-logo.png" Grid.Column="1" Margin="8.2,0,4.8,4" Grid.ColumnSpan="5" />
-        <TextBox x:Name="themaNaam" Grid.Column="3" Height="21" Margin="10.6,40,9.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1"/>
-        <Label FontWeight="Bold" Content="Thema naam:" Grid.Column="3" HorizontalAlignment="Left" Margin="9.6,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="126"/>
-        <DockPanel Grid.Column="1" Grid.Row="1" Margin="45.2,99,45.8,0.6" Grid.ColumnSpan="5" >
+        <Image Source="memory-logo.png" Grid.Column="1" Margin="-10,-102,50,121" Grid.ColumnSpan="6" />
+        <TextBox x:Name="themaNaam" Grid.Column="3" Height="21" Margin="11,31,24,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label FontWeight="Bold" Content="Thema naam:" Grid.Column="3" HorizontalAlignment="Left" Margin="128,285,0,0" VerticalAlignment="Top" Width="126" Grid.RowSpan="2"/>
+        <DockPanel Grid.Column="1" Grid.Row="2" Margin="45,14,46,44" Grid.ColumnSpan="5" Grid.RowSpan="2" >
             <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
                 <Button x:Name="btnOpenFiles" Click="btnOpenFiles_Click" Height="58" Width="90" Content="Open files"/>
             </WrapPanel>
-            <ListBox Name="themeImages" Margin="0,0,0,10" Width="292" />
+            <ListBox Name="themeImages" Width="292" Height="75" VerticalAlignment="Top" Margin="0,0,0,-71" />
         </DockPanel>
-        <Button Name="CreateTheme" Click="ImagesToFolder" Content="Maak thema" Margin="22.6,3.4,24.4,1.8" Grid.Row="2" Grid.Column="3"/>
-        
+        <Button Name="CreateTheme" Click="ImagesToFolder" Content="Maak thema" Margin="19,52,28,-100" Grid.Row="5" Grid.Column="3"/>
+
     </Grid>
 
 </Window>

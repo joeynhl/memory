@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Startscherm"
         mc:Ignorable="d"
-        ResizeMode="NoResize"
+
         WindowStyle="None"
         Loaded="Window_Loaded"
-        Title="Ingame_menu" Background="#3ada9a" WindowState="Maximized" Height="1011" Width="1416">
+        Title="Ingame_menu" Background="#3ada9a"  Height="1011" Width="1416">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0*"/>

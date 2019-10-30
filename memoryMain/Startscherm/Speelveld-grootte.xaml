@@ -6,16 +6,27 @@
         xmlns:local="clr-namespace:Startscherm"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        WindowStyle="None"
-        Title="Speelveld_grootte"  WindowState="Maximized" Height="1011" Width="1416" Background="#3ADA9A">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Image Source="memory-logo.png"  Grid.Row="0" Margin="222,105,195,102" />
+        WindowState="Maximized"
 
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+        WindowStyle="None"
+        Title="Speelveld_grootte" Height="Auto" Width="Auto" Background="#3ADA9A">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Image Source="memory-logo.png"  Grid.Row="1" Margin="169,-50,156,177" Grid.RowSpan="2" Grid.Column="1" />
+
+        <StackPanel Grid.Row="3" HorizontalAlignment="Center" Margin="423,0,410,0" Grid.RowSpan="3" Grid.Column="1" Width="202">
             <Label Content="Kies speelveld" HorizontalAlignment="Center" FontSize="24" Foreground="White" FontWeight="Bold"/>
 
             <RadioButton GroupName="fieldsize" Content="4x4" Foreground="White" DataContext="8" FontSize="40" HorizontalAlignment="Center" IsChecked="True"/>
