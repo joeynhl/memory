@@ -30,16 +30,13 @@ namespace Startscherm
         public string naam2 { get; internal set; }
         public string ChoosenTheme { get; internal set; }
 
-
-
-
+        public string ThemeName { get; internal set; }
 
         public string score1 { get; internal set; }
         public string score2 { get; internal set; }
+        public int minutes { get; internal set; }
+        public int seconds { get; internal set; }
         DispatcherTimer dt = new DispatcherTimer();
-        public int minutes = 5;
-        public int seconds = 0;
-
 
         public speelveld()
         {
@@ -433,7 +430,12 @@ namespace Startscherm
             }
             if (minutes == 0 & seconds == 0)
             {
-                //TimerLabel.Content = "TIME UP";
+                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!╭━━╮╭━━━┳╮╱╱╭━━━┳━╮╱╭┳━━━┳━━━┳━━╮╱╭┳╮╭━╮
+                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╭╮┃┃╭━━┫┃╱╱┃╭━╮┃┃╰╮┃┃╭━╮┃╭━╮┣┫┣╯╱┃┃┃┃╭╯
+                //Moet eigenlijk naar het winnaarsscherm   ┃╰╯╰┫╰━━┫┃╱╱┃┃╱┃┃╭╮╰╯┃┃╱╰┫╰━╯┃┃┃╱╱┃┃╰╯╯
+                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╭━╮┃╭━━┫┃╱╭┫╰━╯┃┃╰╮┃┃┃╭━┫╭╮╭╯┃┃╭╮┃┃╭╮┃
+                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╰━╯┃╰━━┫╰━╯┃╭━╮┃┃╱┃┃┃╰┻━┃┃┃╰┳┫┣┫╰╯┃┃┃╰╮
+                //                                         ╰━━━┻━━━┻━━━┻╯╱╰┻╯╱╰━┻━━━┻╯╰━┻━━┻━━┻╯╰━╯
                 System.Environment.Exit(1);
             }
         }
