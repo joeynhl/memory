@@ -190,5 +190,10 @@
   <ItemGroup>
     <None Include="Resources\Sound1.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="muziek\Sound1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

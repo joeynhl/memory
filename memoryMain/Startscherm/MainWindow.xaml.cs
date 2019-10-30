@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,8 +23,9 @@ namespace Startscherm
     /// </summary>
     public partial class MainWindow : Window
     {
-        SoundPlayer musicPlayer = new SoundPlayer(Properties.Resources.Sound1);
+        MediaPlayer Sound = new MediaPlayer();
 
+      
 
         public MainWindow()
         {
@@ -61,7 +61,8 @@ namespace Startscherm
                 string pathname = openFileDialog.FileName;
                 List<string> lines = File.ReadAllLines(pathname).ToList();
 
-             
+                
+
                     foreach (var line in lines)
                 {
                     string[] entries = line.Split(',');
@@ -103,23 +104,24 @@ namespace Startscherm
 
         public void InitialiseerMuziek()
         {
-            musicPlayer.Play();
-           
+            string path = AppDomain.CurrentDomain.BaseDirectory + "/muziek/Sound1.wav";
+            Sound.Open(new Uri(path));
+            Sound.Play();
         }
 
         private void playMuziek_Click(object sender, RoutedEventArgs e)
         {
-           musicPlayer.Play();
+            Sound.Play();
         }
         private void stopMuziek_Click(object sender, RoutedEventArgs e)
         {
-           musicPlayer.Stop();
+            Sound.Stop();
         }
 
         private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-           // double value = slider.Value;
-           // Sound.Volume = value;
+            double value = slider.Value;
+            Sound.Volume = value;
         }
     }
 }
