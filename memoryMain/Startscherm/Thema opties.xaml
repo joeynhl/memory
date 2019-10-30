@@ -5,38 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Startscherm"
         mc:Ignorable="d"
-        ResizeMode="NoResize"
         WindowStyle="None"
-        Title="Thema_opties" WindowState="Maximized" Height="Auto" Width="Auto" Background="#3ADA9A">
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="454" Width="548">
+        Title="Thema_opties" Height="Auto" Width="Auto" Background="#3ADA9A">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Image Source="memory-logo.png" Stretch="Fill" Width="Auto" Height="Auto" Grid.Row="1" Margin="115,-118,86,60" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="2">
+        <Button Content="Thema kiezen" HorizontalAlignment="Left" Margin="403,45,0,-23" VerticalAlignment="Top" Width="280" Height="74" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Themakiezen" Grid.Row="3" Grid.Column="3" Grid.RowSpan="2"/>
+        <Button Content="Thema maken" HorizontalAlignment="Left" Margin="406,135,0,0" VerticalAlignment="Top" Width="278" Height="78" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Themamaken" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" RenderTransformOrigin="0.406,0.447"/>
+        <Image Source="memory-logo.png" Stretch="Fill" Margin="226,10,219,123" Grid.Column="3" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" >
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="0.076"/>
+                    <RotateTransform Angle="0.551"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Button Content="Thema kiezen" HorizontalAlignment="Left" Margin="5,1,0,0" VerticalAlignment="Top" Width="262" Height="70" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Themakiezen" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2"/>
-        <Button Content="Thema maken" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="278" Height="78" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Themamaken" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="2" RenderTransformOrigin="0.406,0.447"/>
 
     </Grid>
 </Window>

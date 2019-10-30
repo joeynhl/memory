@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:Startscherm"
         mc:Ignorable="d"
         Title="MainWindow"
-        WindowState="Maximized"
-        ResizeMode="NoResize"
+
         WindowStyle="None" 
         >
     
@@ -15,7 +14,7 @@
     <Grid Background="#3ada9a">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <Image Source="memory-logo.png"  Grid.Row="0" HorizontalAlignment="Center" />
