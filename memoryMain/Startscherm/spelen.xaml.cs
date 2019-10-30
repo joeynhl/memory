@@ -67,6 +67,13 @@ namespace Startscherm
 
         }
 
+        /// <summary>
+        /// Dit zorgt ervoor dat de ingevoerde minuten worden ingevoerd in de timer.
+        /// Hert controleert ook of de input van de gebruiker wel juist is.
+        /// Voor verschillende soorten verkeerde inputs doet het programma iets anders.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Minutes_Changed(object sender, TextChangedEventArgs e)
         {
             if (MinutesBox.Text == "")
