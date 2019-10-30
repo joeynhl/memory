@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Startscherm"
         mc:Ignorable="d"
         Title="MainWindow"
-
+        ResizeMode="NoResize"
+        WindowState="Maximized"
         WindowStyle="None" 
         >
     

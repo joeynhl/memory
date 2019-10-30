@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Startscherm"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowState="Maximized"
         WindowStyle="None" 
         Title="Opties_Startscherm" Height="Auto" Width="Auto" Background="#3ADA9A">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto">
