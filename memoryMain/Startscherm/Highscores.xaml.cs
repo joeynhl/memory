@@ -49,7 +49,6 @@ namespace Startscherm
             {
                 TextWriter tw = new StreamWriter(path);
                 tw.Close();
-                addScore("lol", 500, "Eelco", 5000, 39309);
             }
             try
                 {
