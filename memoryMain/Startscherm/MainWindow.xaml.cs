@@ -67,22 +67,24 @@ namespace Startscherm
                 {
                     string[] entries = line.Split(',');
 
-                    speelveld.Speler1_naam.Text = entries[0];
-                    speelveld.speler1Score.Text = entries[1];
-                    speelveld.Speler2_naam.Text = entries[2];
-                    speelveld.speler2Score.Text = entries[3];
-                    speelveld.theme = entries[4];
+                    speelveld.Speler1_naam.Text = entries[17];
+                    speelveld.speler1Score.Text = entries[18];
+                    speelveld.Speler2_naam.Text = entries[19];
+                    speelveld.speler2Score.Text = entries[20];
+                    speelveld.theme = entries[21];
+
 
                     //speelveld.cardgrid = entries[5];
 
-
+                    int k = 0;
 
                     for (int i = 0; i < speelveld.multiplecards.GetLength(0); i++)
                     {
                         for (int j = 0; j < speelveld.multiplecards.GetLength(1); j++)
                         {
-                            count++;
-                            speelveld.multiplecards[i, j] = entries[count]; // put cards in the 2d array
+                           
+                            speelveld.multiplecards[i, j] = entries[k]; // put cards in the 2d array
+                            k++;
                         }
                     }
 

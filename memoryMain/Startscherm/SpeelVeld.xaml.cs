@@ -208,11 +208,13 @@ namespace Startscherm
 
         private void setField()
         {
+            if(multiplecards == null)
+            { 
             fillCards(); // get the duplicate cards array filled
 
             var rnd = new Random();
             Shuffle(rnd, multiplecards); //shuffle cards
-
+            }
             for (int row = 0; row < multiplecards.GetLength(0); row++) //loop trough rows
             {
                 for (int column = 0; column < multiplecards.GetLength(1); column++) // loop trough columns
@@ -235,6 +237,11 @@ namespace Startscherm
 
 
                     Card.MouseLeftButtonDown += Rectangle_MouseDown; // set mousedown event on card
+
+                    if(multiplecards[row,column] == "")
+                    {
+                        Card.Visibility = Visibility.Hidden;
+                    }
 
                     cardgrid.Children.Add(Card); // add card to grid
 
@@ -461,7 +468,7 @@ namespace Startscherm
                 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╭━╮┃╭━━┫┃╱╭┫╰━╯┃┃╰╮┃┃┃╭━┫╭╮╭╯┃┃╭╮┃┃╭╮┃
                 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┃╰━╯┃╰━━┫╰━╯┃╭━╮┃┃╱┃┃┃╰┻━┃┃┃╰┳┫┣┫╰╯┃┃┃╰╮
                 //                                         ╰━━━┻━━━┻━━━┻╯╱╰┻╯╱╰━┻━━━┻╯╰━┻━━┻━━┻╯╰━╯
-                System.Environment.Exit(1);
+                //System.Environment.Exit(1);
             }
         }
 

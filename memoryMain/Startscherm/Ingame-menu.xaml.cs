@@ -90,7 +90,7 @@ namespace Startscherm
             if (minutes == 0 & seconds == 0)
             {
                 //TimerLabel.Content = "TIME UP";
-                System.Environment.Exit(1);
+                //System.Environment.Exit(1);
             }
 
 
@@ -146,7 +146,7 @@ namespace Startscherm
 
 
 
-                string[] createText = { naam1 + "," + score1 + "," + naam2 + "," + score2 + "," + themaNaam + "," + images };
+                string[] createText = { images + "," + naam1 + "," + score1 + "," + naam2 + "," + score2 + "," + themaNaam };
                 
 
                 File.WriteAllLines(saveFileDialog.FileName, createText);
