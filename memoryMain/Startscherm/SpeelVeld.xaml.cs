@@ -30,7 +30,7 @@ namespace Startscherm
         public string naam2 { get; internal set; }
         public string ChoosenTheme { get; internal set; }
 
-        public string ThemeName { get; internal set; }
+        //public string ThemeName { get; internal set; }
 
         public string score1 { get; internal set; }
         public string score2 { get; internal set; }

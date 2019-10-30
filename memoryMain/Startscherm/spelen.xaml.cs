@@ -38,8 +38,11 @@ namespace Startscherm
         {
             string naam1 = Textbox1_speler1.Text;
             string naam2 = Textbox2_speler2.Text;
+            string chosenTheme = ThemeName;
 
             speelveld speelveld = new speelveld();
+
+            speelveld.ChoosenTheme = chosenTheme;
 
             speelveld.naam1 = naam1;
             speelveld.naam2 = naam2;
@@ -50,14 +53,15 @@ namespace Startscherm
             //string message = chosenThema;
             //MessageBox.Show(message);
 
-            speelveld.ThemeName = ThemeName;
+            speelveld.Speler1_naam.Text = "Speler : " + naam1;
+            speelveld.Speler2_naam.Text = "Speler : " + naam2;
+           
 
             //speelveld.Speler1_naam.Text = "Speler : " + naam1;
             //speelveld.Speler2_naam.Text = "Speler : " + naam2;
 
             this.Hide();
             speelveld.Show();
-            this.Close();
         }
 
         public void Textbox1_speler1_TextChanged(object sender, TextChangedEventArgs e)
