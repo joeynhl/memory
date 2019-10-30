@@ -73,8 +73,10 @@ namespace Startscherm
                     speelveld.speler2Score.Text = entries[3];
                     speelveld.theme = entries[4];
 
+                    //speelveld.cardgrid = entries[5];
 
-                   
+
+
                     for (int i = 0; i < speelveld.multiplecards.GetLength(0); i++)
                     {
                         for (int j = 0; j < speelveld.multiplecards.GetLength(1); j++)

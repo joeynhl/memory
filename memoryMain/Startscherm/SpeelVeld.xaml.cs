@@ -204,6 +204,8 @@ namespace Startscherm
             }
         }
 
+        public List<string> CardCheckList = new List<string>();
+
         private void setField()
         {
             fillCards(); // get the duplicate cards array filled
@@ -228,6 +230,8 @@ namespace Startscherm
                     Card.Name = "Card"; //set column property
 
                     Card.SetValue(DataContextProperty, multiplecards[row, column]); // set img url as data context 
+
+                    CardCheckList.Add(multiplecards[row, column]);
 
 
                     Card.MouseLeftButtonDown += Rectangle_MouseDown; // set mousedown event on card
@@ -301,11 +305,28 @@ namespace Startscherm
                         {
                             MessageBox.Show("Deze kaarten zijn gelijk");
 
+
+
                             card_one.Visibility = Visibility.Hidden; // hide first card
                             card_two.Visibility = Visibility.Hidden; // hide second card
 
+
+
+                            for(int i=0; i<CardCheckList.Count; i++)
+                            {
+                                if (CardCheckList[i].Contains(Convert.ToString(card_one.DataContext)))
+                                {
+                                    CardCheckList[i] = "";
+                                }
+                            }
+
+
+
                             card_one = null; // reset card one
                             card_two = null; // reset card two
+
+
+                            
 
                             if (player == 1)//if player 1 has two equal cards
                             {
@@ -455,6 +476,8 @@ namespace Startscherm
 
             string themaNaam = theme;
 
+            List<string> checklist = CardCheckList;
+
             Ingame_menu Ingame_menu = new Ingame_menu(); //Object van maken
             Ingame_menu.naam1 = naam1;
             Ingame_menu.naam2 = naam2;
@@ -465,6 +488,8 @@ namespace Startscherm
             Ingame_menu.cards = cards;
 
             Ingame_menu.themaNaam = themaNaam;
+
+            Ingame_menu.checklist = checklist;
 
             Ingame_menu.minutes = minutes;
             Ingame_menu.seconds = seconds;
