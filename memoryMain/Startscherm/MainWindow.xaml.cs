@@ -35,7 +35,7 @@ namespace Startscherm
 
         private void btnExit(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Environment.Exit(1);
         }
 
         private void startBtn(object sender, RoutedEventArgs e)
@@ -121,6 +121,14 @@ namespace Startscherm
         {
             double value = slider.Value;
             Sound.Volume = value;
+        }
+
+        private void Opties(object sender, RoutedEventArgs e)
+        {
+            Opties_Startscherm opties = new Opties_Startscherm();
+            this.Hide();
+            opties.Show();
+
         }
     }
 }
