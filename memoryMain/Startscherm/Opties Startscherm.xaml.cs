@@ -27,6 +27,14 @@ namespace Startscherm
         public Opties_Startscherm()
         {
             InitializeComponent();
+            InitialiseerMuziek();
+        }
+
+        public void InitialiseerMuziek()
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + "/muziek/Sound1.wav";
+            Sound.Open(new Uri(path));
+            Sound.Play();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
