@@ -127,7 +127,7 @@ namespace Startscherm
         private void Opties(object sender, RoutedEventArgs e)
         {
             Opties_Startscherm opties = new Opties_Startscherm();
-            this.Hide();
+            //this.Hide();
             opties.Show();
 
         }
