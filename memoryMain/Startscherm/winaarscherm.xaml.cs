@@ -21,8 +21,10 @@ namespace Startscherm
     {
         public string naam1 { get; internal set; }
         public string naam2 { get; internal set; }
+        public string naam3 { get; internal set; }
         public int score1 { get; internal set; }
         public int score2 { get; internal set; }
+
 
 
 
@@ -49,10 +51,15 @@ namespace Startscherm
                 score11.Text = Convert.ToString(score1);//vult score in 
 
             }
-            else//als speler 2 wint 
+            else if (naam2 != null)//als speler 2 wint 
             {
                 speler1.Text = naam2;//vult naam in 
                 score11.Text = Convert.ToString(score2);//vult score van speler 2 in
+            }
+            else//gelijkspel 4 punten x 4 punten
+            {
+                speler1.Text = "gelijkspel";
+                score11.Text = "4";
             }
             
         }

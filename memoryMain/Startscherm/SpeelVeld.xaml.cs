@@ -369,6 +369,16 @@ namespace Startscherm
                                 winaarscherm.Show();
                                 this.Close();
                             }
+                            if (PlayerOneScore == PlayerTwoScore)
+                            {
+                                //string naam3 = "Gelijkspel";
+                                winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
+                                //winaarscherm.naam1 = naam3;
+
+                                this.Hide();
+                                winaarscherm.Show();
+                                this.Close();
+                            }
 
 
 
