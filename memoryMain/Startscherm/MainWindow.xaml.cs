@@ -84,11 +84,11 @@ namespace Startscherm
 
                     if (speelveld.player == 1)
                     {
-                        speelveld.Beurt.Text = entries[17];
+                        speelveld.Beurt.Text = "Beurt:" + entries[17];
                     }
                     else
                     {
-                        speelveld.Beurt.Text = entries[19];
+                        speelveld.Beurt.Text = "Beurt:" + entries[19];
                     }
 
 
