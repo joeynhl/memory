@@ -89,11 +89,9 @@ namespace Startscherm
             }
             if (minutes == 0 & seconds == 0)
             {
-                //TimerLabel.Content = "TIME UP";
+                //TimerLabel Content = "TIME UP";
                 //System.Environment.Exit(1);
             }
-
-
         }
 
         private void Speler1_naam_TextChanged(object sender, TextChangedEventArgs e)
@@ -127,16 +125,11 @@ namespace Startscherm
                 this.score1 = score1;
                 this.score2 = score2;
                 this.themaNaam = themaNaam;
-
+                this.minutes = minutes;
+                this.seconds = seconds;
+                this.dt = dt;
 
                 string images = "";
-
-                //List<String> newList = Arrays.asList(images);
-
-
-              
-                        //images += cards[row, column] + ",";
-
 
                 foreach(string image in checklist)
                 {
@@ -144,9 +137,7 @@ namespace Startscherm
 
                 }
 
-
-
-                string[] createText = { images + "," + naam1 + "," + score1 + "," + naam2 + "," + score2 + "," + themaNaam };
+                string[] createText = { images + "," + naam1 + "," + score1 + "," + naam2 + "," + score2 + "," + themaNaam + "," + minutes + "," + seconds + "," + dt };
                 
 
                 File.WriteAllLines(saveFileDialog.FileName, createText);

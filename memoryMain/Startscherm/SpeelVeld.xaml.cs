@@ -515,6 +515,8 @@ namespace Startscherm
             string score1 = speler1Score.Text;
             string score2 = speler2Score.Text;
 
+            //string timer = TimerLabel.Content;
+
 
             string[,] cards = multiplecards;
 
