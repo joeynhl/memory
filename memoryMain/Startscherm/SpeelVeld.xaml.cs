@@ -45,6 +45,7 @@ namespace Startscherm
             InitializeComponent();
             
 
+
         }
 
         public void Window_Loaded(object sender, RoutedEventArgs e)
@@ -67,7 +68,9 @@ namespace Startscherm
            
             dt.Start();
 
-            Beurt.Text = "Beurt:" + naam1;
+           
+
+
         }
 
         /// <summary>
@@ -216,15 +219,20 @@ namespace Startscherm
         private void setField()
         {
             if(CheckSaveFile == false)
-            { 
-               
-            fillCards(); // get the duplicate cards array filled
+            {
+                Beurt.Text = "Beurt:" + naam1;
+
+                fillCards(); // get the duplicate cards array filled
 
             var rnd = new Random();
             Shuffle(rnd, multiplecards); //shuffle cards
             } else
             {
                 multiplecards = SavedCards;
+
+                
+
+              
             }
             for (int row = 0; row < multiplecards.GetLength(0); row++) //loop trough rows
             {
@@ -280,7 +288,7 @@ namespace Startscherm
         /// <summary>
         /// integer for checking whos turn it is (player1 or player2
         /// </summary>
-        private int player = 1; // integer for player 1 or 2
+        public int player = 1; // integer for player 1 or 2
 
         /// <summary>
         /// score for player 1
@@ -330,7 +338,7 @@ namespace Startscherm
                         if (Convert.ToString(card_one.DataContext) == Convert.ToString(card_two.DataContext))// if the the images are the same
                         {
                             isRunning = true;
-                            await Task.Delay(750);
+                            await Task.Delay(3000);
                             isRunning = false;
                             //MessageBox.Show("Deze kaarten zijn gelijk");
 
@@ -372,7 +380,7 @@ namespace Startscherm
                         { // if the images are not equal
                             //MessageBox.Show("Deze kaarten zijn niet gelijk");
                             isRunning = true;
-                            await Task.Delay(750);
+                            await Task.Delay(2000);
                             isRunning = false;
                             card_one.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); //show general image(backside of the card)
                             card_two.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); // show general image(backside of the card)
@@ -525,7 +533,7 @@ namespace Startscherm
             string score1 = speler1Score.Text;
             string score2 = speler2Score.Text;
 
-            string beurt = Beurt.Text;
+            
 
 
             string[,] cards = multiplecards;
@@ -551,7 +559,7 @@ namespace Startscherm
             Ingame_menu.seconds = seconds;
             Ingame_menu.dt = dt;
 
-            Ingame_menu.beurt = beurt;
+            Ingame_menu.player = player;
 
             dt.Stop();
 

@@ -76,7 +76,20 @@ namespace Startscherm
                     speelveld.theme = entries[21];
                     speelveld.minutes = Convert.ToInt32(entries[22]);
                     speelveld.seconds = Convert.ToInt32(entries[23]);
-                    speelveld.Beurt.Text = entries[25];
+                    speelveld.player = Convert.ToInt32(entries[25]);
+                    speelveld.naam1 = entries[17];
+                    speelveld.naam2 = entries[19];
+
+
+
+                    if (speelveld.player == 1)
+                    {
+                        speelveld.Beurt.Text = entries[17];
+                    }
+                    else
+                    {
+                        speelveld.Beurt.Text = entries[19];
+                    }
 
 
                     speelveld.CheckSaveFile = true;

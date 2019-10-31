@@ -52,8 +52,8 @@ namespace Startscherm
 
           
 
-            speelveld.Speler1_naam.Text = "Speler : " + naam1;
-            speelveld.Speler2_naam.Text = "Speler : " + naam2;
+            speelveld.Speler1_naam.Text =  naam1;
+            speelveld.Speler2_naam.Text =  naam2;
            
 
          
