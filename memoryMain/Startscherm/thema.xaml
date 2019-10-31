@@ -12,23 +12,15 @@
         Background="#3ada9a"
 
         >
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="233.167"/>
-            <ColumnDefinition Width="436.833"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
+    <Grid>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
-        <Image Source="memory-logo.png" Stretch="Fill" Grid.Row="0" Margin="5,-167,-6,192" Grid.ColumnSpan="8" RenderTransformOrigin="0.488,0.305"/>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" Margin="35.833,16,264,-154" Width="137" Grid.Column="4" Grid.Row="1">
+        <Image Source="memory-logo.png" Width="500" Grid.Row="0"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Height="250" Grid.Row="1" HorizontalAlignment="Center">
             <StackPanel CanVerticallyScroll="True" x:Name="ButtonHolder" >
                 <Button Click="btnMario" Content="Mario"/>
             </StackPanel>
