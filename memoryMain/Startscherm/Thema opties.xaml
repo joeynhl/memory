@@ -14,7 +14,8 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="648"/>
+            <ColumnDefinition Width="468"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -24,14 +25,14 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Button Content="Thema kiezen" HorizontalAlignment="Left" Margin="415,40.5,0,-18.5" VerticalAlignment="Top" Width="280" Height="74" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Themakiezen" Grid.Row="3" Grid.Column="3" Grid.RowSpan="2"/>
-        <Button Content="Thema maken" HorizontalAlignment="Left" Margin="414,17,0,0" VerticalAlignment="Top" Width="278" Height="78" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Themamaken" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" RenderTransformOrigin="0.406,0.447"/>
-        <Image Source="memory-logo.png" Stretch="Fill" Margin="226,-226,219,151" Grid.Column="3" RenderTransformOrigin="0.5,0.5" >
+        <Button Content="Thema kiezen" HorizontalAlignment="Left" Margin="415,189.5,0,-215.5" VerticalAlignment="Top" Width="280" Height="74" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Themakiezen" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <Button Content="Thema maken" HorizontalAlignment="Left" Margin="414,71.5,0,-101.5" VerticalAlignment="Top" Width="278" Height="78" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Themamaken" Grid.Row="4" Grid.Column="3" RenderTransformOrigin="0.406,0.447" Grid.ColumnSpan="2"/>
+        <Image Source="memory-logo.png" Stretch="Fill" Margin="226,-226,219,1" Grid.Column="3" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Grid.RowSpan="2" >
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="0.551"/>
+                    <RotateTransform Angle="-0.012"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Image.RenderTransform>
