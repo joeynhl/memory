@@ -27,15 +27,20 @@ namespace Startscherm
         public int score1 { get; internal set; }
         public int score2 { get; internal set; }
 
+        string winnaarNaam;
+        int winnaarScore;
+        string verliezerNaam;
+        int verliezerScore;
 
 
 
-       
 
-        public winaarscherm(int score)
+        public winaarscherm(string naamWinnaar, int scoreWinnaar, string naamVerliezer, int scoreVerliezer)
         {
-            score1 = score;
-            score2 = score;
+            winnaarNaam = naamWinnaar;
+            winnaarScore = scoreWinnaar;
+            verliezerNaam = naamVerliezer;
+            verliezerScore = scoreVerliezer;
             InitializeComponent();
             
         }
@@ -46,39 +51,33 @@ namespace Startscherm
         /// <param name="e"></param>
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //als speler 1 wint vul naam in bij winaar + score.
-            if (naam1 != null)
+            if(winnaarNaam == null || verliezerNaam == null)
             {
-                speler1.Text = naam1;//vult naam in
-                score11.Text = Convert.ToString(score1);//vult score in 
-                scorenaam2 = scorenaam2;//speler 2 naam (verliezer)
-
+                return;
             }
-            else if (naam2 != null)//als speler 2 wint 
+            //als speler 1 wint vul naam in bij winaar + score.
+            if (winnaarScore != verliezerScore)
             {
-                speler1.Text = naam2;//vult naam in 
-                score11.Text = Convert.ToString(score2);//vult score van speler 2 in
-                scorenaam1 = scorenaam1;//speler 1 naam (verliezer)
-                Console.WriteLine(scorenaam1);
-                addScore(naam2, score2, scorenaam1, score1);
-                Console.WriteLine("na de addscore writeline: " + naam2 + " " + score2 + " " + scorenaam1 + " " + score1);
+                speler1.Text = winnaarNaam;//vult naam in
+                score11.Text = Convert.ToString(winnaarScore);//vult score in 
+                scorenaam2 = verliezerNaam;//speler 2 naam (verliezer)
+
+                // Voeg score toe
+                addScore(winnaarNaam, winnaarScore, verliezerNaam, verliezerScore);
+                Console.WriteLine("na de if elses: " + winnaarNaam + " " + winnaarScore + " " + verliezerNaam + " " + verliezerScore);
             }
             else//gelijkspel 4 punten x 4 punten
             {
                 speler1.Text = "gelijkspel";
                 score11.Text = "4";
             }
-
-            //addScore(naam1, score1, scorenaam2, score2);
-            //Console.WriteLine("na de if elses: " + naam2 + " " + score2 + " " + scorenaam1 + " " + score1);
-
         }
 
-        private void addScore(string scorenaam1, int score1, string naam2, int score2)
+        private void addScore(string naam1, int score1, string naam2, int score2)
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + "highscores.txt";
-            string score = naam2 + "," + score1 + "," + scorenaam1 + "," + score1;
-            File.WriteAllText(path, score);
+            string score = naam1 + "," + score1 + "," + naam2 + "," + score2 + "\r\n";
+            File.AppendAllText(path, score);
 
         }
 

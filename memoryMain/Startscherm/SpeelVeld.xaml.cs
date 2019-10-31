@@ -385,7 +385,7 @@ namespace Startscherm
                         {//als speler 1 meer punten geeft dan speler 2 
                             if (PlayerOneScore > PlayerTwoScore)
                             {//geef naam en score door aan het winnaarscherm
-                                winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
+                                winaarscherm winaarscherm = new winaarscherm(naam1,PlayerOneScore,naam2,PlayerTwoScore);
                                 scorenaam2 = naam2;
                                 winaarscherm.naam1 = naam1;
                                 winaarscherm.scorenaam2 = scorenaam2;
@@ -397,7 +397,7 @@ namespace Startscherm
                             } //kijken als speler 2 meer punten heeft als speler 1
                             if (PlayerTwoScore > PlayerOneScore)
                             {//geef naam en score door aan het winnaarscherm
-                                winaarscherm winaarscherm = new winaarscherm(PlayerTwoScore);
+                                winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
                                 scorenaam1 = naam1;
                                 winaarscherm.naam2 = naam2;
                                 winaarscherm.scorenaam1 = scorenaam1;
@@ -409,11 +409,11 @@ namespace Startscherm
                             if (PlayerOneScore == PlayerTwoScore)
                             {
                                 //string naam3 = "Gelijkspel";
-                                winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
+                              //  winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
                                 //winaarscherm.naam1 = naam3;
 
                                 this.Hide();
-                                winaarscherm.Show();
+                             //   winaarscherm.Show();
                                 this.Close();
                             }
 
