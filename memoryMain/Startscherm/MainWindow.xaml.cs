@@ -133,7 +133,13 @@ namespace Startscherm
 
         private void Opties(object sender, RoutedEventArgs e)
         {
-            opties.Show();
+            //opties.Show();
+            Opties_Startscherm opties_Startscherm = new Opties_Startscherm();
+            //Thema_opties opties = new Thema_opties();
+
+            this.Hide();
+            opties_Startscherm.Show();
+            //this.Close();
 
         }
     }
