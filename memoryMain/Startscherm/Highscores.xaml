@@ -13,9 +13,7 @@
                 <DataGridTextColumn Header="Naam 1" Binding="{Binding Naam1}"/>
                 <DataGridTextColumn Header="Score 1" Binding="{Binding Score1}"/>
                 <DataGridTextColumn Header="Naam 2" Binding="{Binding Naam2}"/>
-                <DataGridTextColumn Header="Score 2" Binding="{Binding Naam2}"/>
-                <DataGridTextColumn Header="Tijd" Binding="{Binding Tijd}"/>
-
+                <DataGridTextColumn Header="Score 2" Binding="{Binding Score2}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
