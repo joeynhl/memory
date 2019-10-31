@@ -33,7 +33,7 @@
 
         <StackPanel HorizontalAlignment="Center" Grid.Row="3" Grid.Column="2" Margin="32,0,36,0">
             <Button Foreground="White" Background="#666666" Content="Start spel" Width="137" Height="42" Click="startBtn"/>
-            <Button Foreground="White" Background="#666666" Content="Hervatten"  Width="137" Height="42" Click="hervatten"/>
+            <Button Foreground="White" Background="#666666" Content="Spel laden"  Width="137" Height="42" Click="hervatten"/>
             <Button Foreground="White" Background="#666666" Content="Highscores" Width="137" Height="42" Click="Highscores_Click"/>
             <Button Foreground="White" Background="#666666" Content="Opties" Width="137" Height="42" Click="Opties"/>
             <Button Foreground="White" Background="#666666" Content="Afsluiten" Width="137" Height="42" Click="btnExit"/>

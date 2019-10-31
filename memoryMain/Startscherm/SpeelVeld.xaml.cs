@@ -382,7 +382,7 @@ namespace Startscherm
                         }
 
                         //kijken waneer score gelijk is aan 8
-                        if (PlayerOneScore+PlayerTwoScore == 3)
+                        if (PlayerOneScore+PlayerTwoScore == 8)
                         {//als speler 1 meer punten geeft dan speler 2 
                             if (PlayerOneScore > PlayerTwoScore)
                             {//geef naam en score door aan het winnaarscherm
