@@ -62,7 +62,9 @@ namespace Startscherm
                 TimerLabel.Content = minutes.ToString() + ":" + seconds.ToString();
             }
             dt.Interval = TimeSpan.FromSeconds(1);
-            dt.Tick += dtTicker;
+          
+                dt.Tick += dtTicker;
+           
             dt.Start();
 
             Beurt.Text = "Beurt:" + naam1;
@@ -410,19 +412,13 @@ namespace Startscherm
                             if (PlayerOneScore == PlayerTwoScore)
                             {
                                 //string naam3 = "Gelijkspel";
-                              //  winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
-                                //winaarscherm.naam1 = naam3;
+                                //winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
+                               // winaarscherm.naam1 = naam3;
 
                                 this.Hide();
-                             //   winaarscherm.Show();
+                               // winaarscherm.Show();
                                 this.Close();
                             }
-
-
-
-
-
-                          
                         }
                     }
                 }
@@ -473,43 +469,38 @@ namespace Startscherm
             }
             if (minutes == 0 & seconds == 0)
             {
-                                       
-                //System.Environment.Exit(1);
+                    if (PlayerOneScore > PlayerTwoScore)
+                    {//geef naam en score door aan het winnaarscherm
+                        winaarscherm winaarscherm = new winaarscherm(naam1, PlayerOneScore, naam2, PlayerTwoScore);
+                        scorenaam2 = naam2;
+                        winaarscherm.naam1 = naam1;
+                        winaarscherm.scorenaam2 = scorenaam2;
+                        this.Hide();
+                        winaarscherm.Show();
+                        this.Close();
+                    } //kijken als speler 2 meer punten heeft als speler 1
+                    if (PlayerTwoScore > PlayerOneScore)
+                    {//geef naam en score door aan het winnaarscherm
+                        winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
+                        scorenaam1 = naam1;
+                        winaarscherm.naam2 = naam2;
+                        winaarscherm.scorenaam1 = scorenaam1;
 
-           
-                //TODO: infinite loop if players have equal score
+                        this.Hide();
+                        winaarscherm.Show();
+                        this.Close();
+                    }
+                    if (PlayerOneScore == PlayerTwoScore)
+                    {
+                        //string naam3 = "Gelijkspel";
+                        //winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
+                        // winaarscherm.naam1 = naam3;
 
-                //if (PlayerOneScore > PlayerTwoScore)
-                //{//geef naam en score door aan het winnaarscherm
-                //    winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
-
-                //    winaarscherm.naam1 = naam1;
-
-                //    this.Hide();
-                //    winaarscherm.Show();
-                //    this.Close();
-                //} //kijken als speler 2 meer punten heeft als speler 1
-                //else if (PlayerTwoScore > PlayerOneScore)
-                //{//geef naam en score door aan het winnaarscherm
-                //    winaarscherm winaarscherm = new winaarscherm(PlayerTwoScore);
-                //    winaarscherm.naam2 = naam2;
-
-                //    this.Hide();
-                //    winaarscherm.Show();
-                //    this.Close();
-                //}
-                //else if (PlayerOneScore == PlayerTwoScore)
-                //{
-                //    //string naam3 = "Gelijkspel";
-                //    winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
-                //    //winaarscherm.naam1 = naam3;
-
-
-                //    this.Hide();
-                //    winaarscherm.Show();
-                //    this.Close();
-
-                //}
+                        this.Hide();
+                        // winaarscherm.Show();
+                        this.Close();
+                    }
+                dt.Stop();
 
             }
         }
