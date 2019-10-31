@@ -161,6 +161,7 @@ namespace Startscherm
         /// </summary>
         public string[,] multiplecards = new string[4, 4];
 
+        public string[,] SavedCards = new string[4, 4];
         
 
         private static void Shuffle<T>(Random random, T[,] cards)
@@ -206,17 +207,22 @@ namespace Startscherm
             }
         }
 
+        public bool CheckSaveFile;
+
         public List<string> CardCheckList = new List<string>();
 
         private void setField()
         {
-            if(multiplecards != null)
+            if(CheckSaveFile == false)
             { 
                
             fillCards(); // get the duplicate cards array filled
 
             var rnd = new Random();
             Shuffle(rnd, multiplecards); //shuffle cards
+            } else
+            {
+                multiplecards = SavedCards;
             }
             for (int row = 0; row < multiplecards.GetLength(0); row++) //loop trough rows
             {
@@ -314,7 +320,7 @@ namespace Startscherm
                     {
                         card_two = cards; // set second card
 
-                        if (card_one.DataContext == card_two.DataContext)// if the the images are the same
+                        if (Convert.ToString(card_one.DataContext) == Convert.ToString(card_two.DataContext))// if the the images are the same
                         {
                             MessageBox.Show("Deze kaarten zijn gelijk");
 
@@ -322,7 +328,6 @@ namespace Startscherm
 
                             card_one.Visibility = Visibility.Hidden; // hide first card
                             card_two.Visibility = Visibility.Hidden; // hide second card
-
 
 
                             for(int i=0; i<CardCheckList.Count; i++)
@@ -334,12 +339,9 @@ namespace Startscherm
                             }
 
 
-
                             card_one = null; // reset card one
                             card_two = null; // reset card two
 
-
-                            
 
                             if (player == 1)//if player 1 has two equal cards
                             {
@@ -355,8 +357,6 @@ namespace Startscherm
                             }
 
                             clickamount = 0; // set amount clicks to 0;
-
-
 
                         }
                         else
@@ -380,6 +380,7 @@ namespace Startscherm
                                 Beurt.Text = "Beurt:" + naam1;
                             }
                         }
+
                         //kijken waneer score gelijk is aan 8
                         if (PlayerOneScore+PlayerTwoScore == 3)
                         {//als speler 1 meer punten geeft dan speler 2 

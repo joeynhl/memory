@@ -74,9 +74,7 @@ namespace Startscherm
                     speelveld.Speler2_naam.Text = entries[19];
                     speelveld.speler2Score.Text = entries[20];
                     speelveld.theme = entries[21];
-
-
-                    //speelveld.cardgrid = entries[5];
+                    speelveld.CheckSaveFile = true;
 
                     int k = 0;
 
@@ -85,7 +83,7 @@ namespace Startscherm
                         for (int j = 0; j < speelveld.multiplecards.GetLength(1); j++)
                         {
                            
-                            speelveld.multiplecards[i, j] = entries[k]; // put cards in the 2d array
+                            speelveld.SavedCards[i, j] = entries[k]; // put cards in the 2d array
                             k++;
                         }
                     }
