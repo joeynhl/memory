@@ -24,7 +24,7 @@ namespace Startscherm
     /// </summary>
     public partial class Ingame_menu : Window
     {
-        speelveld speelveld = new speelveld();
+        //speelveld speelveld = new speelveld();
         public string naam1 { get; internal set; }
         public string naam2 { get; internal set; }
 
@@ -49,7 +49,7 @@ namespace Startscherm
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             
-            speelveld speelveld = new speelveld();
+            //speelveld speelveld = new speelveld();
 
 
                 Speler1_naam.Text =  naam1;
@@ -228,12 +228,12 @@ namespace Startscherm
 
         private void Hervatten(object sender, RoutedEventArgs e)
         {
-            speelveld.Speler1_naam.Text = naam1;
+            /*speelveld.Speler1_naam.Text = naam1;
             speelveld.Speler2_naam.Text = naam2;
             speelveld.speler1Score.Text = score1;
             speelveld.speler2Score.Text = score2;
             speelveld.minutes = minutes;
-            speelveld.seconds = seconds;
+            speelveld.seconds = seconds;*/
 
 
             if (seconds < 10 & seconds > -1)
@@ -249,7 +249,7 @@ namespace Startscherm
             dt.Start();
 
             this.Hide();
-            speelveld.Show();
+            //speelveld.Show();
             this.Close();
 
         }
