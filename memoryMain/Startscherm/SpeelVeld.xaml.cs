@@ -299,7 +299,9 @@ namespace Startscherm
         /// score for player two
         /// </summary>
         private int PlayerTwoScore = 0;
+
         private bool isRunning = false;
+
         /// <summary>
         /// </summary>
         /// <param name="sender"></param>
@@ -378,7 +380,6 @@ namespace Startscherm
                         }
                         else
                         { // if the images are not equal
-                            //MessageBox.Show("Deze kaarten zijn niet gelijk");
                             isRunning = true;
                             await Task.Delay(2000);
                             isRunning = false;
