@@ -38,6 +38,7 @@
             <ListBox Name="themeImages" Width="292" Height="75" VerticalAlignment="Top" Margin="0,0,0,-71" />
         </DockPanel>
         <Button Name="CreateTheme" Click="ImagesToFolder" Content="Maak thema" Margin="19,52,28,-100" Grid.Row="5" Grid.Column="3"/>
+        <Button Content="Terug" Grid.Column="3" HorizontalAlignment="Left" Margin="128,153,0,-152.8" Grid.Row="5" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
     </Grid>
 

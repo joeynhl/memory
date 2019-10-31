@@ -8,6 +8,8 @@
 
         WindowStyle="None"
         Loaded="Window_Loaded"
+        ResizeMode="NoResize"
+        WindowState="Maximized"
         Title="Ingame_menu" Background="#3ada9a"  Height="1011" Width="1416">
     <Grid>
         <Grid.RowDefinitions>

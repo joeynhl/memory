@@ -9,7 +9,8 @@
         ResizeMode="NoResize"
         WindowState="Maximized"
         WindowStyle="None"
-        Title="spelen" Height="Auto" Width="Auto">
+        Title="spelen" Height="Auto" Width="Auto"
+        >
     <Grid RenderTransformOrigin="0.506,0.486" Margin="0,-40,-0.2,-0.2" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
