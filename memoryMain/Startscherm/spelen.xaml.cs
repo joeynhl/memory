@@ -170,7 +170,6 @@ namespace Startscherm
                     SecondsBox.SelectionStart = SecondsBox.Text.Length;
                     SecondsBox.SelectionLength = 0;
                 }
-
             }
             else
             {

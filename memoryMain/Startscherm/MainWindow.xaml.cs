@@ -74,6 +74,10 @@ namespace Startscherm
                     speelveld.Speler2_naam.Text = entries[19];
                     speelveld.speler2Score.Text = entries[20];
                     speelveld.theme = entries[21];
+                    speelveld.minutes = Convert.ToInt32(entries[22]);
+                    speelveld.seconds = Convert.ToInt32(entries[23]);
+
+
                     speelveld.CheckSaveFile = true;
 
                     int k = 0;
@@ -90,16 +94,7 @@ namespace Startscherm
 
 
 
-                    //for (var i = 0; i < lines.Count; i++)
-                    //{
-                    //    speelveld.multiplecards = entries[];
-                    //}
-
-
-                    //foreach(string image in entries[4])
-                    //{
-                    //    speelveld.cardgrid = entries[4];
-                    //}
+                
 
                 }
 
