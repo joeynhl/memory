@@ -526,7 +526,7 @@ namespace Startscherm
             string score1 = speler1Score.Text;
             string score2 = speler2Score.Text;
 
-            //string timer = TimerLabel.Content;
+            string beurt = Beurt.Text;
 
 
             string[,] cards = multiplecards;
@@ -551,6 +551,8 @@ namespace Startscherm
             Ingame_menu.minutes = minutes;
             Ingame_menu.seconds = seconds;
             Ingame_menu.dt = dt;
+
+            Ingame_menu.beurt = beurt;
 
             dt.Stop();
 

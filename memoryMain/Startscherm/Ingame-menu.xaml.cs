@@ -36,6 +36,7 @@ namespace Startscherm
         public string[,] cards { get; internal set; }
         public string themaNaam { get; internal set; }
         public List<string> checklist { get; internal set; }
+        public string beurt { get; internal set; }
 
         public Ingame_menu()
         {
@@ -128,6 +129,7 @@ namespace Startscherm
                 this.minutes = minutes;
                 this.seconds = seconds;
                 this.dt = dt;
+                this.beurt = beurt;
 
                 string images = "";
 
@@ -137,7 +139,7 @@ namespace Startscherm
 
                 }
 
-                string[] createText = { images + "," + naam1 + "," + score1 + "," + naam2 + "," + score2 + "," + themaNaam + "," + minutes + "," + seconds + "," + dt };
+                string[] createText = { images + "," + naam1 + "," + score1 + "," + naam2 + "," + score2 + "," + themaNaam + "," + minutes + "," + seconds + "," + dt + "," + beurt };
                 
 
                 File.WriteAllLines(saveFileDialog.FileName, createText);
