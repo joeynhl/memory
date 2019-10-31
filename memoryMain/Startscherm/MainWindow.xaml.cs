@@ -63,7 +63,7 @@ namespace Startscherm
                 string pathname = openFileDialog.FileName;
                 List<string> lines = File.ReadAllLines(pathname).ToList();
 
-                int count = 0;
+               
                 
                 foreach (var line in lines)
                 {
@@ -76,6 +76,7 @@ namespace Startscherm
                     speelveld.theme = entries[21];
                     speelveld.minutes = Convert.ToInt32(entries[22]);
                     speelveld.seconds = Convert.ToInt32(entries[23]);
+                    speelveld.Beurt.Text = entries[25];
 
 
                     speelveld.CheckSaveFile = true;
