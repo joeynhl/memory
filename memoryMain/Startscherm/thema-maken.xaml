@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:Startscherm"
         mc:Ignorable="d"
         Title="thema_maken"
-        ResizeMode="NoResize"
-        WindowState="Maximized"
+
         Background="#3ada9a"
         WindowStyle="None"
         >

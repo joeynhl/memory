@@ -291,13 +291,18 @@ namespace Startscherm
         /// score for player two
         /// </summary>
         private int PlayerTwoScore = 0;
-
+        private bool isRunning = false;
         /// <summary>
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        private async void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            if (isRunning)
+            {
+                return;
+            }
+
             var Card = e.Source as FrameworkElement;
 
             if (Card != null)
@@ -324,8 +329,10 @@ namespace Startscherm
 
                         if (Convert.ToString(card_one.DataContext) == Convert.ToString(card_two.DataContext))// if the the images are the same
                         {
-                            MessageBox.Show("Deze kaarten zijn gelijk");
-
+                            isRunning = true;
+                            await Task.Delay(3000);
+                            isRunning = false;
+                            //MessageBox.Show("Deze kaarten zijn gelijk");
 
 
                             card_one.Visibility = Visibility.Hidden; // hide first card
@@ -363,7 +370,10 @@ namespace Startscherm
                         }
                         else
                         { // if the images are not equal
-                            MessageBox.Show("Deze kaarten zijn niet gelijk");
+                            //MessageBox.Show("Deze kaarten zijn niet gelijk");
+                            isRunning = true;
+                            await Task.Delay(3000);
+                            isRunning = false;
                             card_one.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); //show general image(backside of the card)
                             card_two.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); // show general image(backside of the card)
 
