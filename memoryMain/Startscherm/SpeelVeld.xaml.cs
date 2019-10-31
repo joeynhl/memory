@@ -372,7 +372,7 @@ namespace Startscherm
                         { // if the images are not equal
                             //MessageBox.Show("Deze kaarten zijn niet gelijk");
                             isRunning = true;
-                            await Task.Delay(3000);
+                            await Task.Delay(2000);
                             isRunning = false;
                             card_one.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); //show general image(backside of the card)
                             card_two.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); // show general image(backside of the card)
@@ -551,8 +551,9 @@ namespace Startscherm
 
             dt.Stop();
 
-            this.Hide();
+            /*this.Hide();*/
             Ingame_menu.Show();
+
 
         }
     }

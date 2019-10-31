@@ -249,7 +249,7 @@ namespace Startscherm
             dt.Start();
 
             this.Hide();
-            //speelveld.Show();
+
             this.Close();
 
         }
