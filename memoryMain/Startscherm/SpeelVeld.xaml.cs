@@ -361,12 +361,13 @@ namespace Startscherm
                             card_one = null; // reset card one
                             card_two = null; // reset card two
 
-
+                            //TODO: kaarten na laden spel opnieuw toevoegen aan juiste score.text
                             if (player == 1)//if player 1 has two equal cards
                             {
                                 PlayerOneScore++;//score for player1 +1
                                 speler1Score.Text = Convert.ToString(PlayerOneScore);// set score in game
                                 Beurt.Text ="Beurt:" + naam1;
+                                MessageBox.Show(Convert.ToString(PlayerOneScore++));
                             }
                             else// if player 2 has equal cards
                             {
