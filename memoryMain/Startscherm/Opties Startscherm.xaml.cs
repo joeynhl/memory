@@ -48,9 +48,9 @@ namespace Startscherm
 
         private void Terug(object sender, RoutedEventArgs e)
         {
-            //MainWindow main = new MainWindow();
+            MainWindow main = new MainWindow();
             this.Hide();
-            //main.Show();
+            main.Show();
             this.Close();
         }
 
