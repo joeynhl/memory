@@ -26,8 +26,6 @@ namespace Startscherm
         MediaPlayer Sound = new MediaPlayer();
         Opties_Startscherm opties = new Opties_Startscherm();
 
-
-
         public MainWindow()
         {
             InitializeComponent();
@@ -143,11 +141,10 @@ namespace Startscherm
         private void Opties(object sender, RoutedEventArgs e)
         {
             //opties.Show();
-            Opties_Startscherm opties_Startscherm = new Opties_Startscherm();
             //Thema_opties opties = new Thema_opties();
 
-            this.Hide();
-            opties_Startscherm.Show();
+            //this.Hide();
+            opties.Show();
             //this.Close();
 
         }
