@@ -64,9 +64,6 @@ namespace Startscherm
             Duration len = Sound.NaturalDuration;
             TimeSpan pos = Sound.Position;
 
-            Console.WriteLine(len);
-            Console.WriteLine(pos);
-
             if ( pos >= len) {
                 Sound.Open(new Uri(path));
                 Sound.Play();
