@@ -13,6 +13,7 @@ namespace Startscherm
     /// </summary>
     public partial class MainWindow : Window
     {
+
         private MediaPlayer Sound = new MediaPlayer();
         private Opties_Startscherm opties = new Opties_Startscherm();
 
@@ -61,6 +62,9 @@ namespace Startscherm
                     speelveld.naam1 = entries[17];
                     speelveld.naam2 = entries[19];
 
+                    speelveld.PlayerOneScore = Convert.ToInt32(entries[18]);
+                    speelveld.PlayerTwoScore = Convert.ToInt32(entries[20]);
+
                     if (speelveld.player == 1)
                     {
                         speelveld.Beurt.Text = "Beurt:" + entries[17];
@@ -106,11 +110,10 @@ namespace Startscherm
         private void Opties(object sender, RoutedEventArgs e)
         {
             //opties.Show();
-            Opties_Startscherm opties_Startscherm = new Opties_Startscherm();
             //Thema_opties opties = new Thema_opties();
 
-            this.Hide();
-            opties_Startscherm.Show();
+            //this.Hide();
+            opties.Show();
             //this.Close();
         }
     }

@@ -28,6 +28,7 @@ namespace Startscherm
         public string score2 { get; internal set; }
         public int minutes { get; internal set; }
         public int seconds { get; internal set; }
+        public int loadedscore { get; internal set; }
 
         private DispatcherTimer dt = new DispatcherTimer();
 
@@ -266,12 +267,12 @@ namespace Startscherm
         /// <summary>
         /// score for player 1
         /// </summary>
-        private int PlayerOneScore = 0;
+        public int PlayerOneScore = 0;
 
         /// <summary>
         /// score for player two
         /// </summary>
-        private int PlayerTwoScore = 0;
+        public int PlayerTwoScore = 0;
 
         private bool isRunning = false;
 
@@ -397,11 +398,11 @@ namespace Startscherm
                             if (PlayerOneScore == PlayerTwoScore)
                             {
                                 //string naam3 = "Gelijkspel";
-                                //winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
+                                winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
                                 // winaarscherm.naam1 = naam3;
 
                                 this.Hide();
-                                // winaarscherm.Show();
+                                winaarscherm.Show();
                                 this.Close();
                             }
                         }
@@ -475,11 +476,11 @@ namespace Startscherm
                 if (PlayerOneScore == PlayerTwoScore)
                 {
                     //string naam3 = "Gelijkspel";
-                    //winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
-                    // winaarscherm.naam1 = naam3;
+                    winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
+                    //winaarscherm.naam1 = naam3;
 
                     this.Hide();
-                    // winaarscherm.Show();
+                    winaarscherm.Show();
                     this.Close();
                 }
                 dt.Stop();

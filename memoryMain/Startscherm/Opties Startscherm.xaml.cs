@@ -22,7 +22,9 @@ namespace Startscherm
     public partial class Opties_Startscherm : Window
     {
 
-            MediaPlayer Sound = new MediaPlayer();
+        MediaPlayer Sound = new MediaPlayer();
+        string path = AppDomain.CurrentDomain.BaseDirectory + "/muziek/Sound1.wav";
+
 
         public Opties_Startscherm()
         {
@@ -32,9 +34,9 @@ namespace Startscherm
 
         public void InitialiseerMuziek()
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory + "/muziek/Sound1.wav";
             Sound.Open(new Uri(path));
             Sound.Play();
+            checkCurrentPos();
         }
 
         private void playMuziek_Click(object sender, RoutedEventArgs e)
@@ -48,10 +50,25 @@ namespace Startscherm
 
         private void Terug(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
+           // MainWindow main = new MainWindow();
             this.Hide();
-            main.Show();
-            this.Close();
+           // main.Show();
+           // this.Close();
+
+        }
+
+        public async void checkCurrentPos()
+        {
+            await Task.Delay(1000);
+
+            Duration len = Sound.NaturalDuration;
+            TimeSpan pos = Sound.Position;
+
+            if ( pos >= len) {
+                Sound.Open(new Uri(path));
+                Sound.Play();
+            }
+            checkCurrentPos();
         }
 
         private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -60,6 +77,12 @@ namespace Startscherm
             Sound.Volume = value;
         }
 
-      
+        private void Media_Ended(object sender, EventArgs e)
+        {
+            Sound.Open(new Uri(path));
+            Sound.Play();
+        }
+
+
     }
 }
