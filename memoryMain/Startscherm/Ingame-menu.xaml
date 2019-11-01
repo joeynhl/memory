@@ -34,9 +34,6 @@
             <Button Content="Hervatten" Margin="0,0,0,10" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Hervatten"/>
             <Button Content="Resetten"  Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold"  Click="Resetten"/>
 
-            <Label Content="Volume&#xA;" Width="206" HorizontalContentAlignment="Center" FontSize="30" Foreground="White" FontWeight="Bold" Height="68" />
-            <Slider Maximum = "100" ValueChanged="Slider_ValueChanged_1" Width="350" Margin="0,0,0,10" />
-
             <Button Content="Opslaan" Width="272" Margin="0,0,0,10" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Button_Click_1" />
 
             <Button Content="Afsluiten" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Afsluiten" />
