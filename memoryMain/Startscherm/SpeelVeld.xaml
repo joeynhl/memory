@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:Startscherm"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="MainWindow"  Height="828.661" Width="1234.402" 
+        Title="MainWindow"  Height="auto" Width="auto" 
         WindowStyle="None" 
         ResizeMode="NoResize"
         WindowState="Maximized"
+        Background="black"
         >
 
     <Window.Resources>

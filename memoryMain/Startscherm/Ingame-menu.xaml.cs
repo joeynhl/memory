@@ -1,21 +1,11 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Microsoft.Win32;
-using Path = System.IO.Path;
-using save;
-using System.IO;
 using System.Windows.Threading;
+using Path = System.IO.Path;
 
 namespace Startscherm
 {
@@ -26,11 +16,12 @@ namespace Startscherm
     {
         //speelveld speelveld = new speelveld();
         public string naam1 { get; internal set; }
+
         public string naam2 { get; internal set; }
 
         public string score1 { get; internal set; }
         public string score2 { get; internal set; }
-        public int minutes { get; internal set;  }
+        public int minutes { get; internal set; }
         public int seconds { get; internal set; }
         public DispatcherTimer dt { get; internal set; }
         public string[,] cards { get; internal set; }
@@ -44,19 +35,17 @@ namespace Startscherm
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {  
-
+        {
         }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
             //speelveld speelveld = new speelveld();
 
-
-                Speler1_naam.Text =  naam1;
-                Speler2_naam.Text = naam2;
-                speler1Score.Text = score1;
-                speler2Score.Text = score2;
+            Speler1_naam.Text = naam1;
+            Speler2_naam.Text = naam2;
+            speler1Score.Text = score1;
+            speler2Score.Text = score2;
 
             if (minutes < 0)
             {
@@ -97,30 +86,23 @@ namespace Startscherm
 
         private void Speler1_naam_TextChanged(object sender, TextChangedEventArgs e)
         {
-
         }
 
         private void Slider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
             MainWindow mainWindow = new MainWindow();
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-
-           
 
             saveFileDialog.Filter = "save file (*.sav)|*.sav";
             string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             saveFileDialog.InitialDirectory = path;
             if (saveFileDialog.ShowDialog() == true)
             {
-
                 this.naam1 = naam1;
                 this.naam2 = naam2;
                 this.score1 = score1;
@@ -133,27 +115,24 @@ namespace Startscherm
 
                 string images = "";
 
-                foreach(string image in checklist)
+                foreach (string image in checklist)
                 {
                     images += image + ",";
-
                 }
 
                 string[] createText = { images + "," + naam1 + "," + score1 + "," + naam2 + "," + score2 + "," + themaNaam + "," + minutes + "," + seconds + "," + dt + "," + player };
-                
 
                 File.WriteAllLines(saveFileDialog.FileName, createText);
 
                 this.Close();
                 mainWindow.Show();
             }
-
         }
 
         private void Frame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
-
         }
+
         private void Resetten(object sender, RoutedEventArgs e)
         {
             speelveld speelveld = new speelveld();
@@ -170,7 +149,6 @@ namespace Startscherm
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
         }
 
         /// <summary>
@@ -228,7 +206,6 @@ namespace Startscherm
             speelveld.minutes = minutes;
             speelveld.seconds = seconds;*/
 
-
             if (seconds < 10 & seconds > -1)
             {
                 TimerLabel.Content = minutes.ToString() + ":0" + seconds.ToString();
@@ -244,7 +221,6 @@ namespace Startscherm
             this.Hide();
 
             this.Close();
-
         }
 
         private void Afsluiten(object sender, RoutedEventArgs e)

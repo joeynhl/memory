@@ -1,25 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Windows.Threading;
 
 namespace Startscherm
 {
     /// <summary>
     /// Interaction logic for spelen.xaml
     /// </summary>
-    /// 
-    
+    ///
 
     public partial class spelen : Window
     {
@@ -31,7 +19,6 @@ namespace Startscherm
         public spelen()
         {
             InitializeComponent();
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -50,13 +37,8 @@ namespace Startscherm
             speelveld.minutes = minutes;
             speelveld.seconds = seconds;
 
-          
-
-            speelveld.Speler1_naam.Text =  naam1;
-            speelveld.Speler2_naam.Text =  naam2;
-           
-
-         
+            speelveld.Speler1_naam.Text = naam1;
+            speelveld.Speler2_naam.Text = naam2;
 
             this.Hide();
             speelveld.Show();
@@ -64,12 +46,10 @@ namespace Startscherm
 
         public void Textbox1_speler1_TextChanged(object sender, TextChangedEventArgs e)
         {
-
         }
 
         private void Textbox2_speler2_TextChanged(object sender, TextChangedEventArgs e)
         {
-
         }
 
         /// <summary>
@@ -89,7 +69,6 @@ namespace Startscherm
             }
             else if (MinutesBox.Text != "0")
             {
-
                 try
                 {
                     minutes = Convert.ToInt32(MinutesBox.Text);
@@ -106,7 +85,6 @@ namespace Startscherm
                 MinutesBox.Text = minutes.ToString();
                 MinutesBox.SelectionStart = MinutesBox.Text.Length;
                 MinutesBox.SelectionLength = 0;
-
             }
             else
             {
@@ -162,7 +140,6 @@ namespace Startscherm
                     SecondsBox.Text = seconds.ToString();
                     SecondsBox.SelectionStart = SecondsBox.Text.Length;
                     SecondsBox.SelectionLength = 0;
-
                 }
                 else
                 {
@@ -178,4 +155,3 @@ namespace Startscherm
         }
     }
 }
-
