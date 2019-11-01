@@ -28,6 +28,7 @@ namespace Startscherm
         public string score2 { get; internal set; }
         public int minutes { get; internal set; }
         public int seconds { get; internal set; }
+        public int loadedscore { get; internal set; }
 
         private DispatcherTimer dt = new DispatcherTimer();
 
@@ -266,12 +267,12 @@ namespace Startscherm
         /// <summary>
         /// score for player 1
         /// </summary>
-        private int PlayerOneScore = 0;
+        public int PlayerOneScore = 0;
 
         /// <summary>
         /// score for player two
         /// </summary>
-        private int PlayerTwoScore = 0;
+        public int PlayerTwoScore = 0;
 
         private bool isRunning = false;
 
