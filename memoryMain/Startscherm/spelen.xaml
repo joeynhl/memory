@@ -12,16 +12,8 @@
         
         Title="spelen" Height="Auto" Width="Auto"
         >
-    <Grid RenderTransformOrigin="0.506,0.486" Margin="0,-40,-0.2,-0.2" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center">
+    <Grid Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -29,26 +21,17 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition MaxWidth="800" Width="231*"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Speler 1&#xD;&#xA;" Grid.Column="5" HorizontalAlignment="Left" Margin="279,0.333,0,0" VerticalAlignment="Top" Width="138" FontSize="30" Foreground="White" FontWeight="Bold" Height="56" Grid.Row="3" Grid.ColumnSpan="2" />
-        <Label Content="Speler 2&#xA;" Grid.Column="5" HorizontalAlignment="Left" Margin="280,52.333,0,0" VerticalAlignment="Top" Width="144" FontSize="30" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.473,0.669" Height="56" Grid.Row="6" Grid.ColumnSpan="2" Grid.RowSpan="4" />
-        <Button Content="Verder" Grid.Column="5" HorizontalAlignment="Left" Margin="196,18.667,0,-71.667" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Button_Click" ClickMode="Press" RenderTransformOrigin="0.471,0.934" Grid.Row="11" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="Textbox1_speler1" Grid.Column="5" HorizontalAlignment="Left" Height="42" Margin="135,6.333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="431" FontSize="28" TextChanged="Textbox1_speler1_TextChanged" Grid.Row="4" Grid.ColumnSpan="4"/>
-        <TextBox x:Name="Textbox2_speler2" Grid.Column="5" HorizontalAlignment="Left" Height="40" Margin="131,0.333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" FontSize="28" RenderTransformOrigin="0.439,-0.4" TextChanged="Textbox2_speler2_TextChanged" Grid.Row="10" Grid.ColumnSpan="3"/>
-        <Image Source="memory-logo.png" Stretch="Fill" Grid.ColumnSpan="6" Grid.Column="5" Margin="14,-32,-4,122.333" Grid.RowSpan="3"/>
-        <Label x:Name="Minuten" Grid.Column="5" HorizontalAlignment="Center"  Content="Minuten" FontSize="25" VerticalAlignment="Center" Margin="0,0.2,134,31.6" Height="49" Width="118" Grid.Row="6"/>
-        <Label x:Name="Seconden" Grid.Column="5" HorizontalAlignment="Center"  Content="Seconden" FontSize="25" VerticalAlignment="Center" Margin="116,0.2,0,31.6" Height="49" Width="136" Grid.Row="6"/>
-        <TextBox x:Name="MinutesBox" Grid.Column="5" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="80" Margin="10,41.2,162,16.6" TextChanged="Minutes_Changed" Grid.Row="6" RenderTransformOrigin="-0.883,0.583"/>
-        <TextBox x:Name="SecondsBox" Grid.Column="5" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="80" Margin="133,41.2,39,16.6" TextChanged="Seconds_Changed" Grid.Row="6"/>
+        <Label Content="Speler 1&#xD;&#xA;" Grid.Column="4" HorizontalAlignment="Left" Margin="267,62,0,0" VerticalAlignment="Top" Width="138" FontSize="30" Foreground="White" FontWeight="Bold" Height="56" Grid.RowSpan="2" RenderTransformOrigin="0.427,-0.546" />
+        <Label Content="Speler 2&#xA;" Grid.Column="4" HorizontalAlignment="Left" Margin="260,7,0,0" VerticalAlignment="Top" Width="144" FontSize="30" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.473,0.669" Height="56" Grid.Row="7" />
+        <Button Content="Verder" Grid.Column="4" HorizontalAlignment="Left" Margin="192,235,0,-248" Width="272" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Button_Click" ClickMode="Press" RenderTransformOrigin="0.471,0.934" Grid.Row="3"/>
+        <TextBox x:Name="Textbox1_speler1" Grid.Column="4" HorizontalAlignment="Left" Height="42" Margin="119,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="431" FontSize="28" TextChanged="Textbox1_speler1_TextChanged" Grid.Row="1" Grid.RowSpan="2"/>
+        <TextBox x:Name="Textbox2_speler2" Grid.Column="4" HorizontalAlignment="Left" Height="40" Margin="121,62,0,-39" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" FontSize="28" RenderTransformOrigin="0.439,-0.4" TextChanged="Textbox2_speler2_TextChanged" Grid.Row="3"/>
+        <Image Source="memory-logo.png" Stretch="Fill" Grid.Column="4" Margin="2,-258,8,67"/>
+        <Label x:Name="Minuten" Grid.Column="4" HorizontalAlignment="Center"  Content="Minuten" FontSize="25" VerticalAlignment="Center" Margin="192,143,371,-130" Height="50" Width="118" Grid.Row="3" RenderTransformOrigin="0.498,0.919"/>
+        <Label x:Name="Seconden" Grid.Column="4" HorizontalAlignment="Center"  Content="Seconden" FontSize="25" VerticalAlignment="Center" Margin="340,143,205,-128" Height="48" Width="136" Grid.Row="3" RenderTransformOrigin="0.376,3.296"/>
+        <TextBox x:Name="MinutesBox" Grid.Column="4" HorizontalAlignment="Center" Height="22" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="80" Margin="206,195,395,-154" TextChanged="Minutes_Changed" Grid.Row="3" RenderTransformOrigin="-0.883,0.583"/>
+        <TextBox x:Name="SecondsBox" Grid.Column="4" HorizontalAlignment="Center" Height="22" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="80" Margin="366,191,235,-150" TextChanged="Seconds_Changed" Grid.Row="3" RenderTransformOrigin="0.464,1.705"/>
+        <Label Content="Speeltijd &#xA;" Grid.Column="4" HorizontalAlignment="Left" Margin="257,99,0,-92" VerticalAlignment="Top" Width="138" FontSize="30" Foreground="White" FontWeight="Bold" Height="56" Grid.Row="3" />
     </Grid>
 </Window>

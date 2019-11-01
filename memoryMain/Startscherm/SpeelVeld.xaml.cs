@@ -1,22 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Microsoft.Win32;
-using Path = System.IO.Path;
-using save;
 using System.Windows.Threading;
+using Path = System.IO.Path;
 
 namespace Startscherm
 {
@@ -25,27 +18,22 @@ namespace Startscherm
     /// </summary>
     public partial class speelveld : Window
     {
-
         public string naam1 { get; internal set; }
         public string naam2 { get; internal set; }
         public string scorenaam1 { get; internal set; }
         public string scorenaam2 { get; internal set; }
         public string ChoosenTheme { get; internal set; }
 
-        //public string ThemeName { get; internal set; }
-
         public int score1 { get; internal set; }
         public string score2 { get; internal set; }
         public int minutes { get; internal set; }
         public int seconds { get; internal set; }
-        DispatcherTimer dt = new DispatcherTimer();
+
+        private DispatcherTimer dt = new DispatcherTimer();
 
         public speelveld()
         {
             InitializeComponent();
-            
-
-
         }
 
         public void Window_Loaded(object sender, RoutedEventArgs e)
@@ -63,20 +51,17 @@ namespace Startscherm
                 TimerLabel.Content = minutes.ToString() + ":" + seconds.ToString();
             }
             dt.Interval = TimeSpan.FromSeconds(1);
-          
-                dt.Tick += dtTicker;
-           
+
+            dt.Tick += dtTicker;
+
             dt.Start();
-
-           
-
-
         }
 
         /// <summary>
         /// Number of rows in the grid
         /// </summary>
         private int NumRows = 4;
+
         /// <summary>
         /// number of collumns in the grid
         /// </summary>
@@ -87,7 +72,6 @@ namespace Startscherm
         /// </summary>
         private void CreateGrid()
         {
-            
             for (int i = 0; i < NumRows; i++)
             {
                 cardgrid.RowDefinitions.Add(new RowDefinition());
@@ -98,12 +82,11 @@ namespace Startscherm
             }
         }
 
-
-
         /// <summary>
         /// The theme (directory path + directory)
         /// </summary>
         public static string theme;
+
         /// <summary>
         /// get directory path and set theme
         /// </summary>
@@ -111,25 +94,23 @@ namespace Startscherm
         {
             string[] directories = Directory.GetDirectories("../../themas/");
 
-
             foreach (string directory in directories)
             {
                 if (Path.GetFileName(directory) == ChoosenTheme)
                 {
                     theme = directory;
                 }
-
-
             }
         }
+
         /// <summary>
-        /// Get all images from the theme (directory) 
+        /// Get all images from the theme (directory)
         /// put the files in a list
         /// loop trough the 2d array and add the list items
         /// </summary>
         private void getCardImages()
         {
-            SetTheme(); // set theme 
+            SetTheme(); // set theme
 
             string[] files = Directory.GetFiles(theme); // get files(images) from directory (theme)
 
@@ -144,7 +125,7 @@ namespace Startscherm
 
             cardgrid.Background = new ImageBrush(new BitmapImage(new Uri(FileList[0], UriKind.Relative))); // set the Grid background
             //loop trough 2d array and set values
-            for (int i = 0; i < cards.GetLength(0); i++) 
+            for (int i = 0; i < cards.GetLength(0); i++)
             {
                 for (int j = 0; j < cards.GetLength(1); j++)
                 {
@@ -154,11 +135,9 @@ namespace Startscherm
             }
         }
 
-
-
         /// <summary>
         /// 2d array for cards (4x4 game)
-        /// </summary>        
+        /// </summary>
         private string[,] cards = new string[2, 4];
 
         /// <summary>
@@ -167,7 +146,6 @@ namespace Startscherm
         public string[,] multiplecards = new string[4, 4];
 
         public string[,] SavedCards = new string[4, 4];
-        
 
         private static void Shuffle<T>(Random random, T[,] cards)
         {
@@ -218,21 +196,18 @@ namespace Startscherm
 
         private void setField()
         {
-            if(CheckSaveFile == false)
+            if (CheckSaveFile == false)
             {
                 Beurt.Text = "Beurt:" + naam1;
 
                 fillCards(); // get the duplicate cards array filled
 
-            var rnd = new Random();
-            Shuffle(rnd, multiplecards); //shuffle cards
-            } else
+                var rnd = new Random();
+                Shuffle(rnd, multiplecards); //shuffle cards
+            }
+            else
             {
                 multiplecards = SavedCards;
-
-                
-
-              
             }
             for (int row = 0; row < multiplecards.GetLength(0); row++) //loop trough rows
             {
@@ -240,30 +215,28 @@ namespace Startscherm
                 {
                     Rectangle Card = new Rectangle(); // create new card
 
-                    Card.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); //set imagebrush 
-/*
-                    Card.HorizontalAlignment = HorizontalAlignment.Stretch;
-                    Card.VerticalAlignment = VerticalAlignment.Stretch;*/
+                    Card.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); //set imagebrush
+                                                                                                                                   /*
+                                                                                                                                                       Card.HorizontalAlignment = HorizontalAlignment.Stretch;
+                                                                                                                                                       Card.VerticalAlignment = VerticalAlignment.Stretch;*/
                     Card.Margin = new Thickness(10);
 
                     Card.SetValue(Grid.RowProperty, row);// set row property
                     Card.SetValue(Grid.ColumnProperty, column); //set column property
                     Card.Name = "Card"; //set column property
 
-                    Card.SetValue(DataContextProperty, multiplecards[row, column]); // set img url as data context 
+                    Card.SetValue(DataContextProperty, multiplecards[row, column]); // set img url as data context
 
                     CardCheckList.Add(multiplecards[row, column]);
 
-
                     Card.MouseLeftButtonDown += Rectangle_MouseDown; // set mousedown event on card
 
-                    if(multiplecards[row,column] == "")
+                    if (multiplecards[row, column] == "")
                     {
                         Card.Visibility = Visibility.Hidden;
                     }
 
                     cardgrid.Children.Add(Card); // add card to grid
-
                 }
             }
         }
@@ -323,7 +296,6 @@ namespace Startscherm
 
                 if (cards != card_one) // if same card is not clicked twice
                 {
-
                     cards.Fill = new ImageBrush(new BitmapImage(new Uri(context, UriKind.Relative))); // show the card image
 
                     if (clickamount == 0)
@@ -331,7 +303,6 @@ namespace Startscherm
                         card_one = cards; // set first card
 
                         clickamount++; // set clickamount to 1 (for the second click)
-
                     }
                     else if (clickamount == 1)// if the second card is clicked
                     {
@@ -340,23 +311,20 @@ namespace Startscherm
                         if (Convert.ToString(card_one.DataContext) == Convert.ToString(card_two.DataContext))// if the the images are the same
                         {
                             isRunning = true;
-                            await Task.Delay(750);
+                            await Task.Delay(3000);
                             isRunning = false;
                             //MessageBox.Show("Deze kaarten zijn gelijk");
-
 
                             card_one.Visibility = Visibility.Hidden; // hide first card
                             card_two.Visibility = Visibility.Hidden; // hide second card
 
-
-                            for(int i=0; i<CardCheckList.Count; i++)
+                            for (int i = 0; i < CardCheckList.Count; i++)
                             {
                                 if (CardCheckList[i].Contains(Convert.ToString(card_one.DataContext)))
                                 {
                                     CardCheckList[i] = "";
                                 }
                             }
-
 
                             card_one = null; // reset card one
                             card_two = null; // reset card two
@@ -366,8 +334,7 @@ namespace Startscherm
                             {
                                 PlayerOneScore++;//score for player1 +1
                                 speler1Score.Text = Convert.ToString(PlayerOneScore);// set score in game
-                                Beurt.Text ="Beurt:" + naam1;
-                                MessageBox.Show(Convert.ToString(PlayerOneScore++));
+                                Beurt.Text = "Beurt:" + naam1;
                             }
                             else// if player 2 has equal cards
                             {
@@ -377,12 +344,11 @@ namespace Startscherm
                             }
 
                             clickamount = 0; // set amount clicks to 0;
-
                         }
                         else
                         { // if the images are not equal
                             isRunning = true;
-                            await Task.Delay(750);
+                            await Task.Delay(2000);
                             isRunning = false;
                             card_one.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); //show general image(backside of the card)
                             card_two.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); // show general image(backside of the card)
@@ -404,15 +370,14 @@ namespace Startscherm
                         }
 
                         //kijken waneer score gelijk is aan 8
-                        if (PlayerOneScore+PlayerTwoScore == 8)
-                        {//als speler 1 meer punten geeft dan speler 2 
+                        if (PlayerOneScore + PlayerTwoScore == 8)
+                        {//als speler 1 meer punten geeft dan speler 2
                             if (PlayerOneScore > PlayerTwoScore)
                             {//geef naam en score door aan het winnaarscherm
-                                winaarscherm winaarscherm = new winaarscherm(naam1,PlayerOneScore,naam2,PlayerTwoScore);
+                                winaarscherm winaarscherm = new winaarscherm(naam1, PlayerOneScore, naam2, PlayerTwoScore);
                                 scorenaam2 = naam2;
                                 winaarscherm.naam1 = naam1;
                                 winaarscherm.scorenaam2 = scorenaam2;
-
 
                                 this.Hide();
                                 winaarscherm.Show();
@@ -424,7 +389,7 @@ namespace Startscherm
                                 scorenaam1 = naam1;
                                 winaarscherm.naam2 = naam2;
                                 winaarscherm.scorenaam1 = scorenaam1;
-                                
+
                                 this.Hide();
                                 winaarscherm.Show();
                                 this.Close();
@@ -433,10 +398,10 @@ namespace Startscherm
                             {
                                 //string naam3 = "Gelijkspel";
                                 //winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
-                               // winaarscherm.naam1 = naam3;
+                                // winaarscherm.naam1 = naam3;
 
                                 this.Hide();
-                               // winaarscherm.Show();
+                                // winaarscherm.Show();
                                 this.Close();
                             }
                         }
@@ -444,9 +409,6 @@ namespace Startscherm
                 }
             }
         }
-
-
-       
 
         /// <summary>
         /// Zorgt voor de kloklogica en het correct weergeven van de tijd. Het programma
@@ -489,54 +451,48 @@ namespace Startscherm
             }
             if (minutes == 0 & seconds == 0)
             {
-                    if (PlayerOneScore > PlayerTwoScore)
-                    {//geef naam en score door aan het winnaarscherm
-                        winaarscherm winaarscherm = new winaarscherm(naam1, PlayerOneScore, naam2, PlayerTwoScore);
-                        scorenaam2 = naam2;
-                        winaarscherm.naam1 = naam1;
-                        winaarscherm.scorenaam2 = scorenaam2;
-                        this.Hide();
-                        winaarscherm.Show();
-                        this.Close();
-                    } //kijken als speler 2 meer punten heeft als speler 1
-                    if (PlayerTwoScore > PlayerOneScore)
-                    {//geef naam en score door aan het winnaarscherm
-                        winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
-                        scorenaam1 = naam1;
-                        winaarscherm.naam2 = naam2;
-                        winaarscherm.scorenaam1 = scorenaam1;
+                if (PlayerOneScore > PlayerTwoScore)
+                {//geef naam en score door aan het winnaarscherm
+                    winaarscherm winaarscherm = new winaarscherm(naam1, PlayerOneScore, naam2, PlayerTwoScore);
+                    scorenaam2 = naam2;
+                    winaarscherm.naam1 = naam1;
+                    winaarscherm.scorenaam2 = scorenaam2;
+                    this.Hide();
+                    winaarscherm.Show();
+                    this.Close();
+                } //kijken als speler 2 meer punten heeft als speler 1
+                if (PlayerTwoScore > PlayerOneScore)
+                {//geef naam en score door aan het winnaarscherm
+                    winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
+                    scorenaam1 = naam1;
+                    winaarscherm.naam2 = naam2;
+                    winaarscherm.scorenaam1 = scorenaam1;
 
-                        this.Hide();
-                        winaarscherm.Show();
-                        this.Close();
-                    }
-                    if (PlayerOneScore == PlayerTwoScore)
-                    {
-                        //string naam3 = "Gelijkspel";
-                        //winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
-                        // winaarscherm.naam1 = naam3;
+                    this.Hide();
+                    winaarscherm.Show();
+                    this.Close();
+                }
+                if (PlayerOneScore == PlayerTwoScore)
+                {
+                    //string naam3 = "Gelijkspel";
+                    //winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
+                    // winaarscherm.naam1 = naam3;
 
-                        this.Hide();
-                        // winaarscherm.Show();
-                        this.Close();
-                    }
+                    this.Hide();
+                    // winaarscherm.Show();
+                    this.Close();
+                }
                 dt.Stop();
-
             }
         }
 
-
-
         public void Menu(object sender, RoutedEventArgs e)
         {
-            string naam1 = Speler1_naam.Text; 
-            string naam2 = Speler2_naam.Text; 
+            string naam1 = Speler1_naam.Text;
+            string naam2 = Speler2_naam.Text;
 
             string score1 = speler1Score.Text;
             string score2 = speler2Score.Text;
-
-            
-
 
             string[,] cards = multiplecards;
 
@@ -567,8 +523,6 @@ namespace Startscherm
 
             /*this.Hide();*/
             Ingame_menu.Show();
-
-
         }
     }
 }
