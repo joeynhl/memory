@@ -23,6 +23,8 @@ namespace Startscherm
 
         public string score1 { get; internal set; }
         public string score2 { get; internal set; }
+        public int minutensreset { get; internal set; }
+        public int secondesreset { get; internal set; }
         public int minutes { get; internal set; }
         public int seconds { get; internal set; }
         public DispatcherTimer dt { get; internal set; }
@@ -145,6 +147,8 @@ namespace Startscherm
         }
         private void Resetten(object sender, RoutedEventArgs e)
         {
+            //int papa  = minutensreset;
+            //int mama = secondesreset;
 
             speelveld speelveld = new speelveld();
             speelveld.naam1 = naam1;
@@ -154,10 +158,17 @@ namespace Startscherm
             speelveld.Speler2_naam.Text = naam2;
             speelveld.ChoosenTheme = themaNaam;
 
+            speelveld.minutes = minutensreset;
+            speelveld.seconds = secondesreset;
+
+            speelveld.secondesreset = secondesreset;
+            speelveld.minutensreset = minutensreset;
+
+            //App.Current.MainWindow.Show();
             this.Hide();
             speelveld.Show();
             this.Close();
-            
+
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -206,7 +217,7 @@ namespace Startscherm
             if (minutes == 0 & seconds == 0)
             {
                 //TimerLabel.Content = "TIME UP";
-                System.Environment.Exit(1);
+                //System.Environment.Exit(1);
             }
         }
 

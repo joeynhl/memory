@@ -37,12 +37,15 @@ namespace Startscherm
             speelveld.minutes = minutes;
             speelveld.seconds = seconds;
 
+            speelveld.minutensreset = minutes;
+            speelveld.secondesreset = seconds;
+
             speelveld.Speler1_naam.Text = naam1;
             speelveld.Speler2_naam.Text = naam2;
 
             this.Hide();
             speelveld.Show();
-            this.Close();
+            //this.Close();
         }
 
         public void Textbox1_speler1_TextChanged(object sender, TextChangedEventArgs e)

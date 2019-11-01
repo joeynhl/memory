@@ -24,6 +24,9 @@ namespace Startscherm
         public string scorenaam2 { get; internal set; }
         public string ChoosenTheme { get; internal set; }
 
+        public int minutensreset { get; internal set;  }
+        public int secondesreset { get; internal set; }
+
         public int score1 { get; internal set; }
         public string score2 { get; internal set; }
         public int minutes { get; internal set; }
@@ -31,6 +34,7 @@ namespace Startscherm
         public int loadedscore { get; internal set; }
 
         private DispatcherTimer dt = new DispatcherTimer();
+
 
         public speelveld()
         {
@@ -395,7 +399,7 @@ namespace Startscherm
                                 winaarscherm.Show();
                                 this.Close();
                             }
-                            if (PlayerOneScore == PlayerTwoScore)
+                            if (PlayerOneScore == 4 & PlayerTwoScore == 4)
                             {
                                 //string naam3 = "Gelijkspel";
                                 winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
@@ -473,7 +477,7 @@ namespace Startscherm
                     winaarscherm.Show();
                     this.Close();
                 }
-                if (PlayerOneScore == PlayerTwoScore)
+                if (PlayerOneScore==4 & PlayerTwoScore==4)
                 {
                     //string naam3 = "Gelijkspel";
                     winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
@@ -516,6 +520,10 @@ namespace Startscherm
 
             Ingame_menu.minutes = minutes;
             Ingame_menu.seconds = seconds;
+
+            Ingame_menu.minutensreset = minutensreset;
+            Ingame_menu.secondesreset = secondesreset;
+
             Ingame_menu.dt = dt;
 
             Ingame_menu.player = player;
