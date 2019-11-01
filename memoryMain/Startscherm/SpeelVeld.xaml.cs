@@ -38,6 +38,7 @@ namespace Startscherm
         public string score2 { get; internal set; }
         public int minutes { get; internal set; }
         public int seconds { get; internal set; }
+
         DispatcherTimer dt = new DispatcherTimer();
 
         public speelveld()
