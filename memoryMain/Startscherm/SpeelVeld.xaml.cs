@@ -367,7 +367,7 @@ namespace Startscherm
                                 PlayerOneScore++;//score for player1 +1
                                 speler1Score.Text = Convert.ToString(PlayerOneScore);// set score in game
                                 Beurt.Text ="Beurt:" + naam1;
-                                MessageBox.Show(Convert.ToString(PlayerOneScore++));
+                                //MessageBox.Show(Convert.ToString(PlayerOneScore++));
                             }
                             else// if player 2 has equal cards
                             {
