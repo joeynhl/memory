@@ -61,6 +61,9 @@ namespace Startscherm
                     speelveld.naam1 = entries[17];
                     speelveld.naam2 = entries[19];
 
+                    speelveld.PlayerOneScore = Convert.ToInt32(entries[18]);
+                    speelveld.PlayerTwoScore = Convert.ToInt32(entries[20]);
+
                     if (speelveld.player == 1)
                     {
                         speelveld.Beurt.Text = "Beurt:" + entries[17];
