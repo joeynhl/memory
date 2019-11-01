@@ -42,6 +42,7 @@ namespace Startscherm
 
             this.Hide();
             speelveld.Show();
+            this.Close();
         }
 
         public void Textbox1_speler1_TextChanged(object sender, TextChangedEventArgs e)

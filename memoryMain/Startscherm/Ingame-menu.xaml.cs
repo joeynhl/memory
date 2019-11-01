@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 using Path = System.IO.Path;
+
 
 namespace Startscherm
 {
@@ -132,19 +134,30 @@ namespace Startscherm
         private void Frame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
         }
+        private void CloseAllWindows()
+            {
+                for (int intCounter = App.Current.Windows.Count - 1; intCounter >= 0; intCounter--)
+            {
+                MessageBox.Show(Convert.ToString(App.Current.Windows[3]));
+                App.Current.Windows[intCounter].Close();
 
+            }
+        }
         private void Resetten(object sender, RoutedEventArgs e)
         {
+
             speelveld speelveld = new speelveld();
             speelveld.naam1 = naam1;
             speelveld.naam2 = naam2;
 
             speelveld.Speler1_naam.Text = naam1;
             speelveld.Speler2_naam.Text = naam2;
+            speelveld.ChoosenTheme = themaNaam;
 
             this.Hide();
             speelveld.Show();
             this.Close();
+            
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
