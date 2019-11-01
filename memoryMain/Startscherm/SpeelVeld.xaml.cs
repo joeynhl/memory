@@ -340,7 +340,7 @@ namespace Startscherm
                         if (Convert.ToString(card_one.DataContext) == Convert.ToString(card_two.DataContext))// if the the images are the same
                         {
                             isRunning = true;
-                            await Task.Delay(3000);
+                            await Task.Delay(750);
                             isRunning = false;
                             //MessageBox.Show("Deze kaarten zijn gelijk");
 
@@ -382,7 +382,7 @@ namespace Startscherm
                         else
                         { // if the images are not equal
                             isRunning = true;
-                            await Task.Delay(2000);
+                            await Task.Delay(750);
                             isRunning = false;
                             card_one.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); //show general image(backside of the card)
                             card_two.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); // show general image(backside of the card)
