@@ -1,20 +1,10 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Microsoft.Win32;
-using save;
 
 namespace Startscherm
 {
@@ -23,15 +13,12 @@ namespace Startscherm
     /// </summary>
     public partial class MainWindow : Window
     {
-        MediaPlayer Sound = new MediaPlayer();
-        Opties_Startscherm opties = new Opties_Startscherm();
-
-
+        private MediaPlayer Sound = new MediaPlayer();
+        private Opties_Startscherm opties = new Opties_Startscherm();
 
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
         private void btnExit(object sender, RoutedEventArgs e)
@@ -50,21 +37,15 @@ namespace Startscherm
 
         private void hervatten(object sender, RoutedEventArgs e)
         {
-           
             speelveld speelveld = new speelveld();
             Ingame_menu Ingame_menu = new Ingame_menu();
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
             {
-
-                
-
                 string pathname = openFileDialog.FileName;
                 List<string> lines = File.ReadAllLines(pathname).ToList();
 
-               
-                
                 foreach (var line in lines)
                 {
                     string[] entries = line.Split(',');
@@ -80,8 +61,6 @@ namespace Startscherm
                     speelveld.naam1 = entries[17];
                     speelveld.naam2 = entries[19];
 
-
-
                     if (speelveld.player == 1)
                     {
                         speelveld.Beurt.Text = "Beurt:" + entries[17];
@@ -91,7 +70,6 @@ namespace Startscherm
                         speelveld.Beurt.Text = "Beurt:" + entries[19];
                     }
 
-
                     speelveld.CheckSaveFile = true;
 
                     int k = 0;
@@ -100,33 +78,19 @@ namespace Startscherm
                     {
                         for (int j = 0; j < speelveld.multiplecards.GetLength(1); j++)
                         {
-                           
                             speelveld.SavedCards[i, j] = entries[k]; // put cards in the 2d array
                             k++;
                         }
                     }
-
-
-
-                
-
                 }
-
-               
-
 
                 this.Close();
                 speelveld.Show();
             }
-          
-
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void Highscores_Click(object sender, RoutedEventArgs e)
@@ -137,7 +101,6 @@ namespace Startscherm
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void Opties(object sender, RoutedEventArgs e)
@@ -149,7 +112,6 @@ namespace Startscherm
             this.Hide();
             opties_Startscherm.Show();
             //this.Close();
-
         }
     }
 }
