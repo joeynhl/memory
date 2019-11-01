@@ -370,7 +370,7 @@ namespace Startscherm
                         }
 
                         //kijken waneer score gelijk is aan 8
-                        if (PlayerOneScore + PlayerTwoScore == 8)
+                        if (PlayerOneScore + PlayerTwoScore == 2)
                         {//als speler 1 meer punten geeft dan speler 2
                             if (PlayerOneScore > PlayerTwoScore)
                             {//geef naam en score door aan het winnaarscherm
@@ -397,11 +397,11 @@ namespace Startscherm
                             if (PlayerOneScore == PlayerTwoScore)
                             {
                                 //string naam3 = "Gelijkspel";
-                                //winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
+                                winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
                                 // winaarscherm.naam1 = naam3;
 
                                 this.Hide();
-                                // winaarscherm.Show();
+                                winaarscherm.Show();
                                 this.Close();
                             }
                         }
@@ -475,11 +475,11 @@ namespace Startscherm
                 if (PlayerOneScore == PlayerTwoScore)
                 {
                     //string naam3 = "Gelijkspel";
-                    //winaarscherm winaarscherm = new winaarscherm(PlayerOneScore);
-                    // winaarscherm.naam1 = naam3;
+                    winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
+                    //winaarscherm.naam1 = naam3;
 
                     this.Hide();
-                    // winaarscherm.Show();
+                    winaarscherm.Show();
                     this.Close();
                 }
                 dt.Stop();

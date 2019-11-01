@@ -68,7 +68,8 @@ namespace Startscherm
             }
             if (scorenaam1 == scorenaam2)//gelijkspel 4 punten x 4 punten
             {
-                speler1.Text = "gelijkspel";
+                //Hide(Label);
+                speler1.Text = "Gelijkspel";
                 score11.Text = "4";
             }
         }
