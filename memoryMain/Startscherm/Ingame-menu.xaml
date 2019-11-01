@@ -10,53 +10,38 @@
         Loaded="Window_Loaded"
         ResizeMode="NoResize"
         WindowState="Maximized"
-        Title="Ingame_menu" Background="#3ada9a"  Height="1011" Width="1416">
+        Title="Ingame_menu" Background="#3ada9a" Height="auto" >
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto" MinHeight="137"/>
-            <RowDefinition Height="Auto" MinHeight="122"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="100" />
+            <RowDefinition />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel VerticalAlignment = "Center" Margin = "10,62,9.508,47" Grid.ColumnSpan="6" Height="0" Grid.Row="10" />
 
-        <Menu Background="#FF2C2626" Grid.ColumnSpan="6" Grid.RowSpan="3" HorizontalAlignment="Stretch">
+        <Menu Background="black" Height="100" Grid.Row="0" VerticalAlignment="Top">
             <TextBlock x:Name="Speler1_naam" Text="Speler 1:" Height="62" Width="333" Foreground="White" FontSize="36"/>
-            <TextBlock Foreground="#fff" FontSize="50"><Run x:Name="speler1Score" Text="0"/></TextBlock>
+            <TextBlock Foreground="#fff" FontSize="50">
+                <Run x:Name="speler1Score" Text="0"/>
+            </TextBlock>
             <TextBlock x:Name="Speler2_naam" Text="Speler 2:" Height="62" Width="347" Foreground="White" FontSize="36"/>
-            <TextBlock FontSize="50" RenderTransformOrigin="2.815,0.701" Foreground="White"><Run x:Name="speler2Score" Text="0"/></TextBlock>
-            <Label x:Name="TimerLabel" Foreground="#fff" Content="Klik op play" FontFamily="Segoe UI" FontSize="50" VerticalContentAlignment="Center" Margin="40,0,0,0"/>
+            <TextBlock  FontSize="50" Width="79" Foreground="White">
+                <Run x:Name="speler2Score" Text="0"/>
+            </TextBlock>
+            <Label x:Name="TimerLabel" Foreground="#fff" Content="00:00" FontFamily="Segoe UI" FontSize="60" VerticalContentAlignment="Center" Padding="0"  Margin="20,0,0,0"/>
         </Menu>
-        <Button Content="Afsluiten" HorizontalAlignment="Left" Margin="5,177,0,-133" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Afsluiten" Grid.Column="3" Grid.Row="16" Grid.ColumnSpan="2"/>
-        <Button Content="Hervatten" HorizontalAlignment="Left" Margin="6,9,0,0" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="2" Click="Hervatten"/>
+        <StackPanel Grid.Row="1" VerticalAlignment="top" >
+            <Label Content="Pauze&#xA;" Width="236" FontSize="72" Foreground="White" FontWeight="Bold" Height="126" />
 
-        <Slider Maximum = "100" Margin="14,39,13,7" RenderTransformOrigin="0.679,1.029" ValueChanged="Slider_ValueChanged_1" Grid.Row="10" Grid.Column="3" />
-        <Label Content="Pauze&#xA;" HorizontalAlignment="Left" Margin="35,1,0,0" VerticalAlignment="Top" Width="236" FontSize="72" Foreground="White" FontWeight="Bold" Height="126" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" />
-        <Label Content="Volume&#xA;" HorizontalAlignment="Left" Margin="65,4,0,0" VerticalAlignment="Top" Width="206" FontSize="30" Foreground="White" FontWeight="Bold" Height="68" Grid.Column="3" Grid.Row="10" Grid.ColumnSpan="2" />
-        <Button Content="Opslaan" HorizontalAlignment="Left" Margin="3,73,0,-27" VerticalAlignment="Top" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Button_Click_1" Grid.Column="3" Grid.Row="16" Grid.ColumnSpan="2" />
-        
-        <Frame Content="" Background="#FF2C2626" HorizontalAlignment="Left" Height="100" Margin="-34,422,-987.492,-403" VerticalAlignment="Top" Width="2430" Grid.ColumnSpan="6" Grid.Row="16"/>
-        <Button Content="Resetten" HorizontalAlignment="Left" Margin="6,6,0,0" VerticalAlignment="Top" Width="256" Height="79" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Grid.Column="3" Grid.Row="11" Grid.ColumnSpan="2" Click="Resetten"/>
+            <Button Content="Hervatten" Margin="0,0,0,10" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Hervatten"/>
+            <Button Content="Resetten"  Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold"  Click="Resetten"/>
+
+            <Label Content="Volume&#xA;" Width="206" HorizontalContentAlignment="Center" FontSize="30" Foreground="White" FontWeight="Bold" Height="68" />
+            <Slider Maximum = "100" ValueChanged="Slider_ValueChanged_1" Width="350" Margin="0,0,0,10" />
+
+            <Button Content="Opslaan" Width="272" Margin="0,0,0,10" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Button_Click_1" />
+
+            <Button Content="Afsluiten" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Afsluiten" />
+
+        </StackPanel>
+
     </Grid>
 </Window>
