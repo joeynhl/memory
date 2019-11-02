@@ -97,7 +97,7 @@ namespace Startscherm
         /// </summary>
         public void SetTheme()
         {
-            string[] directories = Directory.GetDirectories("../../themas/");
+            string[] directories = Directory.GetDirectories("themas/");
 
             foreach (string directory in directories)
             {
@@ -220,7 +220,7 @@ namespace Startscherm
                 {
                     Rectangle Card = new Rectangle(); // create new card
 
-                    Card.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); //set imagebrush
+                    Card.Fill = new ImageBrush(new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/cardbackground/background.jpg", UriKind.Relative))); //set imagebrush
                                                                                                                                    /*
                                                                                                                                                        Card.HorizontalAlignment = HorizontalAlignment.Stretch;
                                                                                                                                                        Card.VerticalAlignment = VerticalAlignment.Stretch;*/
@@ -355,8 +355,8 @@ namespace Startscherm
                             isRunning = true;
                             await Task.Delay(750);
                             isRunning = false;
-                            card_one.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); //show general image(backside of the card)
-                            card_two.Fill = new ImageBrush(new BitmapImage(new Uri("../../cardbackground/background.jpg", UriKind.Relative))); // show general image(backside of the card)
+                            card_one.Fill = new ImageBrush(new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory +"/cardbackground/background.jpg", UriKind.Relative))); //show general image(backside of the card)
+                            card_two.Fill = new ImageBrush(new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/cardbackground/background.jpg", UriKind.Relative))); // show general image(backside of the card)
 
                             card_one = null;// reset card one
                             card_two = null;// reset card two

@@ -67,7 +67,7 @@ namespace Startscherm
             }
             else 
             {
-                string ThemeDirectoryName = "../../themas/"; // directory with all themes
+                string ThemeDirectoryName = "themas/"; // directory with all themes
 
             string targetPath = ThemeDirectoryName + themaNaam.Text; // directory for this theme
 

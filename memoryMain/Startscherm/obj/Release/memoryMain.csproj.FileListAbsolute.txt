@@ -1,0 +1,37 @@
+D:\NHL\memory\memoryMain\Startscherm\bin\Release\muziek\Sound1.wav
+D:\NHL\memory\memoryMain\Startscherm\bin\Release\Startscherm.exe.config
+D:\NHL\memory\memoryMain\Startscherm\bin\Release\Startscherm.exe
+D:\NHL\memory\memoryMain\Startscherm\bin\Release\Startscherm.pdb
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\memoryMain.csprojAssemblyReference.cache
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Highscores.g.cs
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Ingame-menu.g.cs
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\MainWindow.g.cs
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Opties Startscherm.g.cs
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Speelveld-grootte.g.cs
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\spelen.g.cs
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\SpeelVeld.g.cs
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Thema opties.g.cs
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\thema-maken.g.cs
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\thema.g.cs
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\winaarscherm.g.cs
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\App.g.cs
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Startscherm_Content.g.cs
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Startscherm_MarkupCompile.cache
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Startscherm_MarkupCompile.lref
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Highscores.baml
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Ingame-menu.baml
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\MainWindow.baml
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Opties Startscherm.baml
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Speelveld-grootte.baml
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\spelen.baml
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\SpeelVeld.baml
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Thema opties.baml
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\thema-maken.baml
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\thema.baml
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\winaarscherm.baml
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Startscherm.g.resources
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Startscherm.Properties.Resources.resources
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\memoryMain.csproj.GenerateResource.cache
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\memoryMain.csproj.CoreCompileInputs.cache
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Startscherm.exe
+D:\NHL\memory\memoryMain\Startscherm\obj\Release\Startscherm.pdb

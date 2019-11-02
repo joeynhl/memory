@@ -34,7 +34,7 @@ namespace Startscherm
 
         private void loadButtons()
         {
-            string[] directories = Directory.GetDirectories("../../themas/");
+            string[] directories = Directory.GetDirectories("themas/");
 
 
             foreach (string theme in directories)

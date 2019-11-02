@@ -22,22 +22,10 @@
         <Image Source="memory-logo.png" Width="500" Grid.Row="0"/>
         <ScrollViewer VerticalScrollBarVisibility="Auto" Height="200" Grid.Row="1" HorizontalAlignment="Center">
             <StackPanel CanVerticallyScroll="True" x:Name="ButtonHolder" >
-                <Button Click="btnMario" Content="Mario"/>
+                
             </StackPanel>
         </ScrollViewer>
         <Button Content="Terug" HorizontalAlignment="Left" Margin="348,5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-
-        <!--<Button HorizontalAlignment="Left" Margin="1,1.2,0,0" VerticalAlignment="Top" Width="114" Height="122" Grid.Column="1" Grid.Row="5" Grid.RowSpan="2" Click="btnMario">
-            <Image Source="mario.png"/>
-        </Button>
-        <Button HorizontalAlignment="Left" Margin="2.8,1.2,0,0" VerticalAlignment="Top" Width="114" Height="122" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="5" Grid.RowSpan="2" Click="btnZelda">
-            <Image Source="zelda.png"/>
-        </Button>
-        <Button HorizontalAlignment="Left" Margin="2,1.2,0,0" VerticalAlignment="Top" Width="114" Height="122" Grid.Column="6" Grid.ColumnSpan="3" Grid.Row="5" Grid.RowSpan="2" Click="btnMaple">
-            <Image Source="maple.png"/>
-        </Button>
-        <Button Content="eigenplaatje" HorizontalAlignment="Left" Margin="2.4,1.2,0,0" VerticalAlignment="Top" Width="114" Height="122" Grid.Column="9" Grid.ColumnSpan="2" Grid.Row="5" Grid.RowSpan="2" Click="btnEigen"/>
-        <Label Content="Kies hier uw thema." FontSize="20" Grid.Column="4" HorizontalAlignment="Left" Margin="5,12.6,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="180" Height="43" Grid.RowSpan="2"/>-->
 
     </Grid>
 </Window>
