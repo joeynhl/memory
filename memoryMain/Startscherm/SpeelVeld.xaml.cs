@@ -24,7 +24,7 @@ namespace Startscherm
         public string scorenaam2 { get; internal set; }
         public string ChoosenTheme { get; internal set; }
 
-        public int minutensreset { get; internal set;  }
+        public int minutensreset { get; internal set; }
         public int secondesreset { get; internal set; }
 
         public int score1 { get; internal set; }
@@ -221,9 +221,9 @@ namespace Startscherm
                     Rectangle Card = new Rectangle(); // create new card
 
                     Card.Fill = new ImageBrush(new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/cardbackground/background.jpg", UriKind.Relative))); //set imagebrush
-                                                                                                                                   /*
-                                                                                                                                                       Card.HorizontalAlignment = HorizontalAlignment.Stretch;
-                                                                                                                                                       Card.VerticalAlignment = VerticalAlignment.Stretch;*/
+                                                                                                                                                                      /*
+                                                                                                                                                                                          Card.HorizontalAlignment = HorizontalAlignment.Stretch;
+                                                                                                                                                                                          Card.VerticalAlignment = VerticalAlignment.Stretch;*/
                     Card.Margin = new Thickness(10);
 
                     Card.SetValue(Grid.RowProperty, row);// set row property
@@ -318,7 +318,6 @@ namespace Startscherm
                             isRunning = true;
                             await Task.Delay(750);
                             isRunning = false;
-                            //MessageBox.Show("Deze kaarten zijn gelijk");
 
                             card_one.Visibility = Visibility.Hidden; // hide first card
                             card_two.Visibility = Visibility.Hidden; // hide second card
@@ -355,7 +354,7 @@ namespace Startscherm
                             isRunning = true;
                             await Task.Delay(750);
                             isRunning = false;
-                            card_one.Fill = new ImageBrush(new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory +"/cardbackground/background.jpg", UriKind.Relative))); //show general image(backside of the card)
+                            card_one.Fill = new ImageBrush(new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/cardbackground/background.jpg", UriKind.Relative))); //show general image(backside of the card)
                             card_two.Fill = new ImageBrush(new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/cardbackground/background.jpg", UriKind.Relative))); // show general image(backside of the card)
 
                             card_one = null;// reset card one
@@ -373,48 +372,54 @@ namespace Startscherm
                                 Beurt.Text = "Beurt:" + naam1;
                             }
                         }
+                        scoreSysteem();
 
-                        //kijken waneer score gelijk is aan 8
-                        if (PlayerOneScore + PlayerTwoScore == 8)
-                        {//als speler 1 meer punten geeft dan speler 2
-                            if (PlayerOneScore > PlayerTwoScore)
-                            {//geef naam en score door aan het winnaarscherm
-                                winaarscherm winaarscherm = new winaarscherm(naam1, PlayerOneScore, naam2, PlayerTwoScore);
-                                scorenaam2 = naam2;
-                                winaarscherm.naam1 = naam1;
-                                winaarscherm.scorenaam2 = scorenaam2;
 
-                                this.Hide();
-                                winaarscherm.Show();
-                                this.Close();
-                            } //kijken als speler 2 meer punten heeft als speler 1
-                            if (PlayerTwoScore > PlayerOneScore)
-                            {//geef naam en score door aan het winnaarscherm
-                                winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
-                                scorenaam1 = naam1;
-                                winaarscherm.naam2 = naam2;
-                                winaarscherm.scorenaam1 = scorenaam1;
-
-                                this.Hide();
-                                winaarscherm.Show();
-                                this.Close();
-                            }
-                            if (PlayerOneScore == 4 & PlayerTwoScore == 4)
-                            {
-                                //string naam3 = "Gelijkspel";
-                                winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
-                                // winaarscherm.naam1 = naam3;
-
-                                this.Hide();
-                                winaarscherm.Show();
-                                this.Close();
-                            }
-                        }
                     }
                 }
             }
         }
 
+        /// <summary>
+        /// Vergelijk de scores 
+        /// </summary>
+        private void scoreSysteem()
+        {
+            //kijken waneer score gelijk is aan 8
+            if (PlayerOneScore + PlayerTwoScore == 8)
+            {//als speler 1 meer punten geeft dan speler 2
+                if (PlayerOneScore > PlayerTwoScore)
+                {//geef naam en score door aan het winnaarscherm
+                    winaarscherm winaarscherm = new winaarscherm(naam1, PlayerOneScore, naam2, PlayerTwoScore);
+                    scorenaam2 = naam2;
+                    winaarscherm.naam1 = naam1;
+                    winaarscherm.scorenaam2 = scorenaam2;
+
+                    this.Hide();
+                    winaarscherm.Show();
+                    this.Close();
+                } //kijken als speler 2 meer punten heeft als speler 1
+                else if (PlayerOneScore < PlayerTwoScore)
+                {//geef naam en score door aan het winnaarscherm
+                    winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
+                    scorenaam1 = naam1;
+                    winaarscherm.naam2 = naam2;
+                    winaarscherm.scorenaam1 = scorenaam1;
+
+                    this.Hide();
+                    winaarscherm.Show();
+                    this.Close();
+                }
+                else 
+                {
+                    winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
+
+                    this.Hide();
+                    winaarscherm.Show();
+                    this.Close();
+                }
+            }
+        }
         /// <summary>
         /// Zorgt voor de kloklogica en het correct weergeven van de tijd. Het programma
         /// loopt elke seconde door deze code.
@@ -477,7 +482,7 @@ namespace Startscherm
                     winaarscherm.Show();
                     this.Close();
                 }
-                if (PlayerOneScore==4 & PlayerTwoScore==4)
+                if (PlayerOneScore == 4 & PlayerTwoScore == 4)
                 {
                     //string naam3 = "Gelijkspel";
                     winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
