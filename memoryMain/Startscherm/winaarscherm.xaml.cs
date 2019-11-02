@@ -65,9 +65,7 @@ namespace Startscherm
                 // Voeg score toe
                 addScore(winnaarNaam, winnaarScore, verliezerNaam, verliezerScore);
                 Console.WriteLine("na de if elses: " + winnaarNaam + " " + winnaarScore + " " + verliezerNaam + " " + verliezerScore);
-            }
-            
-            if (scorenaam1 == scorenaam2)//gelijkspel 4 punten x 4 punten
+            } else
             {
                 
                 mylab1.Content = "Gelijkspel";
