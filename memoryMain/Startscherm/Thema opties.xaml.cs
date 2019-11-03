@@ -44,8 +44,8 @@ namespace Startscherm
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            MainWindow mainwindow = new MainWindow();
-            mainwindow.Show();
+          //  MainWindow mainwindow = new MainWindow();
+          //  mainwindow.Show();
             this.Close();
 
         }
