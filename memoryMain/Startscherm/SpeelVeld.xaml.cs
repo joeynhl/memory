@@ -544,7 +544,7 @@ namespace Startscherm
 
             //zet timer stop in het speelveld als je naar het ingame menu gaat
             dt.Stop();
-
+            //this.Hide();
             Ingame_menu.Show();
         }
     }
