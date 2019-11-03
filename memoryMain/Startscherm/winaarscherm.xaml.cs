@@ -49,9 +49,8 @@ namespace Startscherm
                 score11.Text = Convert.ToString(winnaarScore);//vult score in
                 scorenaam2 = verliezerNaam;//speler 2 naam (verliezer)
 
-                // Voeg score toe
+                // Voegt score toe
                 addScore(winnaarNaam, winnaarScore, verliezerNaam, verliezerScore);
-                Console.WriteLine("na de if elses: " + winnaarNaam + " " + winnaarScore + " " + verliezerNaam + " " + verliezerScore);
             }
             else//als het gelijkspel is
             {
@@ -75,7 +74,7 @@ namespace Startscherm
         private void speler2_TextChanged(object sender, TextChangedEventArgs e)
         {
         }
-
+        //terug button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
