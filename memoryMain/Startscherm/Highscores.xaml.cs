@@ -15,6 +15,7 @@ namespace Startscherm
         private ObservableCollection<Score> scores = new ObservableCollection<Score>
         { };
 
+
         public Highscores()
         {
             InitializeComponent();
@@ -22,6 +23,14 @@ namespace Startscherm
             ReadFile();
         }
 
+
+        /// <summary>
+        /// De functie die de namen en scores opslaat naar een bestand
+        /// </summary>
+        /// <param name="Naam1"></param>
+        /// <param name="Score1"></param>
+        /// <param name="Naam2"></param>
+        /// <param name="Score2"></param>
         private void addScore(string Naam1, int Score1, string Naam2, int Score2)
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + "highscores.txt";
@@ -31,6 +40,9 @@ namespace Startscherm
             File.WriteAllText(path, score);
         }
 
+        /// <summary>
+        /// Leest het bestand uit die hij vervolgens verwerkt om te tonen op de applicatie
+        /// </summary>
         private void ReadFile()
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + "highscores.txt";
@@ -56,6 +68,7 @@ namespace Startscherm
                 return;
             }
         }
+
 
         public class Score
         {
