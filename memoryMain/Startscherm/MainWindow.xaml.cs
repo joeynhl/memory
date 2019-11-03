@@ -30,6 +30,7 @@ namespace Startscherm
         {
             Thema_opties opties = new Thema_opties();
             opties.Show();
+            //this.Close(); zou hier moeten staan maar omdat er een terug knop is wordt hij niet gesloten en is dit een slechte oplossing voor een probleem
         }
 
         /// <summary>
