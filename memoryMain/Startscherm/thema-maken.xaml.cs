@@ -54,8 +54,8 @@ namespace Startscherm
             }
         }
         /// <summary>
-        /// If the button is clicked create a directory 
-        /// put the files in the directory
+        /// If the button is clicked create a directory and
+        /// copy the files(images) to the directory
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -69,7 +69,7 @@ namespace Startscherm
             {
                 string ThemeDirectoryName = "themas/"; // directory with all themes
 
-            string targetPath = ThemeDirectoryName + themaNaam.Text; // directory for this theme
+                string targetPath = ThemeDirectoryName + themaNaam.Text; // directory for this theme
 
             if (Directory.Exists(targetPath)) // if directory name already exist 
             {
@@ -93,6 +93,11 @@ namespace Startscherm
             }
         }
 
+        /// <summary>
+        /// navigeer naar vorige pagina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Thema_opties opties = new Thema_opties();

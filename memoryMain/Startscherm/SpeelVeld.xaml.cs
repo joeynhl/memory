@@ -155,6 +155,9 @@ namespace Startscherm
         {
             int lengthRow = cards.GetLength(1);
 
+            MessageBox.Show("lengt row: "+Convert.ToString(lengthRow));
+            MessageBox.Show("cardslength: "+Convert.ToString(cards.Length));
+
             for (int i = cards.Length - 1; i > 0; i--)
             {
                 int i0 = i / lengthRow;

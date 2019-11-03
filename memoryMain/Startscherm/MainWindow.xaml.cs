@@ -21,11 +21,21 @@ namespace Startscherm
             InitializeComponent();
         }
 
+        /// <summary>
+        /// sluit het spel af
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExit(object sender, RoutedEventArgs e)
         {
             Environment.Exit(1);
         }
 
+        /// <summary>
+        /// Navigeert naar 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void startBtn(object sender, RoutedEventArgs e)
         {
             Thema_opties opties = new Thema_opties();
@@ -55,22 +65,22 @@ namespace Startscherm
                     string[] entries = line.Split(',');//maakt een nieuwe arr aan die het bestand splits op komma's
 
                     //plaats de juiste index op de waarde van het speelveld
-                    speelveld.Speler1_naam.Text = entries[17];
-                    speelveld.speler1Score.Text = entries[18];
-                    speelveld.Speler2_naam.Text = entries[19];
-                    speelveld.speler2Score.Text = entries[20];
-                    speelveld.theme = entries[21];
-                    speelveld.minutes = Convert.ToInt32(entries[22]);
-                    speelveld.seconds = Convert.ToInt32(entries[23]);
-                    speelveld.player = Convert.ToInt32(entries[24]);
-                    speelveld.naam1 = entries[17];
-                    speelveld.naam2 = entries[19];
+                    speelveld.Speler1_naam.Text = entries[17]; //set naam van speler 1 in het speelveld
+                    speelveld.speler1Score.Text = entries[18]; //set score van speler 1 in het speelveld
+                    speelveld.Speler2_naam.Text = entries[19]; //set naam van speler 2 in het speelveld
+                    speelveld.speler2Score.Text = entries[20]; //set score van speler 2 in het speelveld
+                    speelveld.theme = entries[21]; // Het thema
+                    speelveld.minutes = Convert.ToInt32(entries[22]); // aantal minuten
+                    speelveld.seconds = Convert.ToInt32(entries[23]); // aantal seconden
+                    speelveld.player = Convert.ToInt32(entries[24]); // speler die aan de beurt is
+                    speelveld.naam1 = entries[17]; // naam van speler 1 
+                    speelveld.naam2 = entries[19]; // naam van speler 2 
 
                     speelveld.minutensreset = Convert.ToInt32(entries[25]);
                     speelveld.secondesreset = Convert.ToInt32(entries[26]);
 
-                    speelveld.PlayerOneScore = Convert.ToInt32(entries[18]);
-                    speelveld.PlayerTwoScore = Convert.ToInt32(entries[20]);
+                    speelveld.PlayerOneScore = Convert.ToInt32(entries[18]); // set score voor speler 1
+                    speelveld.PlayerTwoScore = Convert.ToInt32(entries[20]); // set score voor speler 2
 
                     //kijkt welke speler aan de beurt is en vult daarna de juiste waarde in
                     if (speelveld.player == 1)
@@ -101,10 +111,12 @@ namespace Startscherm
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-        }
 
+        /// <summary>
+        /// Laat highscores zien
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Highscores_Click(object sender, RoutedEventArgs e)
         {
             var highScores = new Highscores();
@@ -115,6 +127,11 @@ namespace Startscherm
         {
         }
 
+        /// <summary>
+        /// Navigeer naar opties scherm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Opties(object sender, RoutedEventArgs e)
         {
             //opties.Show();
