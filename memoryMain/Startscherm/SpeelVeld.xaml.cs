@@ -383,7 +383,7 @@ namespace Startscherm
         }
 
         /// <summary>
-        /// Vergelijk de scores
+        /// Vergelijkt de scores
         /// </summary>
         private void scoreSysteem()
         {
@@ -393,7 +393,7 @@ namespace Startscherm
                 if (PlayerOneScore > PlayerTwoScore)
                 {//geef naam en score door aan het winnaarscherm
                     winaarscherm winaarscherm = new winaarscherm(naam1, PlayerOneScore, naam2, PlayerTwoScore);
-                    scorenaam2 = naam2;
+                    scorenaam2 = naam2;//winnar is speler 2 en geeft speler 2 naam door aan winnaarscherm
                     winaarscherm.naam1 = naam1;
                     winaarscherm.scorenaam2 = scorenaam2;
 
@@ -404,7 +404,7 @@ namespace Startscherm
                 else if (PlayerOneScore < PlayerTwoScore)
                 {//geef naam en score door aan het winnaarscherm
                     winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
-                    scorenaam1 = naam1;
+                    scorenaam1 = naam1;//winaar is speler 1 en geeft speler 1 naam door aan winnaarscherm
                     winaarscherm.naam2 = naam2;
                     winaarscherm.scorenaam1 = scorenaam1;
 
@@ -477,7 +477,7 @@ namespace Startscherm
                 if (PlayerTwoScore > PlayerOneScore)
                 {//geef naam en score door aan het winnaarscherm
                     winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
-                    scorenaam1 = naam1;
+                    scorenaam1 = naam1;//geeft speler naam 1 door naar winnaarscherm
                     winaarscherm.naam2 = naam2;
                     winaarscherm.scorenaam1 = scorenaam1;
 

@@ -53,11 +53,11 @@ namespace Startscherm
                 addScore(winnaarNaam, winnaarScore, verliezerNaam, verliezerScore);
                 Console.WriteLine("na de if elses: " + winnaarNaam + " " + winnaarScore + " " + verliezerNaam + " " + verliezerScore);
             }
-            else
+            else//als het gelijkspel is
             {
-                mylab1.Content = "Gelijkspel";
-                speler1.Text = verliezerNaam + " & " + winnaarNaam;
-                score11.Text = "4";
+                mylab1.Content = "Gelijkspel";//maakt van label "gelijk spel"
+                speler1.Text = verliezerNaam + " & " + winnaarNaam;//vult beide speler namen in
+                score11.Text = "4";//vult bij scrore 4 in
             }
         }
 
