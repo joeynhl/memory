@@ -66,9 +66,6 @@
     <Compile Include="Opties Startscherm.xaml.cs">
       <DependentUpon>Opties Startscherm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Speelveld-grootte.xaml.cs">
-      <DependentUpon>Speelveld-grootte.xaml</DependentUpon>
-    </Compile>
     <Compile Include="spelen.xaml.cs">
       <DependentUpon>spelen.xaml</DependentUpon>
     </Compile>
@@ -108,10 +105,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Opties Startscherm.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Speelveld-grootte.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

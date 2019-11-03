@@ -32,7 +32,7 @@
             <Label Content="Pauze&#xA;" Width="236" FontSize="72" Foreground="White" FontWeight="Bold" Height="126" />
 
             <Button Content="Hervatten" Margin="0,0,0,10" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Hervatten"/>
-            <Button Content="Resetten"  Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold"  Click="Resetten"/>
+            <Button Content="Resetten"  Margin="0,0,0,10" Width="272" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold"  Click="Resetten"/>
 
             <Button Content="Opslaan" Width="272" Margin="0,0,0,10" Height="76" Background="#FF5B5656" Foreground="White" FontSize="32" FontWeight="Bold" Click="Button_Click_1" />
 
