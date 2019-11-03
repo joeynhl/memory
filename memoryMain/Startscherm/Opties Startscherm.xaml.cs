@@ -29,6 +29,7 @@ namespace Startscherm
         public Opties_Startscherm()
         {
             InitializeComponent();
+            // Initialiseer de muziek wanneer dit scherm voor het eerst geopend word
             InitialiseerMuziek();
         }
 
@@ -36,21 +37,24 @@ namespace Startscherm
         {
             Sound.Open(new Uri(path));
             Sound.Play();
+            // begin ook elke seconde te kijken of het liedje al voorbij is
             checkCurrentPos();
         }
 
         private void playMuziek_Click(object sender, RoutedEventArgs e)
         {
+            // speelt de muziek af
             Sound.Play();
         }
         private void stopMuziek_Click(object sender, RoutedEventArgs e)
         {
+            // stop de muziek
             Sound.Stop();
         }
 
         private void Terug(object sender, RoutedEventArgs e)
         {
-           // MainWindow main = new MainWindow();
+           // Keer terug naar de main window
             this.Hide();
            // main.Show();
            // this.Close();
@@ -60,10 +64,10 @@ namespace Startscherm
         public async void checkCurrentPos()
         {
             await Task.Delay(1000);
-
             Duration len = Sound.NaturalDuration;
             TimeSpan pos = Sound.Position;
 
+            // Zodra de positie van de player verder is dan het liedje speel dan opnieuw af
             if ( pos >= len) {
                 Sound.Open(new Uri(path));
                 Sound.Play();
@@ -73,6 +77,7 @@ namespace Startscherm
 
         private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            // slider value vanuit de xaml
             double value = slider.Value;
             Sound.Volume = value;
         }

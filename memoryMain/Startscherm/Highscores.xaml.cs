@@ -25,13 +25,17 @@ namespace Startscherm
         private void addScore(string Naam1, int Score1, string Naam2, int Score2)
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + "highscores.txt";
+            // creeer string vanuit de params die in ons document past
             string score = Naam1 + "," + Score1 + "," + Naam2 + "," + Score2;
+            // schrijf string naar document
             File.WriteAllText(path, score);
         }
 
         private void ReadFile()
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + "highscores.txt";
+
+            // als het bestand niet bestaat maak hem dan altijd eerst aan
             if (!File.Exists(path))
             {
                 TextWriter tw = new StreamWriter(path);
@@ -42,6 +46,7 @@ namespace Startscherm
                 List<string> lines = File.ReadAllLines(path).ToList();
                 foreach (var line in lines)
                 {
+                    // strip elke lijn op de comma om daar een waarde uit te halen
                     string[] entries = line.Split(',');
                     scores.Add(new Score { Naam1 = entries[0], Score1 = Int32.Parse(entries[1]), Naam2 = entries[2], Score2 = Int32.Parse(entries[3]) });
                 }

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\NHL\memory\memoryMain\Startscherm\obj\Release\
+C:\Users\KHD\Documents\GitHub\memory\memoryMain\Startscherm\obj\Release\
 Startscherm
 none
 false
 TRACE
-D:\NHL\memory\memoryMain\Startscherm\App.xaml
+C:\Users\KHD\Documents\GitHub\memory\memoryMain\Startscherm\App.xaml
 11-1468884345
 1-1643195646
 15357558455
 151397803362
 Highscores.xaml;Ingame-menu.xaml;MainWindow.xaml;Opties Startscherm.xaml;Speelveld-grootte.xaml;spelen.xaml;SpeelVeld.xaml;Thema opties.xaml;thema-maken.xaml;thema.xaml;winaarscherm.xaml;
 
-False
+True
 
