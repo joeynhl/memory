@@ -2,12 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 using Path = System.IO.Path;
-
 
 namespace Startscherm
 {
@@ -16,7 +14,6 @@ namespace Startscherm
     /// </summary>
     public partial class Ingame_menu : Window
     {
-        //speelveld speelveld = new speelveld();
         public string naam1 { get; internal set; }
 
         public string naam2 { get; internal set; }
@@ -96,36 +93,35 @@ namespace Startscherm
         {
         }
 
+        /// <summary>
+        /// opslaan knop om het spel op te slaan
+        /// voeg waardes toe aan de createText om nieuwe waardes op te slaan
+        /// om waardes terug te halen kijk in mainwindow naar het hervatten
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
-            saveFileDialog.Filter = "save file (*.sav)|*.sav";
-            string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            saveFileDialog.InitialDirectory = path;
+            saveFileDialog.Filter = "save file (*.sav)|*.sav";//filter zo dat er alleen een .sav aangemaakt kan worden
+            string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);//maakt een pad in de debug folder waar het bestand opgeslagen gaat worden
+            saveFileDialog.InitialDirectory = path;//opent het pad op de plek van Path
             if (saveFileDialog.ShowDialog() == true)
             {
-                this.naam1 = naam1;
-                this.naam2 = naam2;
-                this.score1 = score1;
-                this.score2 = score2;
-                this.themaNaam = themaNaam;
-                this.minutes = minutes;
-                this.seconds = seconds;
-                this.dt = dt;
-                this.player = player;
+                string images = ""; //maakt een nieuw string aan
 
-                string images = "";
-
+                //vult images met elke image in checklist en voegt een comma tussen elke image
                 foreach (string image in checklist)
                 {
                     images += image + ",";
                 }
+                //vult createText arr met alle waardes die gegeven worden
+                string[] createText = { images + "," + naam1 + "," + score1 + "," + naam2 + "," + score2 + "," + themaNaam + "," + minutes + "," + seconds + "," + player + "," + minutensreset + "," + secondesreset };
 
-                string[] createText = { images + "," + naam1 + "," + score1 + "," + naam2 + "," + score2 + "," + themaNaam + "," + minutes + "," + seconds + "," + dt + "," + player };
-
+                //vult een save bestand met alle waardes van createText met de naam van het bestand
                 File.WriteAllLines(saveFileDialog.FileName, createText);
 
                 this.Close();
@@ -136,20 +132,18 @@ namespace Startscherm
         private void Frame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
         }
+
         private void CloseAllWindows()
-            {
-                for (int intCounter = App.Current.Windows.Count - 1; intCounter >= 0; intCounter--)
+        {
+            for (int intCounter = App.Current.Windows.Count - 1; intCounter >= 0; intCounter--)
             {
                 MessageBox.Show(Convert.ToString(App.Current.Windows[3]));
                 App.Current.Windows[intCounter].Close();
-
             }
         }
+
         private void Resetten(object sender, RoutedEventArgs e)
         {
-            //int papa  = minutensreset;
-            //int mama = secondesreset;
-
             speelveld speelveld = new speelveld();
             speelveld.naam1 = naam1;
             speelveld.naam2 = naam2;
@@ -164,11 +158,9 @@ namespace Startscherm
             speelveld.secondesreset = secondesreset;
             speelveld.minutensreset = minutensreset;
 
-            //App.Current.MainWindow.Show();
             this.Hide();
             speelveld.Show();
             this.Close();
-
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -223,13 +215,6 @@ namespace Startscherm
 
         private void Hervatten(object sender, RoutedEventArgs e)
         {
-            /*speelveld.Speler1_naam.Text = naam1;
-            speelveld.Speler2_naam.Text = naam2;
-            speelveld.speler1Score.Text = score1;
-            speelveld.speler2Score.Text = score2;
-            speelveld.minutes = minutes;
-            speelveld.seconds = seconds;*/
-
             if (seconds < 10 & seconds > -1)
             {
                 TimerLabel.Content = minutes.ToString() + ":0" + seconds.ToString();

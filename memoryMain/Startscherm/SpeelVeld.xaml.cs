@@ -35,7 +35,6 @@ namespace Startscherm
 
         private DispatcherTimer dt = new DispatcherTimer();
 
-
         public speelveld()
         {
             InitializeComponent();
@@ -201,6 +200,7 @@ namespace Startscherm
 
         private void setField()
         {
+            //kijkt of de waarde van CheckSaveFile false is anders vult hij deze opnieuw
             if (CheckSaveFile == false)
             {
                 Beurt.Text = "Beurt:" + naam1;
@@ -212,6 +212,7 @@ namespace Startscherm
             }
             else
             {
+                //vult mulitplecards met savedcards als er een spel geladen is
                 multiplecards = SavedCards;
             }
             for (int row = 0; row < multiplecards.GetLength(0); row++) //loop trough rows
@@ -373,15 +374,13 @@ namespace Startscherm
                             }
                         }
                         scoreSysteem();
-
-
                     }
                 }
             }
         }
 
         /// <summary>
-        /// Vergelijk de scores 
+        /// Vergelijk de scores
         /// </summary>
         private void scoreSysteem()
         {
@@ -410,7 +409,7 @@ namespace Startscherm
                     winaarscherm.Show();
                     this.Close();
                 }
-                else 
+                else
                 {
                     winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
 
@@ -420,6 +419,7 @@ namespace Startscherm
                 }
             }
         }
+
         /// <summary>
         /// Zorgt voor de kloklogica en het correct weergeven van de tijd. Het programma
         /// loopt elke seconde door deze code.
@@ -496,8 +496,15 @@ namespace Startscherm
             }
         }
 
+        /// <summary>
+        /// knop om naar het ingame menu te gaan
+        /// neem hier waardes mee die je wilt gebruiken in het ingame menu en voor het opslaan
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void Menu(object sender, RoutedEventArgs e)
         {
+            //public variables worden aan gemaakt
             string naam1 = Speler1_naam.Text;
             string naam2 = Speler2_naam.Text;
 
@@ -511,6 +518,8 @@ namespace Startscherm
             List<string> checklist = CardCheckList;
 
             Ingame_menu Ingame_menu = new Ingame_menu(); //Object van maken
+
+            //neem waardes mee naar ingame menu
             Ingame_menu.naam1 = naam1;
             Ingame_menu.naam2 = naam2;
 
@@ -533,9 +542,9 @@ namespace Startscherm
 
             Ingame_menu.player = player;
 
+            //zet timer stop in het speelveld als je naar het ingame menu gaat
             dt.Stop();
 
-            /*this.Hide();*/
             Ingame_menu.Show();
         }
     }

@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Startscherm
 {
@@ -27,13 +17,10 @@ namespace Startscherm
         public int score1 { get; internal set; }
         public int score2 { get; internal set; }
 
-        string winnaarNaam;
-        int winnaarScore;
-        string verliezerNaam;
-        int verliezerScore;
-
-
-
+        private string winnaarNaam;
+        private int winnaarScore;
+        private string verliezerNaam;
+        private int verliezerScore;
 
         public winaarscherm(string naamWinnaar, int scoreWinnaar, string naamVerliezer, int scoreVerliezer)
         {
@@ -42,8 +29,8 @@ namespace Startscherm
             verliezerNaam = naamVerliezer;
             verliezerScore = scoreVerliezer;
             InitializeComponent();
-            
         }
+
         /// <summary>
         /// window loaded zodat de data wordt geladen waneer het scherm geladen wordt.
         /// </summary>
@@ -51,7 +38,7 @@ namespace Startscherm
         /// <param name="e"></param>
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if(winnaarNaam == null || verliezerNaam == null)
+            if (winnaarNaam == null || verliezerNaam == null)
             {
                 return;
             }
@@ -59,15 +46,15 @@ namespace Startscherm
             if (winnaarScore != verliezerScore)
             {
                 speler1.Text = winnaarNaam;//vult naam in
-                score11.Text = Convert.ToString(winnaarScore);//vult score in 
+                score11.Text = Convert.ToString(winnaarScore);//vult score in
                 scorenaam2 = verliezerNaam;//speler 2 naam (verliezer)
 
                 // Voeg score toe
                 addScore(winnaarNaam, winnaarScore, verliezerNaam, verliezerScore);
                 Console.WriteLine("na de if elses: " + winnaarNaam + " " + winnaarScore + " " + verliezerNaam + " " + verliezerScore);
-            } else
+            }
+            else
             {
-                
                 mylab1.Content = "Gelijkspel";
                 speler1.Text = verliezerNaam + " & " + winnaarNaam;
                 score11.Text = "4";
@@ -79,16 +66,14 @@ namespace Startscherm
             string path = AppDomain.CurrentDomain.BaseDirectory + "highscores.txt";
             string score = naam1 + "," + score1 + "," + naam2 + "," + score2 + "\r\n";
             File.AppendAllText(path, score);
-
         }
 
         private void speler1_TextChanged(object sender, TextChangedEventArgs e)
         {
-
         }
+
         private void speler2_TextChanged(object sender, TextChangedEventArgs e)
         {
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
