@@ -45,8 +45,8 @@ namespace Startscherm
             //als speler 1 wint vul naam in bij winaar + score.
             if (winnaarScore != verliezerScore)
             {
-                speler1.Text = winnaarNaam;//vult naam in
-                score11.Text = Convert.ToString(winnaarScore);//vult score in
+                speler1.Content = winnaarNaam;//vult naam in
+                score11.Content = Convert.ToString(winnaarScore);//vult score in
                 scorenaam2 = verliezerNaam;//speler 2 naam (verliezer)
 
                 // Voegt score toe
@@ -55,8 +55,8 @@ namespace Startscherm
             else//als het gelijkspel is
             {
                 mylab1.Content = "Gelijkspel";//maakt van label "gelijk spel"
-                speler1.Text = verliezerNaam + " & " + winnaarNaam;//vult beide speler namen in
-                score11.Text = "4";//vult bij scrore 4 in
+                speler1.Content = verliezerNaam + " & " + winnaarNaam;//vult beide speler namen in
+                score11.Content = "4";//vult bij scrore 4 in
             }
         }
 
@@ -77,10 +77,10 @@ namespace Startscherm
         //terug button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
+            
 
-            this.Hide();
-            mainWindow.Show();
+           
+           
             this.Close();
         }
     }

@@ -18,6 +18,7 @@ namespace Startscherm
         /// De naam van speler 1 uit het vorige scherm
         /// </summary>
         public string naam1 { get; internal set; }
+
         /// <summary>
         /// De naam van speler 2 uit het vorige scherm
         /// </summary>
@@ -27,6 +28,7 @@ namespace Startscherm
         /// De score van speler 1
         /// </summary>
         public string score1 { get; internal set; }
+
         /// <summary>
         /// De score van speler 2
         /// </summary>
@@ -42,6 +44,7 @@ namespace Startscherm
         /// Alle speel kaarten
         /// </summary>
         public string[,] cards { get; internal set; }
+
         public string themaNaam { get; internal set; }
         public List<string> checklist { get; internal set; }
         public int player { get; internal set; }
@@ -57,7 +60,6 @@ namespace Startscherm
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
             Speler1_naam.Text = naam1;
             Speler2_naam.Text = naam2;
             speler1Score.Text = score1;
@@ -117,7 +119,7 @@ namespace Startscherm
         /// <param name="e"></param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
+            
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
@@ -139,8 +141,6 @@ namespace Startscherm
                 //vult een save bestand met alle waardes van createText met de naam van het bestand
                 File.WriteAllLines(saveFileDialog.FileName, createText);
 
-                this.Close();
-                mainWindow.Show();
             }
         }
 
