@@ -63,7 +63,7 @@ namespace Startscherm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void stopMuziek_Click()
+        private void stopMuziek_Click(object sender, RoutedEventArgs e)
         {
             // stop de muziek
             Sound.Stop();
