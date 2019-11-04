@@ -149,7 +149,8 @@ namespace Startscherm
         }
 
         /// <summary>
-        /// reset het spel
+        /// Reset het spel. 
+        /// Hij zet alleen de namen van de spelers, thema en de ingestelde tijd door naar het nieuwe speelveld.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

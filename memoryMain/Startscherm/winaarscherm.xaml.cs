@@ -74,13 +74,8 @@ namespace Startscherm
         private void speler2_TextChanged(object sender, TextChangedEventArgs e)
         {
         }
-        //terug button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-
-           
-           
             this.Close();
         }
     }
