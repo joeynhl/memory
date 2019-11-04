@@ -14,18 +14,37 @@ namespace Startscherm
     /// </summary>
     public partial class Ingame_menu : Window
     {
+        /// <summary>
+        /// De naam van speler 1 uit het vorige scherm
+        /// </summary>
         public string naam1 { get; internal set; }
 
+        /// <summary>
+        /// De naam van speler 2 uit het vorige scherm
+        /// </summary>
         public string naam2 { get; internal set; }
 
+        /// <summary>
+        /// De score van speler 1
+        /// </summary>
         public string score1 { get; internal set; }
+
+        /// <summary>
+        /// De score van speler 2
+        /// </summary>
         public string score2 { get; internal set; }
+
         public int minutensreset { get; internal set; }
         public int secondesreset { get; internal set; }
         public int minutes { get; internal set; }
         public int seconds { get; internal set; }
         public DispatcherTimer dt { get; internal set; }
+
+        /// <summary>
+        /// Alle speel kaarten
+        /// </summary>
         public string[,] cards { get; internal set; }
+
         public string themaNaam { get; internal set; }
         public List<string> checklist { get; internal set; }
         public int player { get; internal set; }
@@ -41,8 +60,6 @@ namespace Startscherm
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //speelveld speelveld = new speelveld();
-
             Speler1_naam.Text = naam1;
             Speler2_naam.Text = naam2;
             speler1Score.Text = score1;
@@ -102,7 +119,7 @@ namespace Startscherm
         /// <param name="e"></param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
+            
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
@@ -124,8 +141,6 @@ namespace Startscherm
                 //vult een save bestand met alle waardes van createText met de naam van het bestand
                 File.WriteAllLines(saveFileDialog.FileName, createText);
 
-                this.Close();
-                mainWindow.Show();
             }
         }
 
@@ -133,15 +148,11 @@ namespace Startscherm
         {
         }
 
-        private void CloseAllWindows()
-        {
-            for (int intCounter = App.Current.Windows.Count - 1; intCounter >= 0; intCounter--)
-            {
-                MessageBox.Show(Convert.ToString(App.Current.Windows[3]));
-                App.Current.Windows[intCounter].Close();
-            }
-        }
-
+        /// <summary>
+        /// reset het spel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Resetten(object sender, RoutedEventArgs e)
         {
             speelveld speelveld = new speelveld();
@@ -213,6 +224,11 @@ namespace Startscherm
             }
         }
 
+        /// <summary>
+        /// Hervat het gepauzeerde spel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Hervatten(object sender, RoutedEventArgs e)
         {
             if (seconds < 10 & seconds > -1)
@@ -232,6 +248,11 @@ namespace Startscherm
             this.Close();
         }
 
+        /// <summary>
+        /// sluit het spel af
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Afsluiten(object sender, RoutedEventArgs e)
         {
             Environment.Exit(1);

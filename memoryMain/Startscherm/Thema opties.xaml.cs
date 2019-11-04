@@ -24,6 +24,11 @@ namespace Startscherm
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Navigeer naar thema maken om een thema te kunnen maken.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Themamaken(object sender, RoutedEventArgs e)
         {
             this.Hide();
@@ -32,6 +37,11 @@ namespace Startscherm
             this.Close();
         }
 
+        /// <summary>
+        /// Navigeer naar thema kiezen om een thema uit te kiezen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Themakiezen(object sender, RoutedEventArgs e)
         {
             this.Hide();
@@ -41,11 +51,16 @@ namespace Startscherm
 
         }
 
+        /// <summary>
+        /// navigeer terug naar het hoofd menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            MainWindow mainwindow = new MainWindow();
-            mainwindow.Show();
+          //  MainWindow mainwindow = new MainWindow();
+          //  mainwindow.Show();
             this.Close();
 
         }

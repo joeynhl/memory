@@ -18,10 +18,25 @@ namespace Startscherm
     /// </summary>
     public partial class speelveld : Window
     {
+        /// <summary>
+        /// Speler 1 naam
+        /// </summary>
         public string naam1 { get; internal set; }
+        /// <summary>
+        /// Speler 2 naam
+        /// </summary>
         public string naam2 { get; internal set; }
+        /// <summary>
+        /// Score voor speler 1
+        /// </summary>
         public string scorenaam1 { get; internal set; }
+        /// <summary>
+        /// Score voor speler 2
+        /// </summary>
         public string scorenaam2 { get; internal set; }
+        /// <summary>
+        /// Gekozen thema
+        /// </summary>
         public string ChoosenTheme { get; internal set; }
 
         public int minutensreset { get; internal set; }
@@ -151,6 +166,12 @@ namespace Startscherm
 
         public string[,] SavedCards = new string[4, 4];
 
+        /// <summary>
+        /// shuffle all cards
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="random">Random int</param>
+        /// <param name="cards">2d array with cards</param>
         private static void Shuffle<T>(Random random, T[,] cards)
         {
             int lengthRow = cards.GetLength(1);
@@ -194,10 +215,20 @@ namespace Startscherm
             }
         }
 
+        /// <summary>
+        /// Booleaan voor het checken of er een savefile word ingeladen of niet
+        /// </summary>
         public bool CheckSaveFile;
 
+        /// <summary>
+        /// list waar alle kaarten in gezet worden ( word aangepast wanneer er tijdens het spel 2 kaarten gelijk zijn ) 
+        /// zie: rectangle_down functie
+        /// </summary>
         public List<string> CardCheckList = new List<string>();
 
+        /// <summary>
+        /// Set all cards in the grid
+        /// </summary>
         private void setField()
         {
             //kijkt of de waarde van CheckSaveFile false is anders vult hij deze opnieuw
@@ -233,14 +264,18 @@ namespace Startscherm
 
                     Card.SetValue(DataContextProperty, multiplecards[row, column]); // set img url as data context
 
-                    CardCheckList.Add(multiplecards[row, column]);
+                    CardCheckList.Add(multiplecards[row, column]); // add cards to cardchecklist
 
                     Card.MouseLeftButtonDown += Rectangle_MouseDown; // set mousedown event on card
 
+
+                    //if a save file is loaded the invisible cards are saved with a empty string.
                     if (multiplecards[row, column] == "")
                     {
                         Card.Visibility = Visibility.Hidden;
                     }
+
+
 
                     cardgrid.Children.Add(Card); // add card to grid
                 }
@@ -282,6 +317,7 @@ namespace Startscherm
         private bool isRunning = false;
 
         /// <summary>
+        /// When a card is clicked check if they are the same. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -323,11 +359,12 @@ namespace Startscherm
                             card_one.Visibility = Visibility.Hidden; // hide first card
                             card_two.Visibility = Visibility.Hidden; // hide second card
 
-                            for (int i = 0; i < CardCheckList.Count; i++)
+
+                            for (int i = 0; i < CardCheckList.Count; i++) // loop trough cardchecklist 
                             {
                                 if (CardCheckList[i].Contains(Convert.ToString(card_one.DataContext)))
                                 {
-                                    CardCheckList[i] = "";
+                                    CardCheckList[i] = ""; // put a empty string in the list if the cards are guessed
                                 }
                             }
 
@@ -350,11 +387,12 @@ namespace Startscherm
 
                             clickamount = 0; // set amount clicks to 0;
                         }
-                        else
-                        { // if the images are not equal
+                        else // if the images are not equal
+                        { 
                             isRunning = true;
                             await Task.Delay(750);
                             isRunning = false;
+
                             card_one.Fill = new ImageBrush(new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/cardbackground/background.jpg", UriKind.Relative))); //show general image(backside of the card)
                             card_two.Fill = new ImageBrush(new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/cardbackground/background.jpg", UriKind.Relative))); // show general image(backside of the card)
 
@@ -380,7 +418,7 @@ namespace Startscherm
         }
 
         /// <summary>
-        /// Vergelijk de scores
+        /// Vergelijkt de scores
         /// </summary>
         private void scoreSysteem()
         {
@@ -390,7 +428,7 @@ namespace Startscherm
                 if (PlayerOneScore > PlayerTwoScore)
                 {//geef naam en score door aan het winnaarscherm
                     winaarscherm winaarscherm = new winaarscherm(naam1, PlayerOneScore, naam2, PlayerTwoScore);
-                    scorenaam2 = naam2;
+                    scorenaam2 = naam2;//winnar is speler 2 en geeft speler 2 naam door aan winnaarscherm
                     winaarscherm.naam1 = naam1;
                     winaarscherm.scorenaam2 = scorenaam2;
 
@@ -401,7 +439,7 @@ namespace Startscherm
                 else if (PlayerOneScore < PlayerTwoScore)
                 {//geef naam en score door aan het winnaarscherm
                     winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
-                    scorenaam1 = naam1;
+                    scorenaam1 = naam1;//winaar is speler 1 en geeft speler 1 naam door aan winnaarscherm
                     winaarscherm.naam2 = naam2;
                     winaarscherm.scorenaam1 = scorenaam1;
 
@@ -474,7 +512,7 @@ namespace Startscherm
                 if (PlayerTwoScore > PlayerOneScore)
                 {//geef naam en score door aan het winnaarscherm
                     winaarscherm winaarscherm = new winaarscherm(naam2, PlayerTwoScore, naam1, PlayerOneScore);
-                    scorenaam1 = naam1;
+                    scorenaam1 = naam1;//geeft speler naam 1 door naar winnaarscherm
                     winaarscherm.naam2 = naam2;
                     winaarscherm.scorenaam1 = scorenaam1;
 
@@ -544,7 +582,7 @@ namespace Startscherm
 
             //zet timer stop in het speelveld als je naar het ingame menu gaat
             dt.Stop();
-
+            //this.Hide();
             Ingame_menu.Show();
         }
     }
