@@ -106,7 +106,7 @@ namespace Startscherm
                     }
                 }
 
-                this.Close();
+                
                 speelveld.Show();
             }
         }
