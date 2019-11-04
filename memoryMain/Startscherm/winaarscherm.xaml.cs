@@ -77,10 +77,10 @@ namespace Startscherm
         //terug button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
+            
 
-            this.Hide();
-            mainWindow.Show();
+           
+           
             this.Close();
         }
     }
