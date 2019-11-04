@@ -20,7 +20,13 @@ namespace Startscherm
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Hij maakt van de teskt in de twee tekstboxen een string en zet de namen,de ingestelde tijd en de gekozen thema.
+        /// Er word een nieuw speelveld aangemaakt. 
+        /// De namen, de ingestelde tijd en de gekozen thema worden door gezet naar het nieuwe speelveld.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string naam1 = Textbox1_speler1.Text;
