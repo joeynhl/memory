@@ -60,9 +60,10 @@ namespace Startscherm
 
         /// <summary>
         /// De click handler die er voor zorgt dat de muziek stopt
+        /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void stopMuziek_Click(object sender, RoutedEventArgs e)
+        private void stopMuziek_Click()
         {
             // stop de muziek
             Sound.Stop();
