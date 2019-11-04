@@ -28,9 +28,9 @@
             <Label x:Name="speler1" Content="" Margin="5,5,0,5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="74"/>
             <Button Content="Hoofdmenu" Foreground="White" Margin="5,5,0,5" Background="#666666" Width="137" Height="42" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click" />
         </StackPanel>
-        <StackPanel Grid.Column="2" HorizontalAlignment="Left" Height="113" Margin="149,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100">
+        <StackPanel Grid.Column="2" HorizontalAlignment="Left" Height="107" Margin="149,16,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100">
             <Label Content="Score:" FontWeight="Bold"/>
-            <Label x:Name="score11" Content="" Margin="5,5,0,5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="74"/>
+            <Label x:Name="score11" Content="" Margin="5,5,0,5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="74"/>
         </StackPanel>
 
 
